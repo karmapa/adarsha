@@ -6,7 +6,7 @@ var Textcontrolbar = React.createClass({
   filepage2vpos:function(file,page) {
     var out=[];
     if(!this.props.db || !this.props.toc) return 0;
-    var offsets=this.props.db.getFilePageOffsets(file);
+    var offsets=this.props.db.getFileSegOffsets(file);
     var voff=offsets[page];
 
     var n=this.findByVoff(voff);//toc裡的第幾項

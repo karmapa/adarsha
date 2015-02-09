@@ -12,7 +12,7 @@ var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
 var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var tibetan=require("ksana-tibetan").wylie;
-var Stacktoc=require("ksana2015-stacktoc");  //載入目錄顯示元件
+var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var search_api=require("./search_api");
 var Showtext=require("./showtext.jsx");
 var Namelist=require("./namelist.jsx");
@@ -74,7 +74,7 @@ var main = React.createClass({
     var file=parseInt(fp[1])-1;
     if (file<0) file=0;
     if (p<0) p=0;
-    var pagename=this.state.db.getFilePageNames(file)[p]; 
+    var pagename=this.state.db.getFileSegNames(file)[p]; 
     this.setPage(pagename,file);
   },
   goHashTag:function() {
@@ -235,7 +235,7 @@ var main = React.createClass({
   showPage:function(f,p) {  
     window.location.hash = this.encodeHashTag(f,p);
     var that=this;
-    var pagename=this.state.db.getFilePageNames(f)[p];
+    var pagename=this.state.db.getFileSegNames(f)[p];
     this.setState({scrollto:pagename});
 
     kse.highlightFile(this.state.db,f,{q:this.state.tofind,nospan:true},function(data){
@@ -243,8 +243,8 @@ var main = React.createClass({
     });
   }, 
   showText:function(n) {
-    var res=kse.vpos2filepage(this.state.db,this.state.toc[n].voff);
-    if(res.file != -1) this.showPage(res.file,res.page);
+    var res=this.state.db.fileSegFromVpos(this.state.toc[n].voff);
+    if(res.file != -1) this.showPage(res.file,res.seg);
     this.setState({dataN:n});    
   },
   nextfile:function() {
@@ -261,7 +261,7 @@ var main = React.createClass({
     this.setState({scrollto:null});
   },
   setPage:function(newpagename,file) {
-    var fp=this.state.db.findPage(newpagename);
+    var fp=this.state.db.findSeg(newpagename);
     if (fp.length){
       this.showPage(fp[0].file,fp[0].page);
     }
@@ -315,7 +315,6 @@ var main = React.createClass({
 
             <div className="tab-content" ref="tab-content">
               <div className="tab-pane fade in active" id="Catalog">               
-              //stacktoc
                 <Stacktoc textConverter={this.textConverter} showText={this.showText} showExcerpt={this.showExcerpt} 
                 opts={{tocbar:"banner/bar.png",tocbar_start:"banner/bar_start.png",stopAt:"་",
                 maxitemlength:42,tocstyle:"vertical_line"}}
