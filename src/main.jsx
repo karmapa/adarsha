@@ -2,6 +2,7 @@
 
 /* to rename the component,
  change name of ./component.js and  "dependencies" section of ../../component.js */
+var React=require("react");
 var require_kdb=[{
   filename:"jiangkangyur.kdb"  , 
   url:"http://ya.ksana.tw/kdb/jiangkangyur.kdb" , desc:"jiangkangyur"
@@ -238,7 +239,8 @@ var main = React.createClass({
     var pagename=this.state.db.getFileSegNames(f)[p];
     this.setState({scrollto:pagename});
 
-    kse.highlightFile(this.state.db,f,{q:this.state.tofind,nospan:true},function(data){
+    kse.highlightFile(this.state.db,f,{q:this.state.tofind,nospan:true},function(data){//kde
+      console.log(data);
       that.setState({bodytext:data,page:p});
     });
   }, 

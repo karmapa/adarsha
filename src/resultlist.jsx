@@ -3,6 +3,7 @@
 /* to rename the component, change name of ./component.js and  "dependencies" section of ../../component.js */
 
 //var othercomponent=Require("other"); 
+var React=require("react");
 var tibetan=require("ksana-tibetan").wylie;
 var resultlist=React.createClass({  //should search result
   show:function() {
