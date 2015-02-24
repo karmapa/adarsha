@@ -1,3 +1,4 @@
+var React=require("react");
 var tibetan=require("ksana-tibetan").wylie;
 var Textcontrolbar = React.createClass({
   getInitialState: function() {

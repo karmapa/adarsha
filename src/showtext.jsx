@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
+var React=require("react");
 var corres_api=require("./corres_api");
 var Textcontrolbar=require("./textcontrolbar.jsx");
 var Defbox=require("./defbox.jsx");
@@ -12,7 +13,7 @@ var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
 var showtext = React.createClass({
   getInitialState: function() {
-    return {message:"",pageImg:"",clickedpb:[]};
+    return {message:"",pageImg:"",clickedpb:[],recen:"lijiang"};
   },
   shouldComponentUpdate:function(nextProps,nextState) {
     if (nextProps.page!=this.props.page) {
@@ -100,13 +101,25 @@ var showtext = React.createClass({
     if (idx>-1) clickedpb.splice(idx,1);
     this.setState({clickedpb:clickedpb});
   },
-  addImage:function(pb) {
+  addImage:function(pb,recen) {
+    var r;
     var clickedpb=this.state.clickedpb;
     var idx=clickedpb.indexOf(clickedpb);
     if (idx==-1) clickedpb.push(pb);
-    this.setState({clickedpb:clickedpb});
+    if(recen=="J") r="lijiang";
+    if(recen=="D") r="derge";
+    if(recen=="H") r="lhasa";
+    this.setState({clickedpb:clickedpb,recen:r});
   },
   togglePageImg: function(e) {
+    // if(e.target.nodeName == "SPAN") {
+    //   this.exhaustiveFind("ཀུ་བ་");
+    // }
+    if(e.target.dataset.type=="goCorres") {
+      this.addImage(e.target.dataset.pb,e.target.dataset.recen);
+      //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
+      return;
+    }
     if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
       e.target.nextSibling.nextSibling.nodeName=="IMG") {
       if (e.target && e.target.dataset) {
@@ -117,11 +130,11 @@ var showtext = React.createClass({
       var pb=null;
       if (e.target && e.target.dataset) pb=e.target.dataset.pb;
       if (pb) {
-        this.addImage(pb);
+        this.addImage(pb,"J");
       } else {
         if (e && e.target && e.target.previousSibling && e.target.previousSibling
-          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.dataset){
-          var pb=e.target.previousSibling.previousSibling.dataset.pb;
+          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
+          var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
           if (pb) this.removeImage(pb);
         }
       }  
@@ -138,12 +151,17 @@ var showtext = React.createClass({
 
     return vol+"/"+vol+"-"+page+side;
   },
-
-  getCorresPage: function(fromPage) {
-    var corresPage=corres_api.dosearch(fromPage,mappings["J"],mappings["D"]);
-    return corresPage;
+  getAllCorresPages: function(pbJ) {
+    var corresPages={};
+    for(var i in mappings) {
+      if(i != "J") {
+        //corresPages[i] = this.getCorresEachPage(pbJ,"J",i);
+        corresPages[i] = corres_api.dosearch(pbJ,mappings["J"],mappings[i]);
+      }
+    }
+    console.log(corresPages);
+    return corresPages;
   },
-
   renderpb: function(s){
     var that=this;
     if(typeof s == "undefined") return "";
@@ -156,9 +174,10 @@ var showtext = React.createClass({
       if (idx==0) pagetext="";
       if(that.state.clickedpb.indexOf(m1)>-1){
         var imgName=that.getImgName(m1);
-        var corresPage=that.getCorresPage(m1);
+        //var corresPage=that.getCorresPage(m1);
+        var corresPage=that.getAllCorresPages(m1);
         link='</span><br></br><a href="#" data-pb="'+m1+'">'+m1+
-        '</a>&nbsp;(Derge:'+corresPage+')<img class="sourceimage" data-img="'+m1+'" width="100%" src="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/lijiang/'+imgName+'.jpg"/><br></br>'
+        '</a>&nbsp;&nbsp;Derge:<a data-type="goCorres" data-recen="D" data-pb='+corresPage.D+'>'+corresPage.D+'</a>&nbsp;&nbsp;Lhasa:<a data-type="goCorres" data-recen="H" data-pb='+corresPage.H+'>'+corresPage.H+'</a><img class="sourceimage" data-img="'+m1+'" width="100%" src="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/'+that.state.recen+'/'+imgName+'.jpg"/><br></br>'
         +'<span class="textwithimage">';
         nextpagekeepcrlf=true;
       } else {

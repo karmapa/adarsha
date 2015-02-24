@@ -1,3 +1,4 @@
+var React=require("react");
 var Defbox = React.createClass({
   getInitialState: function() {
     return {openBox:false,id:0,ch:""};
