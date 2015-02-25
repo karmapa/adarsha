@@ -7,7 +7,6 @@ var require_kdb=[{
   filename:"jiangkangyur.kdb"  , 
   url:"http://ya.ksana.tw/kdb/jiangkangyur.kdb" , desc:"jiangkangyur"
 }];
-//var othercomponent=Require("other"); 
 var Tabarea=require("./tabarea.jsx");
 var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
@@ -17,13 +16,19 @@ var Showtext=require("./showtext.jsx");
 
 var version="v0.1.45";
 var main = React.createClass({
+  getInitialState: function() {
+    //for Mac OS X, edit info.plist
+    //  <key>CFBundleName</key>
+    document.title="Adarsha "+version;
+    return {sidemenu:true,dialog:null,res:{},res_toc:[],bodytext:{file:0,page:0},db:null,toc_result:[],page:0,field:"sutra",scrollto:0,hide:false, wylie:false, dataN:null};
+  },
   hideBanner:function() {
     var header=$("div.header");
     var that=this;
     header.animate({height: "0px"}, 2000, function() {
       header.hide();
       that.bannerHeight=0;
-      //that.setBannerHeight(0);
+      that.setBannerHeight(0);
     });
   },
   toggleMenu:function(){
@@ -33,9 +38,9 @@ var main = React.createClass({
   handleResize:function() {
     clearTimeout(this.resizetimer);
     var that=this;
-    // this.resizetimer=setTimeout(function(){
-    //   that.setBannerHeight(that.bannerHeight);
-    // },300);
+    this.resizetimer=setTimeout(function(){
+      that.setBannerHeight(that.bannerHeight);
+    },300);
   },
   componentWillUnmount:function() {
     window.removeEventListener('resize', this.handleResize);
@@ -48,19 +53,13 @@ var main = React.createClass({
     //window.onhashchange = function () {that.goHashTag();} 
     window.addEventListener('resize', this.handleResize);
   }, 
-  getInitialState: function() {
-    //for Mac OS X, edit info.plist
-    //  <key>CFBundleName</key>
-    document.title="Adarsha "+version;
-    return {sidemenu:true,dialog:null,res:{},res_toc:[],bodytext:{file:0,page:0},db:null,toc_result:[],page:0,field:"sutra",scrollto:0,hide:false, wylie:false, dataN:null};
+  setBannerHeight:function(bannerHeight) {
+    var ch=document.documentElement.clientHeight;
+    //this.refs["text-content"].getDOMNode().style.height=ch-bannerHeight+"px";
+    //this.refs["tab-content-main"].getDOMNode().style.height=(ch-bannerHeight-40)+"px";
   },
-  // setBannerHeight:function(bannerHeight) {
-  //   var ch=document.documentElement.clientHeight;
-  //   this.refs["text-content"].getDOMNode().style.height=ch-bannerHeight+"px";
-  //   this.refs["tab-content"].getDOMNode().style.height=(ch-bannerHeight-40)+"px";
-  // },
   componentDidUpdate:function()  {
-  //  this.setBannerHeight(this.bannerHeight);
+    this.setBannerHeight(this.bannerHeight);
   },  
   encodeHashTag:function(file,p) { //file/page to hash tag
     var f=parseInt(file)+1;
@@ -117,7 +116,6 @@ var main = React.createClass({
           var voffs=db.get(["fields","head_voff"]);
           var toc=this.genToc(heads,depths,voffs);
           this.setState({toc:toc});
-          console.log(toc);
           this.goHashTag();
         }); //載入目錄
     },this);    
@@ -142,7 +140,7 @@ var main = React.createClass({
     var pagename=this.state.db.getFileSegNames(f)[p];
     this.setState({scrollto:pagename});
 
-    kse.highlightFile(this.state.db,f,{q:this.state.tofind,nospan:true},function(data){//kde
+    kse.highlightFile(this.state.db,f,{q:this.state.tofind,token:true},function(data){//kde
       console.log(data);
       that.setState({bodytext:data,page:p});
     });
@@ -202,7 +200,7 @@ var main = React.createClass({
 
       <div className="row">
         <div className={menuclass}>
-          <Tabarea className="tabarea" toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} />
+          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} />
         </div>
         <div className={bodytextcols}>    
           <div className="text text-content" ref="text-content">

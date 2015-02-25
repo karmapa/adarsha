@@ -49,14 +49,14 @@ input {
   padding-right:20px;
   }
 
-.tabarea{
+/*.tabarea{
   width: 25%;
   line-height: 36px;
-  font-size: 12px;
+  font-size: 14px;
   float: left;
   padding-left: 0;
   padding-right: 10px;
-  }
+  }*/
 
 .input-small{
   width:260px;
@@ -149,11 +149,97 @@ division:after{content: attr(t);
 .stacktoc a {color:black;text-align:left;}
 .stacktoc a.hitbadge {color:white;}
 
+.tocitem {text-decoration: none;cursor:pointer;font-size:100%}
+.tocitem:hover {background:#D8F6CE;}
+a.tocitem {padding-right:6px ;padding-left:6px;}
+.expandable:before {content: url("banner/plus.png")}
 div.current {color:black; background:#D8F6CE;border-bottom-right-radius:10px 10px;}
 div.current:hover {background:#D8F6CE;}
 div.current span.text:hover{text-decoration:underline;cursor:pointer;}
 div.current {color:black; background:white ;border-bottom-right-radius:10px 10px;}
 div.current:hover {background:#D8F6CE;}
 /*stacktoc*/
+
+
+/*defbox*/
+.term {
+  size:20px;
+  color:red;
+}
+
+.highlight{
+  border:1px solid #5cb85c;
+}
+
+.modalDialog {
+  position: absolute;
+  border-radius: 10px;
+  width: 500px;
+  height: 200px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;  
+  text-align: center; 
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog.opened {
+  position: absolute;
+  border-radius: 10px;
+  overflow-y:auto;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  opacity:1;
+  pointer-events: auto;
+  color:white;
+}
+
+/*.modalDialog > div {
+  width: 80%;
+  height:50%;
+  top:25%;
+  overflow-y:auto;
+  overflow-x:none;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 20px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}*/
+
+.modalClose {
+  font-face: courier;
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 32px;
+  position: absolute;
+  right: 4px;
+  text-align: center;
+  top: 4px;
+  width: 32px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.modalClose:hover { background: #00d9ff; }
+
+/*defbox*/
 
 

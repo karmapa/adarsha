@@ -3,6 +3,7 @@
 //var othercomponent=Require("other"); 
 var React=require("react");
 var corres_api=require("./corres_api");
+var dict_api=require("./dict_api");
 var Textcontrolbar=require("./textcontrolbar.jsx");
 var Defbox=require("./defbox.jsx");
 var tibetan=require("ksana-tibetan").wylie;
@@ -13,7 +14,7 @@ var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
 var showtext = React.createClass({
   getInitialState: function() {
-    return {message:"",pageImg:"",clickedpb:[],recen:"lijiang"};
+    return {message:"",pageImg:"",clickedpb:{},recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   shouldComponentUpdate:function(nextProps,nextState) {
     if (nextProps.page!=this.props.page) {
@@ -111,10 +112,14 @@ var showtext = React.createClass({
     if(recen=="H") r="lhasa";
     this.setState({clickedpb:clickedpb,recen:r});
   },
+
   togglePageImg: function(e) {
-    // if(e.target.nodeName == "SPAN") {
-    //   this.exhaustiveFind("ཀུ་བ་");
-    // }
+    if(e.target.nodeName == "SPAN" && e.target.getAttribute("vpos")) {
+      var vpos=e.target.getAttribute("vpos");
+      var def=dict_api.exhaustiveFind(e.target.textContent);//"ཀུ་བ་"
+      var clickedChPos = $('span[vpos="'+vpos+'"]').position();
+      this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
+    } else this.setState({openBox:false});
     if(e.target.dataset.type=="goCorres") {
       this.addImage(e.target.dataset.pb,e.target.dataset.recen);
       //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
@@ -202,14 +207,14 @@ var showtext = React.createClass({
 
   render: function() {
     var content=this.props.text||"";
-    if (this.props.wylie) content=tibetan.romanize.toWylie(content,null,false);
+    //if (this.props.wylie) content=tibetan.romanize.toWylie(content,null,false);
     content=this.renderpb(content);
  
     return (
       <div className="cursor" >
         <Textcontrolbar message={this.state.message} sidemenu={this.props.sidemenu} toggleMenu={this.props.toggleMenu} dataN={this.props.dataN} setwylie={this.props.setwylie} wylie={this.props.wylie} page={this.props.page} bodytext={this.props.bodytext}  next={this.props.nextfile} prev={this.props.prevfile} setpage={this.props.setpage} db={this.props.db} toc={this.props.toc} />
         <div onKeypress={this.keyup} onClick={this.togglePageImg} ref="pagetext" className="pagetext" dangerouslySetInnerHTML={{__html: content}} />
-
+        <Defbox vpos={this.state.vpos} clickedChPos={this.state.clickedChPos} def={this.state.def} openBox={this.state.openBox} />
       </div>
     );
   }
