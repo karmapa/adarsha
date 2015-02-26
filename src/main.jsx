@@ -141,7 +141,6 @@ var main = React.createClass({
     this.setState({scrollto:pagename});
 
     kse.highlightFile(this.state.db,f,{q:this.state.tofind,token:true},function(data){//kde
-      console.log(data);
       that.setState({bodytext:data,page:p});
     });
   }, 

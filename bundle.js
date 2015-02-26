@@ -158529,7 +158529,6 @@ var main = React.createClass({displayName: "main",
     this.setState({scrollto:pagename});
 
     kse.highlightFile(this.state.db,f,{q:this.state.tofind,token:true},function(data){//kde
-      console.log(data);
       that.setState({bodytext:data,page:p});
     });
   }, 
@@ -158925,24 +158924,142 @@ var searcharea= React.createClass({displayName: "searcharea",
 });
 module.exports=searcharea;
 
-},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
+},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showseg.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
-var React=require("react");
+var React=require('react');
+var Defbox=require("./defbox.jsx");
 var corres_api=require("./corres_api");
 var dict_api=require("./dict_api");
-var Textcontrolbar=require("./textcontrolbar.jsx");
-var Defbox=require("./defbox.jsx");
-var tibetan=require("ksana-tibetan").wylie;
 var jPedurma=require("./jPedurma");
 var dPedurma=require("./dPedurma");
 var hPedurma=require("./hPedurma");
 var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
+var showseg= React.createClass({displayName: "showseg",
+  getInitialState: function() {
+    return {recen:"lijiang",showCorres:false,clickedChPos:{left:0,top:0},openBox:"",vpos:0};
+  },
+  componentWillReceiveProps: function(nextProps) {
+    if(this.props.clickedCorrespb != nextProps.clickedCorrespb){
+      this.setState({showCorres:true,clickedCorrespb:nextProps.clickedCorrespb});
+    } else this.setState({showCorres:false});
+  },
+  getImgName: function(volpage) {
+    var p=volpage.split(".");
+    var v="000"+p[0];
+    var vol=v.substr(v.length-3,v.length);
+    var pa="000"+p[1].substr(0,p[1].length-1);
+    var page=pa.substr(pa.length-3,pa.length);
+    var side=p[1].substr(p[1].length-1);
+
+    return vol+"/"+vol+"-"+page+side;
+  },
+  getAllCorresPages: function(pbJ) {
+    var corresPages={};
+    for(var i in mappings) {
+      if(i != "J") corresPages[i] = corres_api.dosearch(pbJ,mappings["J"],mappings[i]);
+    }
+
+    return corresPages;
+  },
+  togglePageImg: function(e) {
+    if(e.target.nodeName == "SPAN" && e.target.getAttribute("vpos")) {
+      var vpos=e.target.getAttribute("vpos");
+      var def=dict_api.exhaustiveFind(e.target.textContent);//"ཀུ་བ་"
+      var clickedChPos = $('span[vpos="'+vpos+'"]').position();
+      this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
+    } else this.setState({openBox:false});
+    if(e.target.dataset.type=="goCorres") {
+      this.props.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
+      //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
+      return;
+    }
+    if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
+      e.target.nextSibling.nextSibling.nodeName=="IMG") {
+      if (e.target && e.target.dataset) {
+        var pb=e.target.dataset.pb;
+        if (pb) this.props.removeImage(pb);
+      }
+    } else {
+      var pb=null;
+      if (e.target && e.target.dataset) {
+        if(e.target.nodeName=="SPAN") pb=e.target.parentElement.dataset.pb;//add parentElement
+        else pb=e.target.dataset.pb
+      }
+      if (pb) {
+        this.props.addImage(pb,"J");
+      } else {
+        if (e && e.target && e.target.previousSibling && e.target.previousSibling
+          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
+          var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
+          if (pb) this.props.removeImage(pb);
+        }
+      }  
+    }    
+  },
+  renderPb: function(seg){
+    var clickedpb=this.props.clickedpb;
+    if(clickedpb.indexOf(seg.pb)>-1){
+      var imgName, imgLink;
+      var corresPage=this.getAllCorresPages(seg.pb);//clickedpb[clickedpb.indexOf(seg.pb)].pb
+      if(!this.state.showCorres) {
+        imgName=this.getImgName(seg.pb);
+        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
+      } else {
+        imgName=this.getImgName(this.state.clickedCorrespb);
+        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
+      }
+      return (
+        React.createElement("div", null, 
+          React.createElement("a", {href: "#", "data-pb": seg.pb}, seg.pb), 
+          "  " + ' ' +
+          "Derge:", React.createElement("a", {"data-type": "goCorres", "data-recen": "D", "data-pb": corresPage.D}, corresPage.D), 
+          "  " + ' ' +
+          "Lhasa:", React.createElement("a", {"data-type": "goCorres", "data-recen": "H", "data-pb": corresPage.H}, corresPage.H), 
+          React.createElement("img", {className: "sourceimage", "data-img": seg.pb, width: "100%", src: imgLink}), React.createElement("br", null)
+        )
+      );
+      nextpagekeepcrlf=true;
+    } else {
+      return (
+        React.createElement("div", null, 
+          React.createElement("a", {href: "#", "data-pb": seg.pb}, seg.pb, React.createElement("img", {width: "25", "data-pb": seg.pb, src: "banner/imageicon.png"}))
+        )
+      );
+    }
+  },
+
+  render: function() {
+    var seg=this.props.segs ||{};
+    if(typeof seg != "undefined") var linkedPb = this.renderPb(seg);//{this.props.segs.pb}
+
+    return (
+     React.createElement("div", null, 
+        React.createElement("div", {onKeypress: this.keyup, onClick: this.togglePageImg, ref: "pagetext", className: "pagetext"}, 
+          linkedPb, 
+          React.createElement("div", {dangerouslySetInnerHTML: {__html: this.props.segs.text}})
+        ), 
+        React.createElement(Defbox, {vpos: this.state.vpos, clickedChPos: this.state.clickedChPos, def: this.state.def, openBox: this.state.openBox})
+      )
+    );
+  }
+});
+module.exports=showseg;
+
+},{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
+/** @jsx React.DOM */
+
+//var othercomponent=Require("other"); 
+var React=require("react");
+var Textcontrolbar=require("./textcontrolbar.jsx");
+var Showseg=require("./showseg.jsx");
+var tibetan=require("ksana-tibetan").wylie;
+
 var showtext = React.createClass({displayName: "showtext",
   getInitialState: function() {
-    return {message:"",pageImg:"",clickedpb:{},recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
+    return {message:"",pageImg:"",clickedpb:{},clickedCorrespb:{},recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   shouldComponentUpdate:function(nextProps,nextState) {
     if (nextProps.page!=this.props.page) {
@@ -159034,122 +159151,62 @@ var showtext = React.createClass({displayName: "showtext",
     var r;
     var clickedpb=this.state.clickedpb;
     var idx=clickedpb.indexOf(clickedpb);
-    if (idx==-1) clickedpb.push(pb);
+    if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
     if(recen=="J") r="lijiang";
     if(recen=="D") r="derge";
     if(recen=="H") r="lhasa";
     this.setState({clickedpb:clickedpb,recen:r});
   },
-
-  togglePageImg: function(e) {
-    if(e.target.nodeName == "SPAN" && e.target.getAttribute("vpos")) {
-      var vpos=e.target.getAttribute("vpos");
-      var def=dict_api.exhaustiveFind(e.target.textContent);//"ཀུ་བ་"
-      var clickedChPos = $('span[vpos="'+vpos+'"]').position();
-      this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
-    } else this.setState({openBox:false});
-    if(e.target.dataset.type=="goCorres") {
-      this.addImage(e.target.dataset.pb,e.target.dataset.recen);
-      //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
-      return;
-    }
-    if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
-      e.target.nextSibling.nextSibling.nodeName=="IMG") {
-      if (e.target && e.target.dataset) {
-        var pb=e.target.dataset.pb;
-        if (pb) this.removeImage(pb);
-      }
-    } else {
-      var pb=null;
-      if (e.target && e.target.dataset) pb=e.target.dataset.pb;
-      if (pb) {
-        this.addImage(pb,"J");
-      } else {
-        if (e && e.target && e.target.previousSibling && e.target.previousSibling
-          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
-          var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
-          if (pb) this.removeImage(pb);
-        }
-      }  
-    }    
+  addCorresImage:function(pb,recen) {
+    if(recen=="J") r="lijiang";
+    if(recen=="D") r="derge";
+    if(recen=="H") r="lhasa";   
+    this.setState({clickedCorrespb:pb,recen:r}); 
   },
-
-  getImgName: function(volpage) {
-    var p=volpage.split(".");
-    var v="000"+p[0];
-    var vol=v.substr(v.length-3,v.length);
-    var pa="000"+p[1].substr(0,p[1].length-1);
-    var page=pa.substr(pa.length-3,pa.length);
-    var side=p[1].substr(p[1].length-1);
-
-    return vol+"/"+vol+"-"+page+side;
-  },
-  getAllCorresPages: function(pbJ) {
-    var corresPages={};
-    for(var i in mappings) {
-      if(i != "J") {
-        //corresPages[i] = this.getCorresEachPage(pbJ,"J",i);
-        corresPages[i] = corres_api.dosearch(pbJ,mappings["J"],mappings[i]);
-      }
-    }
-    console.log(corresPages);
-    return corresPages;
-  },
-  renderpb: function(s){
+  getSegsFromFile: function(file) {
+    var segs=[], pb=[], text=[];
     var that=this;
-    if(typeof s == "undefined") return "";
     var out="",lastidx=0,nextpagekeepcrlf=false;
 
-    s.replace(/<pb n="(.*?)"><\/pb>/g,function(m,m1,idx){
-      var p=m1.match(/\d+.(\d+[ab])/) || ["",""];
-      var link="";
-      var pagetext=s.substring(lastidx+m.length,idx);
-      if (idx==0) pagetext="";
-      if(that.state.clickedpb.indexOf(m1)>-1){
-        var imgName=that.getImgName(m1);
-        //var corresPage=that.getCorresPage(m1);
-        var corresPage=that.getAllCorresPages(m1);
-        link='</span><br></br><a href="#" data-pb="'+m1+'">'+m1+
-        '</a>&nbsp;&nbsp;Derge:<a data-type="goCorres" data-recen="D" data-pb='+corresPage.D+'>'+corresPage.D+'</a>&nbsp;&nbsp;Lhasa:<a data-type="goCorres" data-recen="H" data-pb='+corresPage.H+'>'+corresPage.H+'</a><img class="sourceimage" data-img="'+m1+'" width="100%" src="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/'+that.state.recen+'/'+imgName+'.jpg"/><br></br>'
-        +'<span class="textwithimage">';
-        nextpagekeepcrlf=true;
-      } else {
-        link='</span><br></br><a href="#" data-pb="'+m1+'">'+m1+'<img width="25" data-pb="'+m1+'" src="banner/imageicon.png"/></a><span>';
-      }
-      if (!nextpagekeepcrlf) {
-        pagetext=pagetext.replace(/། །\r?\n/g,"། །");
-        pagetext=pagetext.replace(/།།\r?\n/g,"།།");
-        pagetext=pagetext.replace(/།\r?\n/g,"། ");
-        pagetext=pagetext.replace(/\r?\n/g,"");
-        nextpagekeepcrlf=false;
-      }
-      out+=pagetext+link;
+    file.replace(/<pb n="(.*?)"><\/pb>/g,function(m,m1,idx){
+      var pagetext=file.substring(lastidx+m.length,idx);
+      pb.push(m1);
+      text.push(pagetext);
+      //segs.push({pb:m1,text:pagetext});/////text內容與pb差一個///////////////////////
       lastidx=idx;
     });
-    out+=s.substring(lastidx);
-
-    out="<span>"+out+"</span>";
-    
-    return out;
+    var t1=file.substr(file.lastIndexOf("<pb"));
+    var t=t1.replace(/<pb n="(.*?)"><\/pb>/,"");
+    text.push(t);
+    pb.map(function(item,i){
+      segs.push({pb:item,text:text[i+1]});
+    });
+    //console.log("pb:",pb.length,"text:",text.length);
+    return segs;
   },
-
   render: function() {
     var content=this.props.text||"";
     //if (this.props.wylie) content=tibetan.romanize.toWylie(content,null,false);
-    content=this.renderpb(content);
- 
+    //content=this.renderpb(content);
+    var that=this;
+    var s=this.getSegsFromFile(content);
+    var segs=[];
+    s.map(function(item){
+      segs.push(React.createElement(Showseg, {segs: item, clickedCorrespb: that.state.clickedCorrespb, clickedpb: that.state.clickedpb, recen: that.state.recen, addImage: that.addImage, addCorresImage: that.addCorresImage, removeImage: that.removeImage}));
+    });
+
     return (
       React.createElement("div", {className: "cursor"}, 
         React.createElement(Textcontrolbar, {message: this.state.message, sidemenu: this.props.sidemenu, toggleMenu: this.props.toggleMenu, dataN: this.props.dataN, setwylie: this.props.setwylie, wylie: this.props.wylie, page: this.props.page, bodytext: this.props.bodytext, next: this.props.nextfile, prev: this.props.prevfile, setpage: this.props.setpage, db: this.props.db, toc: this.props.toc}), 
-        React.createElement("div", {onKeypress: this.keyup, onClick: this.togglePageImg, ref: "pagetext", className: "pagetext", dangerouslySetInnerHTML: {__html: content}}), 
-        React.createElement(Defbox, {vpos: this.state.vpos, clickedChPos: this.state.clickedChPos, def: this.state.def, openBox: this.state.openBox})
+        React.createElement("br", null), React.createElement("br", null), 
+        React.createElement("div", {ref: "pagetext"}, segs)
       )
     );
   }
 });
 module.exports=showtext;
 
-},{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
+},{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
