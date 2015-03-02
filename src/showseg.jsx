@@ -12,16 +12,10 @@ var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
 var showseg= React.createClass({
   getInitialState: function() {
-    return {recen:"lijiang",showCorres:false,clickedChPos:{left:0,top:0},openBox:"",vpos:0};
-  },
-  componentWillUpdate: function(nextProps) {
-    return this.props.clickedCorrespb != nextProps.clickedCorrespb;
+    return {recen:"lijiang",showCorres:false,clickedCorrespb:{},clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   componentWillReceiveProps: function(nextProps) {
-    if(this.props.clickedCorrespb != nextProps.clickedCorrespb){
-      this.setState({showCorres:true,clickedCorrespb:nextProps.clickedCorrespb});
-    } else this.setState({showCorres:false});
-    this.setState({openBox:false});
+    this.setState({showCorres:false,openBox:false});
   },
   getImgName: function(volpage) {
     var p=volpage.split(".");
@@ -41,6 +35,15 @@ var showseg= React.createClass({
 
     return corresPages;
   },
+  addCorresImage:function(pb,recen) {
+    var r;// if(recen=="J") r="lijiang";
+    if(recen=="D") r="derge";
+    if(recen=="H") r="lhasa";   
+    var c={pb:pb,recen:r};
+    this.setState({clickedCorrespb:c,showCorres:true});
+
+    console.log("rendering",r,pb);
+  },
   togglePageImg: function(e) {
     if(e.target.nodeName == "SPAN" && e.target.getAttribute("vpos")) {
       var vpos=e.target.getAttribute("vpos");
@@ -49,7 +52,7 @@ var showseg= React.createClass({
       this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
     } else //this.setState({openBox:false});
     if(e.target.dataset.type=="goCorres") {
-      this.props.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
+      this.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
       return;
     }
     if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
@@ -85,8 +88,8 @@ var showseg= React.createClass({
         imgName=this.getImgName(seg.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
       } else {
-        imgName=this.getImgName(this.state.clickedCorrespb);
-        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
+        imgName=this.getImgName(this.state.clickedCorrespb.pb);
+        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.state.clickedCorrespb.recen+"/"+imgName+".jpg";//
       }
       return (
         <div>

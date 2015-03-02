@@ -158941,16 +158941,10 @@ var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
 var showseg= React.createClass({displayName: "showseg",
   getInitialState: function() {
-    return {recen:"lijiang",showCorres:false,clickedChPos:{left:0,top:0},openBox:"",vpos:0};
-  },
-  componentWillUpdate: function(nextProps) {
-    return this.props.clickedCorrespb != nextProps.clickedCorrespb;
+    return {recen:"lijiang",showCorres:false,clickedCorrespb:{},clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   componentWillReceiveProps: function(nextProps) {
-    if(this.props.clickedCorrespb != nextProps.clickedCorrespb){
-      this.setState({showCorres:true,clickedCorrespb:nextProps.clickedCorrespb});
-    } else this.setState({showCorres:false});
-    this.setState({openBox:false});
+    this.setState({showCorres:false,openBox:false});
   },
   getImgName: function(volpage) {
     var p=volpage.split(".");
@@ -158970,6 +158964,15 @@ var showseg= React.createClass({displayName: "showseg",
 
     return corresPages;
   },
+  addCorresImage:function(pb,recen) {
+    var r;// if(recen=="J") r="lijiang";
+    if(recen=="D") r="derge";
+    if(recen=="H") r="lhasa";   
+    var c={pb:pb,recen:r};
+    this.setState({clickedCorrespb:c,showCorres:true});
+
+    console.log("rendering",r,pb);
+  },
   togglePageImg: function(e) {
     if(e.target.nodeName == "SPAN" && e.target.getAttribute("vpos")) {
       var vpos=e.target.getAttribute("vpos");
@@ -158978,7 +158981,7 @@ var showseg= React.createClass({displayName: "showseg",
       this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
     } else //this.setState({openBox:false});
     if(e.target.dataset.type=="goCorres") {
-      this.props.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
+      this.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
       return;
     }
     if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
@@ -159014,8 +159017,8 @@ var showseg= React.createClass({displayName: "showseg",
         imgName=this.getImgName(seg.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
       } else {
-        imgName=this.getImgName(this.state.clickedCorrespb);
-        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
+        imgName=this.getImgName(this.state.clickedCorrespb.pb);
+        imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.state.clickedCorrespb.recen+"/"+imgName+".jpg";//
       }
       return (
         React.createElement("div", null, 
@@ -159055,6 +159058,11 @@ var showseg= React.createClass({displayName: "showseg",
   }
 });
 module.exports=showseg;
+
+
+
+
+
 
 },{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
@@ -159162,18 +159170,18 @@ var showtext = React.createClass({displayName: "showtext",
     if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
     this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
-  addCorresImage:function(pb,recen) {
-    var r;// if(recen=="J") r="lijiang";
-    if(recen=="D") r="derge";
-    if(recen=="H") r="lhasa";   
-    var clickedCorrespb=this.state.clickedCorrespb;
-    var idx=clickedCorrespb.indexOf(clickedCorrespb);
-    if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
-    this.setState({clickedpb:clickedCorrespb,recen:r});
+  // addCorresImage:function(pb,recen) {
+  //   var r;// if(recen=="J") r="lijiang";
+  //   if(recen=="D") r="derge";
+  //   if(recen=="H") r="lhasa";   
+  //   var clickedCorrespb=this.state.clickedCorrespb;
+  //   var idx=clickedCorrespb.indexOf(clickedCorrespb);
+  //   if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
+  //   this.setState({clickedpb:clickedCorrespb,recen:r});
 
-    //$('img[data-img="'+pb+'"]').attr("src","url");
-    console.log("rendering",r,pb);
-  },
+  //   //$('img[data-img="'+pb+'"]').attr("src","url");
+  //   console.log("rendering",r,pb);
+  // },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
     var that=this;
@@ -159202,7 +159210,7 @@ var showtext = React.createClass({displayName: "showtext",
     var s=this.getSegsFromFile(content);
     var segs=[];
     s.map(function(item){
-      segs.push(React.createElement(Showseg, {segs: item, clickedCorrespb: that.state.clickedCorrespb, clickedpb: that.state.clickedpb, recen: that.state.recen, addImage: that.addImage, addCorresImage: that.addCorresImage, removeImage: that.removeImage}));
+      segs.push(React.createElement(Showseg, {segs: item, clickedpb: that.state.clickedpb, recen: that.state.recen, addImage: that.addImage, addCorresImage: that.addCorresImage, removeImage: that.removeImage}));
     });
 
     return (
@@ -159215,11 +159223,6 @@ var showtext = React.createClass({displayName: "showtext",
   }
 });
 module.exports=showtext;
-
-
-
-
-
 
 },{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
 var React=require("react");

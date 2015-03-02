@@ -103,18 +103,18 @@ var showtext = React.createClass({
     if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
     this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
-  addCorresImage:function(pb,recen) {
-    var r;// if(recen=="J") r="lijiang";
-    if(recen=="D") r="derge";
-    if(recen=="H") r="lhasa";   
-    var clickedCorrespb=this.state.clickedCorrespb;
-    var idx=clickedCorrespb.indexOf(clickedCorrespb);
-    if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
-    this.setState({clickedpb:clickedCorrespb,recen:r});
+  // addCorresImage:function(pb,recen) {
+  //   var r;// if(recen=="J") r="lijiang";
+  //   if(recen=="D") r="derge";
+  //   if(recen=="H") r="lhasa";   
+  //   var clickedCorrespb=this.state.clickedCorrespb;
+  //   var idx=clickedCorrespb.indexOf(clickedCorrespb);
+  //   if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
+  //   this.setState({clickedpb:clickedCorrespb,recen:r});
 
-    //$('img[data-img="'+pb+'"]').attr("src","url");
-    console.log("rendering",r,pb);
-  },
+  //   //$('img[data-img="'+pb+'"]').attr("src","url");
+  //   console.log("rendering",r,pb);
+  // },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
     var that=this;
@@ -143,7 +143,7 @@ var showtext = React.createClass({
     var s=this.getSegsFromFile(content);
     var segs=[];
     s.map(function(item){
-      segs.push(<Showseg segs={item} clickedCorrespb={that.state.clickedCorrespb} clickedpb={that.state.clickedpb} recen={that.state.recen} addImage={that.addImage} addCorresImage={that.addCorresImage} removeImage={that.removeImage} />);
+      segs.push(<Showseg segs={item} clickedpb={that.state.clickedpb} recen={that.state.recen} addImage={that.addImage} addCorresImage={that.addCorresImage} removeImage={that.removeImage} />);
     });
 
     return (
