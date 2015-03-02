@@ -14,10 +14,14 @@ var showseg= React.createClass({
   getInitialState: function() {
     return {recen:"lijiang",showCorres:false,clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
+  componentWillUpdate: function(nextProps) {
+    return this.props.clickedCorrespb != nextProps.clickedCorrespb;
+  },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.clickedCorrespb != nextProps.clickedCorrespb){
       this.setState({showCorres:true,clickedCorrespb:nextProps.clickedCorrespb});
     } else this.setState({showCorres:false});
+    this.setState({openBox:false});
   },
   getImgName: function(volpage) {
     var p=volpage.split(".");
@@ -43,10 +47,9 @@ var showseg= React.createClass({
       var def=dict_api.exhaustiveFind(e.target.textContent);//"ཀུ་བ་"
       var clickedChPos = $('span[vpos="'+vpos+'"]').position();
       this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
-    } else this.setState({openBox:false});
+    } else //this.setState({openBox:false});
     if(e.target.dataset.type=="goCorres") {
       this.props.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
-      //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
       return;
     }
     if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
@@ -62,21 +65,22 @@ var showseg= React.createClass({
         else pb=e.target.dataset.pb
       }
       if (pb) {
-        this.props.addImage(pb,"J");
+        this.props.addImage(pb);
       } else {
-        if (e && e.target && e.target.previousSibling && e.target.previousSibling
-          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
-          var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
+        //if (e && e.target && e.target.previousSibling && e.target.previousSibling
+        //  && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
+        if(e && e.target && e.target.dataset.img){
+          //var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
+          var pb=e.target.dataset.img;
           if (pb) this.props.removeImage(pb);
         }
       }  
     }    
   },
   renderPb: function(seg){
-    var clickedpb=this.props.clickedpb;
-    if(clickedpb.indexOf(seg.pb)>-1){
+    if(this.props.clickedpb && this.props.clickedpb.indexOf(seg.pb)>-1){
       var imgName, imgLink;
-      var corresPage=this.getAllCorresPages(seg.pb);//clickedpb[clickedpb.indexOf(seg.pb)].pb
+      var corresPage=this.getAllCorresPages(seg.pb);
       if(!this.state.showCorres) {
         imgName=this.getImgName(seg.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
@@ -103,13 +107,15 @@ var showseg= React.createClass({
       );
     }
   },
-
+  removeDefBox: function() {
+    console.log("scrolled");
+  },
   render: function() {
     var seg=this.props.segs ||{};
     if(typeof seg != "undefined") var linkedPb = this.renderPb(seg);//{this.props.segs.pb}
 
     return (
-     <div>
+     <div onScroll={this.removeDefBox}>
         <div onKeypress={this.keyup} onClick={this.togglePageImg} ref="pagetext" className="pagetext">
           {linkedPb}
           <div dangerouslySetInnerHTML={{__html: this.props.segs.text}} />

@@ -8,11 +8,12 @@ var tibetan=require("ksana-tibetan").wylie;
 
 var showtext = React.createClass({
   getInitialState: function() {
-    return {message:"",pageImg:"",clickedpb:{},clickedCorrespb:{},recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
+    return {message:"",pageImg:"",clickedpb:[],clickedCorrespb:[],recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   shouldComponentUpdate:function(nextProps,nextState) {
-    if (nextProps.page!=this.props.page) {
+    if (nextProps.page!=this.props.page && typeof nextProps.page != "number") { //typeof NaN = "number"
       nextState.clickedpb=[]; //reset image
+      nextState.clickedCorrespb=[]; //reset corres image
     }
     return true;
   },
@@ -96,21 +97,23 @@ var showtext = React.createClass({
     if (idx>-1) clickedpb.splice(idx,1);
     this.setState({clickedpb:clickedpb});
   },
-  addImage:function(pb,recen) {
-    var r;
+  addImage:function(pb) {
     var clickedpb=this.state.clickedpb;
     var idx=clickedpb.indexOf(clickedpb);
     if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
-    if(recen=="J") r="lijiang";
-    if(recen=="D") r="derge";
-    if(recen=="H") r="lhasa";
-    this.setState({clickedpb:clickedpb,recen:r});
+    this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
   addCorresImage:function(pb,recen) {
-    if(recen=="J") r="lijiang";
+    var r;// if(recen=="J") r="lijiang";
     if(recen=="D") r="derge";
     if(recen=="H") r="lhasa";   
-    this.setState({clickedCorrespb:pb,recen:r}); 
+    var clickedCorrespb=this.state.clickedCorrespb;
+    var idx=clickedCorrespb.indexOf(clickedCorrespb);
+    if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
+    this.setState({clickedpb:clickedCorrespb,recen:r});
+
+    //$('img[data-img="'+pb+'"]').attr("src","url");
+    console.log("rendering",r,pb);
   },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
@@ -121,7 +124,6 @@ var showtext = React.createClass({
       var pagetext=file.substring(lastidx+m.length,idx);
       pb.push(m1);
       text.push(pagetext);
-      //segs.push({pb:m1,text:pagetext});/////text內容與pb差一個///////////////////////
       lastidx=idx;
     });
     var t1=file.substr(file.lastIndexOf("<pb"));

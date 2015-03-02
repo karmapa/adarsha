@@ -2734,6 +2734,8 @@ var Defbox = React.createClass({displayName: "Defbox",
     $("span[vpos]").removeClass("scrolled");
     $("span[vpos='"+nextprops.vpos+"']").addClass("scrolled");
     this.setState({openBox:nextprops.openBox});
+    // if(this.props.vpos != nextProps.vpos) this.setState({openBox:nextprops.openBox});
+    // else this.setState({openBox:false})
   },
   todosearch: function(e) {
     //this.props.ids.push(e.target.id);
@@ -158941,10 +158943,14 @@ var showseg= React.createClass({displayName: "showseg",
   getInitialState: function() {
     return {recen:"lijiang",showCorres:false,clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
+  componentWillUpdate: function(nextProps) {
+    return this.props.clickedCorrespb != nextProps.clickedCorrespb;
+  },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.clickedCorrespb != nextProps.clickedCorrespb){
       this.setState({showCorres:true,clickedCorrespb:nextProps.clickedCorrespb});
     } else this.setState({showCorres:false});
+    this.setState({openBox:false});
   },
   getImgName: function(volpage) {
     var p=volpage.split(".");
@@ -158970,10 +158976,9 @@ var showseg= React.createClass({displayName: "showseg",
       var def=dict_api.exhaustiveFind(e.target.textContent);//"ཀུ་བ་"
       var clickedChPos = $('span[vpos="'+vpos+'"]').position();
       this.setState({openBox:true,clickedChPos:clickedChPos,def:def,vpos:vpos});
-    } else this.setState({openBox:false});
+    } else //this.setState({openBox:false});
     if(e.target.dataset.type=="goCorres") {
       this.props.addCorresImage(e.target.dataset.pb,e.target.dataset.recen);
-      //this.renderCorresImg(e.target.previousSibling.previousSibling.dataset.pb, e.target.dataset.pb,e.target.dataset.recen);
       return;
     }
     if (e&& e.target && e.target.nextSibling && e.target.nextSibling.nextSibling &&
@@ -158989,21 +158994,22 @@ var showseg= React.createClass({displayName: "showseg",
         else pb=e.target.dataset.pb
       }
       if (pb) {
-        this.props.addImage(pb,"J");
+        this.props.addImage(pb);
       } else {
-        if (e && e.target && e.target.previousSibling && e.target.previousSibling
-          && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
-          var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
+        //if (e && e.target && e.target.previousSibling && e.target.previousSibling
+        //  && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
+        if(e && e.target && e.target.dataset.img){
+          //var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
+          var pb=e.target.dataset.img;
           if (pb) this.props.removeImage(pb);
         }
       }  
     }    
   },
   renderPb: function(seg){
-    var clickedpb=this.props.clickedpb;
-    if(clickedpb.indexOf(seg.pb)>-1){
+    if(this.props.clickedpb && this.props.clickedpb.indexOf(seg.pb)>-1){
       var imgName, imgLink;
-      var corresPage=this.getAllCorresPages(seg.pb);//clickedpb[clickedpb.indexOf(seg.pb)].pb
+      var corresPage=this.getAllCorresPages(seg.pb);
       if(!this.state.showCorres) {
         imgName=this.getImgName(seg.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
@@ -159030,13 +159036,15 @@ var showseg= React.createClass({displayName: "showseg",
       );
     }
   },
-
+  removeDefBox: function() {
+    console.log("scrolled");
+  },
   render: function() {
     var seg=this.props.segs ||{};
     if(typeof seg != "undefined") var linkedPb = this.renderPb(seg);//{this.props.segs.pb}
 
     return (
-     React.createElement("div", null, 
+     React.createElement("div", {onScroll: this.removeDefBox}, 
         React.createElement("div", {onKeypress: this.keyup, onClick: this.togglePageImg, ref: "pagetext", className: "pagetext"}, 
           linkedPb, 
           React.createElement("div", {dangerouslySetInnerHTML: {__html: this.props.segs.text}})
@@ -159059,11 +159067,12 @@ var tibetan=require("ksana-tibetan").wylie;
 
 var showtext = React.createClass({displayName: "showtext",
   getInitialState: function() {
-    return {message:"",pageImg:"",clickedpb:{},clickedCorrespb:{},recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
+    return {message:"",pageImg:"",clickedpb:[],clickedCorrespb:[],recen:"lijiang",clickedChPos:{left:0,top:0},openBox:"",vpos:0};
   },
   shouldComponentUpdate:function(nextProps,nextState) {
-    if (nextProps.page!=this.props.page) {
+    if (nextProps.page!=this.props.page && typeof nextProps.page != "number") { //typeof NaN = "number"
       nextState.clickedpb=[]; //reset image
+      nextState.clickedCorrespb=[]; //reset corres image
     }
     return true;
   },
@@ -159147,21 +159156,23 @@ var showtext = React.createClass({displayName: "showtext",
     if (idx>-1) clickedpb.splice(idx,1);
     this.setState({clickedpb:clickedpb});
   },
-  addImage:function(pb,recen) {
-    var r;
+  addImage:function(pb) {
     var clickedpb=this.state.clickedpb;
     var idx=clickedpb.indexOf(clickedpb);
     if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
-    if(recen=="J") r="lijiang";
-    if(recen=="D") r="derge";
-    if(recen=="H") r="lhasa";
-    this.setState({clickedpb:clickedpb,recen:r});
+    this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
   addCorresImage:function(pb,recen) {
-    if(recen=="J") r="lijiang";
+    var r;// if(recen=="J") r="lijiang";
     if(recen=="D") r="derge";
     if(recen=="H") r="lhasa";   
-    this.setState({clickedCorrespb:pb,recen:r}); 
+    var clickedCorrespb=this.state.clickedCorrespb;
+    var idx=clickedCorrespb.indexOf(clickedCorrespb);
+    if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
+    this.setState({clickedpb:clickedCorrespb,recen:r});
+
+    //$('img[data-img="'+pb+'"]').attr("src","url");
+    console.log("rendering",r,pb);
   },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
@@ -159172,7 +159183,6 @@ var showtext = React.createClass({displayName: "showtext",
       var pagetext=file.substring(lastidx+m.length,idx);
       pb.push(m1);
       text.push(pagetext);
-      //segs.push({pb:m1,text:pagetext});/////text內容與pb差一個///////////////////////
       lastidx=idx;
     });
     var t1=file.substr(file.lastIndexOf("<pb"));
@@ -159205,6 +159215,11 @@ var showtext = React.createClass({displayName: "showtext",
   }
 });
 module.exports=showtext;
+
+
+
+
+
 
 },{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
 var React=require("react");

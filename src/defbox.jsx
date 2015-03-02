@@ -17,6 +17,8 @@ var Defbox = React.createClass({
     $("span[vpos]").removeClass("scrolled");
     $("span[vpos='"+nextprops.vpos+"']").addClass("scrolled");
     this.setState({openBox:nextprops.openBox});
+    // if(this.props.vpos != nextProps.vpos) this.setState({openBox:nextprops.openBox});
+    // else this.setState({openBox:false})
   },
   todosearch: function(e) {
     //this.props.ids.push(e.target.id);
