@@ -173,7 +173,6 @@ var main = React.createClass({
     this.setState({wylie:!this.state.wylie});
     this.setState({scrollto:null});
   },
-
   render: function() {
     if (!this.state.quota) { // install required db
         return this.openFileinstaller(true);
@@ -199,7 +198,7 @@ var main = React.createClass({
 
       <div className="row">
         <div className={menuclass}>
-          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} />
+          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} wylie={this.state.wylie} />
         </div>
         <div className={bodytextcols}>    
           <div className="text text-content" ref="text-content">

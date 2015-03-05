@@ -1,6 +1,7 @@
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
+var tibetan=require("ksana-tibetan").wylie;
 var tabarea = React.createClass({
   getInitialState: function() {
     return {res:{},res_toc:[]};
@@ -13,7 +14,7 @@ var tabarea = React.createClass({
     this.setBannerHeight(100);
   },  
   textConverter:function(t) {
-    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
+    if(this.props.wylie == true) return tibetan.toWylie(t,null,false); 
     return t; 
   },
   render: function() {

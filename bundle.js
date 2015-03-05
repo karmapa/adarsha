@@ -158554,7 +158554,6 @@ var main = React.createClass({displayName: "main",
     this.setState({wylie:!this.state.wylie});
     this.setState({scrollto:null});
   },
-
   render: function() {
     if (!this.state.quota) { // install required db
         return this.openFileinstaller(true);
@@ -158580,7 +158579,7 @@ var main = React.createClass({displayName: "main",
 
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: menuclass}, 
-          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db})
+          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db, wylie: this.state.wylie})
         ), 
         React.createElement("div", {className: bodytextcols}, 
           React.createElement("div", {className: "text text-content", ref: "text-content"}, 
@@ -159205,6 +159204,7 @@ module.exports=showtext;
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
+var tibetan=require("ksana-tibetan").wylie;
 var tabarea = React.createClass({displayName: "tabarea",
   getInitialState: function() {
     return {res:{},res_toc:[]};
@@ -159217,7 +159217,7 @@ var tabarea = React.createClass({displayName: "tabarea",
     this.setBannerHeight(100);
   },  
   textConverter:function(t) {
-    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
+    if(this.props.wylie == true) return tibetan.toWylie(t,null,false); 
     return t; 
   },
   render: function() {
@@ -159247,7 +159247,7 @@ var tabarea = React.createClass({displayName: "tabarea",
   }
 });
 module.exports=tabarea;
-},{"./searcharea.jsx":"/Users/yu/ksana2015/adarsha/src/searcharea.jsx","ksana2015-stacktoc":"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx":[function(require,module,exports){
+},{"./searcharea.jsx":"/Users/yu/ksana2015/adarsha/src/searcharea.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","ksana2015-stacktoc":"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx":[function(require,module,exports){
 var React=require("react");
 var tibetan=require("ksana-tibetan").wylie;
 var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
