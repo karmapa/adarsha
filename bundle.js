@@ -158490,18 +158490,18 @@ var main = React.createClass({displayName: "main",
     return React.createElement(Fileinstaller, {quota: "512M", autoclose: autoclose, needed: require_kdb, 
                      onReady: this.onReady})
   },
-  gotofile:function(vpos){
+  gotofile:function(vpos,tofind){
     //var res=kse.vpos2filepage(this.state.db,vpos);
     var res=this.state.db.fileSegFromVpos(vpos);
-    this.showPage(res.file,res.seg);
+    this.showPage(res.file,res.seg,tofind);
   },
-  showPage:function(f,p) {  
+  showPage:function(f,p,tofind) {  
     window.location.hash = this.encodeHashTag(f,p);
     var that=this;
     var pagename=this.state.db.getFileSegNames(f)[p];
     this.setState({scrollto:pagename});
 
-    kse.highlightFile(this.state.db,f,{q:this.state.tofind,token:true},function(data){//kde
+    kse.highlightFile(this.state.db,f,{q:this.state.tofind || tofind,token:true},function(data){//kde
       that.setState({bodytext:data,page:p});
     });
   }, 
@@ -158679,7 +158679,7 @@ var resultlist=React.createClass({displayName: "resultlist",  //should search re
   }, 
   gotopage:function(e) {
     var vpos=parseInt(e.target.parentNode.dataset['vpos']);
-    this.props.gotofile(vpos);
+    this.props.gotofile(vpos,this.props.tofind);
   },
   renderCount:function() {
     var hit=this.props.res.tochit ||this.props.res.rawresult.length;

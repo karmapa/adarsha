@@ -28,7 +28,7 @@ var resultlist=React.createClass({  //should search result
   }, 
   gotopage:function(e) {
     var vpos=parseInt(e.target.parentNode.dataset['vpos']);
-    this.props.gotofile(vpos);
+    this.props.gotofile(vpos,this.props.tofind);
   },
   renderCount:function() {
     var hit=this.props.res.tochit ||this.props.res.rawresult.length;
