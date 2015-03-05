@@ -26,11 +26,12 @@ var Defbox = React.createClass({
     //this.props.dosearch(e);
   },
   renderTerm: function(item,termIndex) {
-      return (
-      <div data-term={item[0]} onClick={this.todosearch}>
-        <div>{item}</div>
-      </div>
-      )
+    var parsedItem=item.join("<br>");
+    return (
+    <div data-term={item[0]} onClick={this.todosearch}>
+      <div dangerouslySetInnerHTML={{__html: parsedItem}} />
+    </div>
+    )
   },
   render: function() {
     var topOffset=0, leftOffset=0;

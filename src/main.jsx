@@ -88,18 +88,18 @@ var main = React.createClass({
     this.refs.tofind.getDOMNode().value=e.target.innerHTML;
     this.searchtypechange();
   },
-  tofindchange:function(e) {
-    clearTimeout(this.tofindtimer);
-    var that=this;
-    this.tofindtimer=setTimeout(function(){
-      that.dosearch(null,null,0);
-    },300);
-    //var field=e.target.parentElement.dataset.type;
-  },
-  removeLeadingEndingSpace:function(tofind) {
-    if (!tofind || tofind.length<2) return tofind;
-    return tofind.replace(/^་/,"").replace(/་$/,"");
-  },
+  // tofindchange:function(e) {
+  //   clearTimeout(this.tofindtimer);
+  //   var that=this;
+  //   this.tofindtimer=setTimeout(function(){
+  //     that.dosearch(null,null,0);
+  //   },300);
+  //   //var field=e.target.parentElement.dataset.type;
+  // },
+  // removeLeadingEndingSpace:function(tofind) {
+  //   if (!tofind || tofind.length<2) return tofind;
+  //   return tofind.replace(/^་/,"").replace(/་$/,"");
+  // },
   genToc:function(texts,depths,voffs){
     var out=[{depth:0,text:"འཇང་བཀའ་འགྱུར།"}];
     for(var i=0; i<texts.length; i++){

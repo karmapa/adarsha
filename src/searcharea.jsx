@@ -4,15 +4,13 @@
 var React=require("react");
 var Namelist=require("./namelist.jsx");
 var Resultlist=require("./resultlist.jsx");
+var tibetan=require("ksana-tibetan").wylie;
+var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var search_api=require("./search_api");
 
 var searcharea= React.createClass({
   getInitialState: function() {
     return {res:{},res_toc:[]};
-  },
-  textConverter:function(t) {
-    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
-    return t; 
   },
   showExcerpt:function(n) {
     var voff=this.props.toc[n].voff;
@@ -62,6 +60,14 @@ var searcharea= React.createClass({
     } else return null;
     
   },
+  tofindchange:function(e) {
+    clearTimeout(this.tofindtimer);
+    var that=this;
+    this.tofindtimer=setTimeout(function(){
+      that.dosearch(null,null,0);
+    },300);
+    //var field=e.target.parentElement.dataset.type;
+  },
   renderinputs:function(searcharea) {  // input interface for search // onInput={this.searchtypechange}
     if (this.props.db) {
       return (    
@@ -80,9 +86,13 @@ var searcharea= React.createClass({
       that.refs.tofind.getDOMNode().focus();  
     },500);
   },
+  removeLeadingEndingSpace:function(tofind) {
+    if (!tofind || tofind.length<2) return tofind;
+    return tofind.replace(/^་/,"").replace(/་$/,"");
+  },
   dosearch: function(e,reactid,start_end){
     var start=start_end,tochit=0;
-    var end=this.state.db.get("meta").vsize;
+    var end=this.props.db.get("meta").vsize;
     if (typeof start_end!="number" && typeof start_end[0]=="number") {
       start=start_end[0];
       end=start_end[1];
@@ -93,7 +103,7 @@ var searcharea= React.createClass({
     tofind=tofind.replace(/\\/g,"\\\\"); //escape operator
     tofind=tofind.replace(/\*/g,"**"); //escape operator
 
-    tofind=tibetan.romanize.fromWylie(tofind);
+    tofind=tibetan.fromWylie(tofind);//tibetan.romanize.fromWylie(tofind)
     tofind=tofind.replace(/༌༌/g,"*");
     tofind=this.removeLeadingEndingSpace(tofind);
 

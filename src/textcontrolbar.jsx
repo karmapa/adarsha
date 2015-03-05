@@ -53,7 +53,7 @@ var Textcontrolbar = React.createClass({
     var page=this.props.page;
     var res=this.filepage2vpos(file,page);
    if(this.props.wylie == false) return res;
-   if(this.props.wylie == true) return tibetan.romanize.toWylie(res,null,false);    
+   if(this.props.wylie == true) return tibetan.toWylie(res,null,false);    
   },
   increasefontsize:function() {
     var fontsize=parseFloat($(".pagetext").css("font-size"));

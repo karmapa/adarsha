@@ -5,7 +5,6 @@ runtime.boot("adarsha",function(){
 	var Main=React.createElement(require("./src/main.jsx"));
 	ksana.mainComponent=React.render(Main,document.getElementById("main"));
 });
-
 },{"./src/main.jsx":"/Users/yu/ksana2015/adarsha/src/main.jsx","ksana2015-webruntime":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/corres_api.js":[function(require,module,exports){
 var dosearch=function(volpage,from,to) {
   var tmp=fromVolpage(volpage,from,to);
@@ -236,7 +235,6 @@ var snap2realpage=function(id){
 
 var corres_api={dosearch:dosearch}
 module.exports=corres_api;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/dPedurma.js":[function(require,module,exports){
 var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
   [ '1_2', '001@015a7-001@025a2', '1_2' ],
@@ -2713,7 +2711,6 @@ var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
 dPedurma.rcode="D";
 module.exports=dPedurma;
 
-
 },{}],"/Users/yu/ksana2015/adarsha/src/defbox.jsx":[function(require,module,exports){
 var React=require("react");
 var Defbox = React.createClass({displayName: "Defbox",
@@ -2743,11 +2740,12 @@ var Defbox = React.createClass({displayName: "Defbox",
     //this.props.dosearch(e);
   },
   renderTerm: function(item,termIndex) {
-      return (
-      React.createElement("div", {"data-term": item[0], onClick: this.todosearch}, 
-        React.createElement("div", null, item)
-      )
-      )
+    var parsedItem=item.join("<br>");
+    return (
+    React.createElement("div", {"data-term": item[0], onClick: this.todosearch}, 
+      React.createElement("div", {dangerouslySetInnerHTML: {__html: parsedItem}})
+    )
+    )
   },
   render: function() {
     var topOffset=0, leftOffset=0;
@@ -2775,7 +2773,6 @@ var Defbox = React.createClass({displayName: "Defbox",
   }
 });
 module.exports=Defbox;
-
 },{"react":"react"}],"/Users/yu/ksana2015/adarsha/src/dict_api.js":[function(require,module,exports){
 var entries=require("./entries.js");
 var mahavyutpatti=require("./mahavyutpatti.js");
@@ -2815,7 +2812,6 @@ var exhaustiveFind=function(tofind) {
 
 var dict_api={exhaustiveFind:exhaustiveFind};
 module.exports=dict_api;
-
 },{"./entries.js":"/Users/yu/ksana2015/adarsha/src/entries.js","./indexes.js":"/Users/yu/ksana2015/adarsha/src/indexes.js","./mahavyutpatti.js":"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js"}],"/Users/yu/ksana2015/adarsha/src/entries.js":[function(require,module,exports){
 var entries=[
  "bcu pa dang po la",
@@ -12507,7 +12503,6 @@ var entries=[
  "ཨོལ་མདུད"
 ];
 module.exports=entries;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/hPedurma.js":[function(require,module,exports){
 var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '1_2', '001@020b7-001@033b6', '1_2' ],
@@ -14675,7 +14670,6 @@ var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '809', '100@001a1-510a6', '1152' ] ];
 hPedurma.rcode="H";
 module.exports=hPedurma;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/indexes.js":[function(require,module,exports){
 var indexes=[
  8556,
@@ -24367,7 +24361,6 @@ var indexes=[
  4126
 ];
 module.exports=indexes;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/jPedurma.js":[function(require,module,exports){
 var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1_2', '001@017b8-001@027b4', '1_2' ],
@@ -26830,7 +26823,6 @@ var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1007', '109@001a1-021b7', '1146' ] ];
 jPedurma.rcode="J";
 module.exports=jPedurma;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js":[function(require,module,exports){
 var mahavyutpatti=[
  [
@@ -158386,7 +158378,6 @@ var mahavyutpatti=[
  ]
 ];
 module.exports=mahavyutpatti;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/main.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -158478,18 +158469,18 @@ var main = React.createClass({displayName: "main",
     this.refs.tofind.getDOMNode().value=e.target.innerHTML;
     this.searchtypechange();
   },
-  tofindchange:function(e) {
-    clearTimeout(this.tofindtimer);
-    var that=this;
-    this.tofindtimer=setTimeout(function(){
-      that.dosearch(null,null,0);
-    },300);
-    //var field=e.target.parentElement.dataset.type;
-  },
-  removeLeadingEndingSpace:function(tofind) {
-    if (!tofind || tofind.length<2) return tofind;
-    return tofind.replace(/^་/,"").replace(/་$/,"");
-  },
+  // tofindchange:function(e) {
+  //   clearTimeout(this.tofindtimer);
+  //   var that=this;
+  //   this.tofindtimer=setTimeout(function(){
+  //     that.dosearch(null,null,0);
+  //   },300);
+  //   //var field=e.target.parentElement.dataset.type;
+  // },
+  // removeLeadingEndingSpace:function(tofind) {
+  //   if (!tofind || tofind.length<2) return tofind;
+  //   return tofind.replace(/^་/,"").replace(/་$/,"");
+  // },
   genToc:function(texts,depths,voffs){
     var out=[{depth:0,text:"འཇང་བཀའ་འགྱུར།"}];
     for(var i=0; i<texts.length; i++){
@@ -158605,7 +158596,6 @@ var main = React.createClass({displayName: "main",
 });
 
 module.exports=main;
-
 },{"./showtext.jsx":"/Users/yu/ksana2015/adarsha/src/showtext.jsx","./tabarea.jsx":"/Users/yu/ksana2015/adarsha/src/tabarea.jsx","ksana-database":"/Users/yu/ksana2015/node_modules/ksana-database/index.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","ksana2015-webruntime":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/namelist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -158679,7 +158669,6 @@ var namelist = React.createClass({displayName: "namelist",
   }
 });
 module.exports=namelist;
-
 },{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/resultlist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -158742,7 +158731,6 @@ var resultlist=React.createClass({displayName: "resultlist",  //should search re
   }
 });
 module.exports=resultlist; 
-
 },{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/search_api.js":[function(require,module,exports){
 var searchSutra=function(tofind,toc){
 	var out=[];
@@ -158779,7 +158767,6 @@ var searchKacha=function(tofind,toc){
 
 var search_api={searchSutra:searchSutra,searchKacha:searchKacha}
 module.exports=search_api;
-
 },{}],"/Users/yu/ksana2015/adarsha/src/searcharea.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -158787,15 +158774,13 @@ module.exports=search_api;
 var React=require("react");
 var Namelist=require("./namelist.jsx");
 var Resultlist=require("./resultlist.jsx");
+var tibetan=require("ksana-tibetan").wylie;
+var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var search_api=require("./search_api");
 
 var searcharea= React.createClass({displayName: "searcharea",
   getInitialState: function() {
     return {res:{},res_toc:[]};
-  },
-  textConverter:function(t) {
-    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
-    return t; 
   },
   showExcerpt:function(n) {
     var voff=this.props.toc[n].voff;
@@ -158845,6 +158830,14 @@ var searcharea= React.createClass({displayName: "searcharea",
     } else return null;
     
   },
+  tofindchange:function(e) {
+    clearTimeout(this.tofindtimer);
+    var that=this;
+    this.tofindtimer=setTimeout(function(){
+      that.dosearch(null,null,0);
+    },300);
+    //var field=e.target.parentElement.dataset.type;
+  },
   renderinputs:function(searcharea) {  // input interface for search // onInput={this.searchtypechange}
     if (this.props.db) {
       return (    
@@ -158863,9 +158856,13 @@ var searcharea= React.createClass({displayName: "searcharea",
       that.refs.tofind.getDOMNode().focus();  
     },500);
   },
+  removeLeadingEndingSpace:function(tofind) {
+    if (!tofind || tofind.length<2) return tofind;
+    return tofind.replace(/^་/,"").replace(/་$/,"");
+  },
   dosearch: function(e,reactid,start_end){
     var start=start_end,tochit=0;
-    var end=this.state.db.get("meta").vsize;
+    var end=this.props.db.get("meta").vsize;
     if (typeof start_end!="number" && typeof start_end[0]=="number") {
       start=start_end[0];
       end=start_end[1];
@@ -158876,7 +158873,7 @@ var searcharea= React.createClass({displayName: "searcharea",
     tofind=tofind.replace(/\\/g,"\\\\"); //escape operator
     tofind=tofind.replace(/\*/g,"**"); //escape operator
 
-    tofind=tibetan.romanize.fromWylie(tofind);
+    tofind=tibetan.fromWylie(tofind);//tibetan.romanize.fromWylie(tofind)
     tofind=tofind.replace(/༌༌/g,"*");
     tofind=this.removeLeadingEndingSpace(tofind);
 
@@ -158925,8 +158922,7 @@ var searcharea= React.createClass({displayName: "searcharea",
   }
 });
 module.exports=searcharea;
-
-},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showseg.jsx":[function(require,module,exports){
+},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showseg.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
@@ -159058,12 +159054,6 @@ var showseg= React.createClass({displayName: "showseg",
   }
 });
 module.exports=showseg;
-
-
-
-
-
-
 },{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
@@ -159166,22 +159156,10 @@ var showtext = React.createClass({displayName: "showtext",
   },
   addImage:function(pb) {
     var clickedpb=this.state.clickedpb;
-    var idx=clickedpb.indexOf(clickedpb);
-    if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
+    var idx=clickedpb.indexOf(pb);//idx=clickedpb.indexOf(clickedpb)
+    if (idx==-1) clickedpb.push(pb);
     this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
-  // addCorresImage:function(pb,recen) {
-  //   var r;// if(recen=="J") r="lijiang";
-  //   if(recen=="D") r="derge";
-  //   if(recen=="H") r="lhasa";   
-  //   var clickedCorrespb=this.state.clickedCorrespb;
-  //   var idx=clickedCorrespb.indexOf(clickedCorrespb);
-  //   if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
-  //   this.setState({clickedpb:clickedCorrespb,recen:r});
-
-  //   //$('img[data-img="'+pb+'"]').attr("src","url");
-  //   console.log("rendering",r,pb);
-  // },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
     var that=this;
@@ -159204,7 +159182,7 @@ var showtext = React.createClass({displayName: "showtext",
   },
   render: function() {
     var content=this.props.text||"";
-    //if (this.props.wylie) content=tibetan.romanize.toWylie(content,null,false);
+    if (this.props.wylie) content=tibetan.toWylie(content,null,false);
     //content=this.renderpb(content);
     var that=this;
     var s=this.getSegsFromFile(content);
@@ -159223,7 +159201,6 @@ var showtext = React.createClass({displayName: "showtext",
   }
 });
 module.exports=showtext;
-
 },{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
@@ -159239,6 +159216,10 @@ var tabarea = React.createClass({displayName: "tabarea",
   componentDidUpdate:function()  {
     this.setBannerHeight(100);
   },  
+  textConverter:function(t) {
+    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
+    return t; 
+  },
   render: function() {
     return (
       React.createElement("div", null, 
@@ -159266,7 +159247,6 @@ var tabarea = React.createClass({displayName: "tabarea",
   }
 });
 module.exports=tabarea;
-
 },{"./searcharea.jsx":"/Users/yu/ksana2015/adarsha/src/searcharea.jsx","ksana2015-stacktoc":"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx":[function(require,module,exports){
 var React=require("react");
 var tibetan=require("ksana-tibetan").wylie;
@@ -159323,7 +159303,7 @@ var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
     var page=this.props.page;
     var res=this.filepage2vpos(file,page);
    if(this.props.wylie == false) return res;
-   if(this.props.wylie == true) return tibetan.romanize.toWylie(res,null,false);    
+   if(this.props.wylie == true) return tibetan.toWylie(res,null,false);    
   },
   increasefontsize:function() {
     var fontsize=parseFloat($(".pagetext").css("font-size"));
@@ -159382,7 +159362,6 @@ var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
   }  
 });
 module.exports=Textcontrolbar;
-
 },{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/configs.js":[function(require,module,exports){
 var tokenizers=require('./tokenizers');
 var normalizeTbl=null;
@@ -159759,6 +159738,16 @@ var getFileRange=function(i) {
 	return {start:start,end:end};
 }
 
+var myAbsSegToFileSeg=function(absoluteseg) {
+	var filesegcount=this.get("filesegcount");
+	var s=absoluteseg;
+	var file=0;	
+	while(s>=filesegcount[file]) {file++}
+	var seg=s-filesegcount[file-1];
+
+	return {file:file,seg: seg};
+}
+
 var absSegToFileSeg=function(absoluteseg) {
 	var filesegcount=this.get("filesegcount");
 	var s=absoluteseg;
@@ -159769,16 +159758,6 @@ var absSegToFileSeg=function(absoluteseg) {
 	}
 	return {file:file,seg:s};
 }
-
-var myAbsSegToFileSeg=function(absoluteseg) {
-	var filesegcount=this.get("filesegcount");
-	var s=absoluteseg;
-	var file=0;
-	while(s>=filesegcount[file]) {file++}
-	var seg=s-filesegcount[file-1]
-	return {file:file,seg: seg};
-}
-
 
 var fileSegToAbsSeg=function(file,seg) {
 	if (file==0)return seg;
@@ -159809,6 +159788,14 @@ var findSeg=function(segname) {
 	}
 	return out;
 }
+var findFile=function(filename) {
+	var filenames=this.get("filenames");
+	for (var i=0;i<filenames.length;i++) {
+		if (filenames[i]===filename) return i;
+	}
+	return -1;
+}
+
 var getFileSegOffsets=function(i) {
 	var segoffsets=this.get("segoffsets");
 	var range=getFileRange.apply(this,[i]);
@@ -159820,14 +159807,16 @@ var getFileSegOffsets=function(i) {
 	
 
 }
-
-//TODO , this two function should be interchangable 
-var fileSegFromVpos=function(vpos) { 
+var absSegFromVpos=function(vpos) { 
 	var segoffsets=this.get(["segoffsets"]);
 	var i=bsearch(segoffsets,vpos,true);
 	while (segoffsets[i]==vpos) i++;
-	//return absSegToFileSeg.apply(this,[i]);
-	return myAbsSegToFileSeg.apply(this,[i]);
+	return i;
+}
+
+var fileSegFromVpos=function(vpos) { 
+	var seg=absSegFromVpos.call(this,vpos);
+	return myAbsSegToFileSeg.call(this,seg);//it was absSegToFileSeg
 }
 var fileSegToVpos=function(f,s) {
 	var segoffsets=this.get(["segoffsets"]);
@@ -159889,13 +159878,16 @@ var createLocalEngine=function(kdb,opts,cb,context) {
 
 	engine.segOffset=segOffset;
 	engine.fileOffset=fileOffset;
+	engine.folderOffset=folderOffset;
 	engine.getFileSegNames=getFileSegNames;
 	engine.getFileSegOffsets=getFileSegOffsets;
 	engine.getFileRange=getFileRange;
 	engine.findSeg=findSeg;
+	engine.findFile=findFile;
 	engine.absSegToFileSeg=absSegToFileSeg;
 	engine.fileSegToAbsSeg=fileSegToAbsSeg;
 	engine.fileSegFromVpos=fileSegFromVpos;
+	engine.absSegFromVpos=absSegFromVpos;
 	engine.fileSegToVpos=fileSegToVpos;
 	
 	//engine.fileSegToVpos=fileSegToVpos;
@@ -160087,18 +160079,24 @@ var setPath=function(path) {
 }
 
 var enumKdb=function(cb,context){
-	return kdbs.map(function(k){return k[0]});
+	if (kdbs.length) return kdbs.map(function(k){return k[0]});
+
+	if (!kdblisted) {
+		require("./listkdb")(function(files){
+			kdbs=files;
+			cb.call(context, kdbs.map(function(k){return k[0]}) );
+		});
+		kdblisted=true;
+	}
 }
 
 module.exports={open:openLocal,setPath:setPath, close:closeLocal, enumKdb:enumKdb, bsearch:bsearch};
 },{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js","./listkdb":"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js","./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"ksana-jsonrom":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js":[function(require,module,exports){
 /* return array of dbid and absolute path*/
-var listkdb_html5=function() {
-	throw "not implement yet";
-	require("ksana-jsonrom").html5fs.readdir(function(kdbs){
+var listkdb_html5=function(cb,context) {
+	ksana.runtime.html5fs.readdir(function(kdbs){
 			cb.apply(this,[kdbs]);
 	},context||this);		
-
 }
 
 var listkdb_node=function(){
@@ -160142,20 +160140,20 @@ var listkdb_ksanagap=function() {
 	};
 	return output;
 }
-var listkdb=function() {
+var listkdb=function(cb,context) {
 	var platform=require("./platform").getPlatform();
 	var files=[];
 	if (platform=="node" || platform=="node-webkit") {
 		files=listkdb_node();
-	} else if (typeof kfs!="undefined") {
-		files=listkdb_ksanagap();
+	} else if (platform=="chrome") {
+		files=listkdb_html5(cb,context);
 	} else {
-		throw "not implement yet";
+		files=listkdb_ksanagap();
 	}
 	return files;
 }
 module.exports=listkdb;
-},{"./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"ksana-jsonrom":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js","path":false}],"/Users/yu/ksana2015/node_modules/ksana-database/platform.js":[function(require,module,exports){
+},{"./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana-database/platform.js":[function(require,module,exports){
 var getPlatform=function() {
 	if (typeof ksanagap=="undefined") {
 		platform="node";
@@ -160260,10 +160258,9 @@ module.exports=API;
 },{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js":[function(require,module,exports){
 module.exports={
 	open:require("./kdb")
-	,create:require("./kdbw")
 }
 
-},{"./kdb":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js","./kdbw":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbw.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js":[function(require,module,exports){
+},{"./kdb":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js":[function(require,module,exports){
 /*
 	KDB version 3.0 GPL
 	yapcheahshen@gmail.com
@@ -160391,11 +160388,12 @@ var Create=function(path,opts,cb) {
 
 				if (opts.lazy) { 
 						var offset=L.offset;
-						L.sz.map(function(sz){
+						for (var i=0;i<L.sz.length;i++) {
+							var sz=L.sz[i];
 							o[o.length]=strsep+offset.toString(16)
 								   +strsep+sz.toString(16);
 							offset+=sz;
-						})
+						};
 				} else {
 					var taskqueue=[];
 					for (var i=0;i<L.count;i++) {
@@ -160615,14 +160613,16 @@ var Create=function(path,opts,cb) {
 		}
 		return o;
 	}
-	var get=function(path,opts,cb) {
+	var get=function(path,opts,cb,context) {
 		if (typeof path=='undefined') path=[];
 		if (typeof path=="string") path=[path];
 		//opts.recursive=!!opts.recursive;
 		if (typeof opts=="function") {
-			cb=opts;node
+			context=cb;
+			cb=opts;
 			opts={};
 		}
+		var context=context||this;
 		var that=this;
 		if (typeof cb!='function') return getSync(path);
 
@@ -160630,9 +160630,9 @@ var Create=function(path,opts,cb) {
 			var o=CACHE;
 			if (path.length==0) {
 				if (opts.address) {
-					cb([0,that.fs.size]);
+					cb.apply(context,[[0,that.fs.size]]);
 				} else {
-					cb(Object.keys(CACHE));	
+					cb.apply(context,[Object.keys(CACHE)]);
 				}
 				return;
 			} 
@@ -160657,7 +160657,7 @@ var Create=function(path,opts,cb) {
 
 						if (typeof r==="undefined") {
 							taskqueue=null;
-							cb.apply(that,[r]); //return empty value
+							cb.apply(context,[r]); //return empty value
 						} else {							
 							if (parseInt(k)) pathnow+=strsep;
 							pathnow+=key;
@@ -160689,16 +160689,16 @@ var Create=function(path,opts,cb) {
 			}
 
 			if (taskqueue.length==0) {
-				cb.apply(that,[o]);
+				cb.apply(context,[o]);
 			} else {
 				//last call to child load
 				taskqueue.push(function(data,cursz){
 					if (opts.address) {
-						cb.apply(that,[cursz]);
+						cb.apply(context,[cursz]);
 					} else{
 						var key=path[path.length-1];
 						o[key]=data; KEY[pathnow]=opts.keys;
-						cb.apply(that,[data]);
+						cb.apply(context,[data]);
 					}
 				});
 				taskqueue.shift()({__empty:true});			
@@ -160710,6 +160710,7 @@ var Create=function(path,opts,cb) {
 	var getkeys=function(path,cb) {
 		if (!path) path=[]
 		var that=this;
+
 		get.apply(this,[path,false,function(){
 			if (path && path.length) {
 				cb.apply(that,[KEY[path.join(strsep)]]);
@@ -160787,16 +160788,22 @@ if (verbose) readLog=_readLog;
 
 var unpack_int = function (ar, count , reset) {
    count=count||ar.length;
-  var r = [], i = 0, v = 0;
+  var r = []
+  //var r=new Uint32Array(count);
+  var i = 0, v = 0,n=0;
   do {
 	var shift = 0;
 	do {
 	  v += ((ar[i] & 0x7F) << shift);
 	  shift += 7;	  
 	} while (ar[++i] & 0x80);
-	r.push(v); if (reset) v=0;
+	r.push(v);
+	//r[n++]=v;
+	if (reset) v=0;
 	count--;
   } while (i<ar.length && count);
+
+  //var rr=r.subarray(0,n);
   return {data:r, adv:i };
 }
 var Open=function(path,opts,cb) {
@@ -161311,463 +161318,7 @@ var Open=function(path,opts,cb) {
 }
 
 module.exports=Open;
-},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbw.js":[function(require,module,exports){
-/*
-  convert any json into a binary buffer
-  the buffer can be saved with a single line of fs.writeFile
-*/
-
-var DT={
-	uint8:'1', //unsigned 1 byte integer
-	int32:'4', // signed 4 bytes integer
-	utf8:'8',  
-	ucs2:'2',
-	bool:'^', 
-	blob:'&',
-	utf8arr:'*', //shift of 8
-	ucs2arr:'@', //shift of 2
-	uint8arr:'!', //shift of 1
-	int32arr:'$', //shift of 4
-	vint:'`',
-	pint:'~',	
-
-	array:'\u001b',
-	object:'\u001a' 
-	//ydb start with object signature,
-	//type a ydb in command prompt shows nothing
-}
-var key_writing="";//for debugging
-var pack_int = function (ar, savedelta) { // pack ar into
-  if (!ar || ar.length === 0) return []; // empty array
-  var r = [],
-  i = 0,
-  j = 0,
-  delta = 0,
-  prev = 0;
-  
-  do {
-	delta = ar[i];
-	if (savedelta) {
-		delta -= prev;
-	}
-	if (delta < 0) {
-	  console.trace('negative',prev,ar[i])
-	  throw 'negetive';
-	  break;
-	}
-	
-	r[j++] = delta & 0x7f;
-	delta >>= 7;
-	while (delta > 0) {
-	  r[j++] = (delta & 0x7f) | 0x80;
-	  delta >>= 7;
-	}
-	prev = ar[i];
-	i++;
-  } while (i < ar.length);
-  return r;
-}
-var Kfs=function(path,opts) {
-	
-	var handle=null;
-	opts=opts||{};
-	opts.size=opts.size||65536*2048; 
-	console.log('kdb estimate size:',opts.size);
-	var dbuf=new Buffer(opts.size);
-	var cur=0;//dbuf cursor
-	
-	var writeSignature=function(value,pos) {
-		dbuf.write(value,pos,value.length,'utf8');
-		if (pos+value.length>cur) cur=pos+value.length;
-		return value.length;
-	}
-	var writeOffset=function(value,pos) {
-		dbuf.writeUInt8(Math.floor(value / (65536*65536)),pos);
-		dbuf.writeUInt32BE( value & 0xFFFFFFFF,pos+1);
-		if (pos+5>cur) cur=pos+5;
-		return 5;
-	}
-	var writeString= function(value,pos,encoding) {
-		encoding=encoding||'ucs2';
-		if (value=="") throw "cannot write null string";
-		if (encoding==='utf8')dbuf.write(DT.utf8,pos,1,'utf8');
-		else if (encoding==='ucs2')dbuf.write(DT.ucs2,pos,1,'utf8');
-		else throw 'unsupported encoding '+encoding;
-			
-		var len=Buffer.byteLength(value, encoding);
-		dbuf.write(value,pos+1,len,encoding);
-		
-		if (pos+len+1>cur) cur=pos+len+1;
-		return len+1; // signature
-	}
-	var writeStringArray = function(value,pos,encoding) {
-		encoding=encoding||'ucs2';
-		if (encoding==='utf8') dbuf.write(DT.utf8arr,pos,1,'utf8');
-		else if (encoding==='ucs2')dbuf.write(DT.ucs2arr,pos,1,'utf8');
-		else throw 'unsupported encoding '+encoding;
-		
-		var v=value.join('\0');
-		var len=Buffer.byteLength(v, encoding);
-		if (0===len) {
-			throw "empty string array " + key_writing;
-		}
-		dbuf.write(v,pos+1,len,encoding);
-		if (pos+len+1>cur) cur=pos+len+1;
-		return len+1;
-	}
-	var writeI32=function(value,pos) {
-		dbuf.write(DT.int32,pos,1,'utf8');
-		dbuf.writeInt32BE(value,pos+1);
-		if (pos+5>cur) cur=pos+5;
-		return 5;
-	}
-	var writeUI8=function(value,pos) {
-		dbuf.write(DT.uint8,pos,1,'utf8');
-		dbuf.writeUInt8(value,pos+1);
-		if (pos+2>cur) cur=pos+2;
-		return 2;
-	}
-	var writeBool=function(value,pos) {
-		dbuf.write(DT.bool,pos,1,'utf8');
-		dbuf.writeUInt8(Number(value),pos+1);
-		if (pos+2>cur) cur=pos+2;
-		return 2;
-	}		
-	var writeBlob=function(value,pos) {
-		dbuf.write(DT.blob,pos,1,'utf8');
-		value.copy(dbuf, pos+1);
-		var written=value.length+1;
-		if (pos+written>cur) cur=pos+written;
-		return written;
-	}		
-	/* no signature */
-	var writeFixedArray = function(value,pos,unitsize) {
-		//console.log('v.len',value.length,items.length,unitsize);
-		if (unitsize===1) var func=dbuf.writeUInt8;
-		else if (unitsize===4)var func=dbuf.writeInt32BE;
-		else throw 'unsupported integer size';
-		if (!value.length) {
-			throw "empty fixed array "+key_writing;
-		}
-		for (var i = 0; i < value.length ; i++) {
-			func.apply(dbuf,[value[i],i*unitsize+pos])
-		}
-		var len=unitsize*value.length;
-		if (pos+len>cur) cur=pos+len;
-		return len;
-	}
-
-	this.writeI32=writeI32;
-	this.writeBool=writeBool;
-	this.writeBlob=writeBlob;
-	this.writeUI8=writeUI8;
-	this.writeString=writeString;
-	this.writeSignature=writeSignature;
-	this.writeOffset=writeOffset; //5 bytes offset
-	this.writeStringArray=writeStringArray;
-	this.writeFixedArray=writeFixedArray;
-	Object.defineProperty(this, "buf", {get : function(){ return dbuf; }});
-	
-	return this;
-}
-
-var Create=function(path,opts) {
-	opts=opts||{};
-	var kfs=new Kfs(path,opts);
-	var cur=0;
-
-	var handle={};
-	
-	//no signature
-	var writeVInt =function(arr) {
-		var o=pack_int(arr,false);
-		kfs.writeFixedArray(o,cur,1);
-		cur+=o.length;
-	}
-	var writeVInt1=function(value) {
-		writeVInt([value]);
-	}
-	//for postings
-	var writePInt =function(arr) {
-		var o=pack_int(arr,true);
-		kfs.writeFixedArray(o,cur,1);
-		cur+=o.length;
-	}
-	
-	var saveVInt = function(arr,key) {
-		var start=cur;
-		key_writing=key;
-		cur+=kfs.writeSignature(DT.vint,cur);
-		writeVInt(arr);
-		var written = cur-start;
-		pushitem(key,written);
-		return written;		
-	}
-	var savePInt = function(arr,key) {
-		var start=cur;
-		key_writing=key;
-		cur+=kfs.writeSignature(DT.pint,cur);
-		writePInt(arr);
-		var written = cur-start;
-		pushitem(key,written);
-		return written;	
-	}
-
-	
-	var saveUI8 = function(value,key) {
-		var written=kfs.writeUI8(value,cur);
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}
-	var saveBool=function(value,key) {
-		var written=kfs.writeBool(value,cur);
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}
-	var saveI32 = function(value,key) {
-		var written=kfs.writeI32(value,cur);
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}	
-	var saveString = function(value,key,encoding) {
-		encoding=encoding||stringencoding;
-		key_writing=key;
-		var written=kfs.writeString(value,cur,encoding);
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}
-	var saveStringArray = function(arr,key,encoding) {
-		encoding=encoding||stringencoding;
-		key_writing=key;
-		try {
-			var written=kfs.writeStringArray(arr,cur,encoding);
-		} catch(e) {
-			throw e;
-		}
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}
-	
-	var saveBlob = function(value,key) {
-		key_writing=key;
-		var written=kfs.writeBlob(value,cur);
-		cur+=written;
-		pushitem(key,written);
-		return written;
-	}
-
-	var folders=[];
-	var pushitem=function(key,written) {
-		var folder=folders[folders.length-1];	
-		if (!folder) return ;
-		folder.itemslength.push(written);
-		if (key) {
-			if (!folder.keys) throw 'cannot have key in array';
-			folder.keys.push(key);
-		}
-	}	
-	var open = function(opt) {
-		var start=cur;
-		var key=opt.key || null;
-		var type=opt.type||DT.array;
-		cur+=kfs.writeSignature(type,cur);
-		cur+=kfs.writeOffset(0x0,cur); // pre-alloc space for offset
-		var folder={
-			type:type, key:key,
-			start:start,datastart:cur,
-			itemslength:[] };
-		if (type===DT.object) folder.keys=[];
-		folders.push(folder);
-	}
-	var openObject = function(key) {
-		open({type:DT.object,key:key});
-	}
-	var openArray = function(key) {
-		open({type:DT.array,key:key});
-	}
-	var saveInts=function(arr,key,func) {
-		func.apply(handle,[arr,key]);
-	}
-	var close = function(opt) {
-		if (!folders.length) throw 'empty stack';
-		var folder=folders.pop();
-		//jump to lengths and keys
-		kfs.writeOffset( cur-folder.datastart, folder.datastart-5);
-		var itemcount=folder.itemslength.length;
-		//save lengths
-		writeVInt1(itemcount);
-		writeVInt(folder.itemslength);
-		
-		if (folder.type===DT.object) {
-			//use utf8 for keys
-			cur+=kfs.writeStringArray(folder.keys,cur,'utf8');
-		}
-		written=cur-folder.start;
-		pushitem(folder.key,written);
-		return written;
-	}
-	
-	
-	var stringencoding='ucs2';
-	var stringEncoding=function(newencoding) {
-		if (newencoding) stringencoding=newencoding;
-		else return stringencoding;
-	}
-	
-	var allnumber_fast=function(arr) {
-		if (arr.length<5) return allnumber(arr);
-		if (typeof arr[0]=='number'
-		    && Math.round(arr[0])==arr[0] && arr[0]>=0)
-			return true;
-		return false;
-	}
-	var allstring_fast=function(arr) {
-		if (arr.length<5) return allstring(arr);
-		if (typeof arr[0]=='string') return true;
-		return false;
-	}	
-	var allnumber=function(arr) {
-		for (var i=0;i<arr.length;i++) {
-			if (typeof arr[i]!=='number') return false;
-		}
-		return true;
-	}
-	var allstring=function(arr) {
-		for (var i=0;i<arr.length;i++) {
-			if (typeof arr[i]!=='string') return false;
-		}
-		return true;
-	}
-	var getEncoding=function(key,encs) {
-		var enc=encs[key];
-		if (!enc) return null;
-		if (enc=='delta' || enc=='posting') {
-			return savePInt;
-		} else if (enc=="variable") {
-			return saveVInt;
-		}
-		return null;
-	}
-	var save=function(J,key,opts) {
-		opts=opts||{};
-		
-		if (typeof J=="null" || typeof J=="undefined") {
-			throw 'cannot save null value of ['+key+'] folders'+JSON.stringify(folders);
-			return;
-		}
-		var type=J.constructor.name;
-		if (type==='Object') {
-			openObject(key);
-			for (var i in J) {
-				save(J[i],i,opts);
-				if (opts.autodelete) delete J[i];
-			}
-			close();
-		} else if (type==='Array') {
-			if (allnumber_fast(J)) {
-				if (J.sorted) { //number array is sorted
-					saveInts(J,key,savePInt);	//posting delta format
-				} else {
-					saveInts(J,key,saveVInt);	
-				}
-			} else if (allstring_fast(J)) {
-				saveStringArray(J,key);
-			} else {
-				openArray(key);
-				for (var i=0;i<J.length;i++) {
-					save(J[i],null,opts);
-					if (opts.autodelete) delete J[i];
-				}
-				close();
-			}
-		} else if (type==='String') {
-			saveString(J,key);
-		} else if (type==='Number') {
-			if (J>=0&&J<256) saveUI8(J,key);
-			else saveI32(J,key);
-		} else if (type==='Boolean') {
-			saveBool(J,key);
-		} else if (type==='Buffer') {
-			saveBlob(J,key);
-		} else {
-			throw 'unsupported type '+type;
-		}
-	}
-	
-	var free=function() {
-		while (folders.length) close();
-		kfs.free();
-	}
-	var currentsize=function() {
-		return cur;
-	}
-
-	Object.defineProperty(handle, "size", {get : function(){ return cur; }});
-
-	var writeFile=function(fn,opts,cb) {
-		if (typeof fs=="undefined") {
-			var fs=opts.fs||require('fs');	
-		}
-		var totalbyte=handle.currentsize();
-		var written=0,batch=0;
-		
-		if (typeof cb=="undefined" || typeof opts=="function") {
-			cb=opts;
-		}
-		opts=opts||{};
-		batchsize=opts.batchsize||1024*1024*16; //16 MB
-
-		if (fs.existsSync(fn)) fs.unlinkSync(fn);
-
-		var writeCb=function(total,written,cb,next) {
-			return function(err) {
-				if (err) throw "write error"+err;
-				cb(total,written);
-				batch++;
-				next();
-			}
-		}
-
-		var next=function() {
-			if (batch<batches) {
-				var bufstart=batchsize*batch;
-				var bufend=bufstart+batchsize;
-				if (bufend>totalbyte) bufend=totalbyte;
-				var sliced=kfs.buf.slice(bufstart,bufend);
-				written+=sliced.length;
-				fs.appendFile(fn,sliced,writeCb(totalbyte,written, cb,next));
-			}
-		}
-		var batches=1+Math.floor(handle.size/batchsize);
-		next();
-	}
-	handle.free=free;
-	handle.saveI32=saveI32;
-	handle.saveUI8=saveUI8;
-	handle.saveBool=saveBool;
-	handle.saveString=saveString;
-	handle.saveVInt=saveVInt;
-	handle.savePInt=savePInt;
-	handle.saveInts=saveInts;
-	handle.saveBlob=saveBlob;
-	handle.save=save;
-	handle.openArray=openArray;
-	handle.openObject=openObject;
-	handle.stringEncoding=stringEncoding;
-	//this.integerEncoding=integerEncoding;
-	handle.close=close;
-	handle.writeFile=writeFile;
-	handle.currentsize=currentsize;
-	return handle;
-}
-
-module.exports=Create;
-},{"fs":false}],"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js":[function(require,module,exports){
 /*
   TODO
   and not
@@ -162306,7 +161857,7 @@ var highlightFile=function(Q,fileid,opts,cb) {
 				var endvpos=segoffsets[i+1];
 				var segnames=Q.engine.getFileSegNames(fileid);
 				var seg=getSegSync(Q.engine, fileid,i+1);
-					var opt={text:seg.text,hits:null,tag:'hl',vpos:startvpos,
+				var opt={text:seg.text,hits:null,tag:'hl',vpos:startvpos,
 					fulltext:true,nospan:opts.nospan,nocrlf:opts.nocrlf};
 				var segname=segnames[i+1];
 				opt.hits=hitInRange(Q,startvpos,endvpos);
@@ -165324,7 +164875,7 @@ module.exports= {
 
 
 },{}],"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js":[function(require,module,exports){
-var React=require("react");
+var React=(window&&window.React)||require("react");
 var E=React.createElement;
 var trimHit=function(hit) {
   if (hit>999) { 
@@ -165682,12 +165233,11 @@ var genToc=function(toc,title) {
 module.exports={component:stacktoc,genToc:genToc,enumChildren:enumChildren,enumAncestors:enumAncestors};
 
 },{"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/checkbrowser.js":[function(require,module,exports){
-/** @jsx React.DOM */
 /*
 convert to pure js
 save -g reactify
 */
-var React=window.React||require("react");
+var React=(window&&window.React)||require("react");
 var E=React.createElement;
 
 var hasksanagap=(typeof ksanagap!="undefined");
@@ -165871,10 +165421,8 @@ var downloader={startDownload:startDownload, downloadedByte:downloadedByte,
 	downloadingFile:downloadingFile, cancelDownload:cancelDownload,doneDownload:doneDownload};
 module.exports=downloader;
 },{"./mkdirp":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/mkdirp.js","fs":false,"http":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/fileinstaller.js":[function(require,module,exports){
-/** @jsx React.DOM */
-
 /* todo , optional kdb */
-var React=window.React||require("react");
+var React=(window&&window.React)||require("react");
 var HtmlFS=require("./htmlfs");
 var html5fs=require("./html5fs");
 var CheckBrowser=require("./checkbrowser");
@@ -166132,7 +165680,7 @@ var Filemanager = React.createClass({
 		}
 		var that=this;
 		taskqueue.push(function(data){	
-			files[files.length-1].hasUpdate=data;
+			if (files.length) files[files.length-1].hasUpdate=data;
 			var hasupdate=files.some(function(f){return f.hasUpdate});
 			if (cb) cb.apply(that,[hasupdate]);
 		});
@@ -166388,7 +165936,7 @@ var API={
 module.exports=API;
 },{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/htmlfs.js":[function(require,module,exports){
 var html5fs=require("./html5fs");
-var React=window.React||require("react");
+var React=(window&&window.React)||require("react");
 var E=React.createElement;
 
 var htmlfs = React.createClass({
@@ -166501,7 +166049,6 @@ var htmlfs = React.createClass({
 
 module.exports=htmlfs;
 },{"./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js":[function(require,module,exports){
-var React=require("react");
 var ksana={"platform":"remote"};
 if (typeof window!="undefined") {
 	window.ksana=ksana;
@@ -166568,7 +166115,7 @@ module.exports={boot:boot
 	,installkdb:require("./installkdb")
 };
 },{"./downloader":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js","./fileinstaller":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/fileinstaller.js","./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js","./htmlfs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/htmlfs.js","./installkdb":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/installkdb.js","./kfs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs.js","./kfs_html5":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs_html5.js","./ksanagap":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/ksanagap.js","./livereload":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/livereload.js","./liveupdate":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/liveupdate.js","fs":false,"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/installkdb.js":[function(require,module,exports){
-var React=window.React||require("react");
+var React=(window&&window.React)||require("react");
 var Fileinstaller=require("./fileinstaller");
 
 var getRequire_kdb=function() {

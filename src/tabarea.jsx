@@ -12,6 +12,10 @@ var tabarea = React.createClass({
   componentDidUpdate:function()  {
     this.setBannerHeight(100);
   },  
+  textConverter:function(t) {
+    if(this.state.wylie == true) return tibetan.romanize.toWylie(t,null,false); 
+    return t; 
+  },
   render: function() {
     return (
       <div>     

@@ -99,22 +99,10 @@ var showtext = React.createClass({
   },
   addImage:function(pb) {
     var clickedpb=this.state.clickedpb;
-    var idx=clickedpb.indexOf(clickedpb);
-    if (idx==-1) clickedpb.push(pb);//{pb:pb,recen:recen}
+    var idx=clickedpb.indexOf(pb);//idx=clickedpb.indexOf(clickedpb)
+    if (idx==-1) clickedpb.push(pb);
     this.setState({clickedpb:clickedpb,recen:"lijiang"});
   },
-  // addCorresImage:function(pb,recen) {
-  //   var r;// if(recen=="J") r="lijiang";
-  //   if(recen=="D") r="derge";
-  //   if(recen=="H") r="lhasa";   
-  //   var clickedCorrespb=this.state.clickedCorrespb;
-  //   var idx=clickedCorrespb.indexOf(clickedCorrespb);
-  //   if (idx==-1) clickedCorrespb.push(pb);//{pb:pb,recen:recen}
-  //   this.setState({clickedpb:clickedCorrespb,recen:r});
-
-  //   //$('img[data-img="'+pb+'"]').attr("src","url");
-  //   console.log("rendering",r,pb);
-  // },
   getSegsFromFile: function(file) {
     var segs=[], pb=[], text=[];
     var that=this;
@@ -137,7 +125,7 @@ var showtext = React.createClass({
   },
   render: function() {
     var content=this.props.text||"";
-    //if (this.props.wylie) content=tibetan.romanize.toWylie(content,null,false);
+    if (this.props.wylie) content=tibetan.toWylie(content,null,false);
     //content=this.renderpb(content);
     var that=this;
     var s=this.getSegsFromFile(content);

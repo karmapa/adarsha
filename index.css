@@ -199,6 +199,7 @@ div.current:hover {background:#D8F6CE;}
   text-align: center;
   opacity:1;
   pointer-events: auto;
+  font-size: 200%;
   color:white;
 }
 
