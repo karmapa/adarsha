@@ -22,6 +22,15 @@ var searcharea= React.createClass({
     $("label[data-type='fulltext']").addClass("active");
     this.dosearch(null,null,[voff,end,hit]);
   },
+  searchtypechange:function(e) {
+    this.refs.tofind.getDOMNode().focus();
+    this.dosearch(null,null,0);
+  },
+  clicksearch:function(e) {
+    if (!e || !e.target) return null;
+    this.refs.tofind.getDOMNode().value=e.target.innerHTML;
+    this.searchtypechange();
+  },
   renderInputSyntax:function() {
     if (!this.refs.searchtype) return;
     var field=$(this.refs.searchtype.getDOMNode()).find(".active")[0].dataset.type;

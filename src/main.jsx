@@ -79,27 +79,6 @@ var main = React.createClass({
     this.decodeHashTag(window.location.hash || "#1.1");
   
   },  
-  searchtypechange:function(e) {
-    this.refs.tofind.getDOMNode().focus();
-    this.dosearch(null,null,0);
-  },
-  clicksearch:function(e) {
-    if (!e || !e.target) return null;
-    this.refs.tofind.getDOMNode().value=e.target.innerHTML;
-    this.searchtypechange();
-  },
-  // tofindchange:function(e) {
-  //   clearTimeout(this.tofindtimer);
-  //   var that=this;
-  //   this.tofindtimer=setTimeout(function(){
-  //     that.dosearch(null,null,0);
-  //   },300);
-  //   //var field=e.target.parentElement.dataset.type;
-  // },
-  // removeLeadingEndingSpace:function(tofind) {
-  //   if (!tofind || tofind.length<2) return tofind;
-  //   return tofind.replace(/^་/,"").replace(/་$/,"");
-  // },
   genToc:function(texts,depths,voffs){
     var out=[{depth:0,text:"འཇང་བཀའ་འགྱུར།"}];
     for(var i=0; i<texts.length; i++){
@@ -199,7 +178,7 @@ var main = React.createClass({
 
       <div className="row">
         <div className={menuclass}>
-          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} wylie={this.state.wylie} gotofile={this.gotofile} />
+          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} wylie={this.state.wylie} gotofile={this.gotofile} toc={this.state.toc} />
         </div>
         <div className={bodytextcols}>    
           <div className="text text-content" ref="text-content">

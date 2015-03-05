@@ -158460,27 +158460,6 @@ var main = React.createClass({displayName: "main",
     this.decodeHashTag(window.location.hash || "#1.1");
   
   },  
-  searchtypechange:function(e) {
-    this.refs.tofind.getDOMNode().focus();
-    this.dosearch(null,null,0);
-  },
-  clicksearch:function(e) {
-    if (!e || !e.target) return null;
-    this.refs.tofind.getDOMNode().value=e.target.innerHTML;
-    this.searchtypechange();
-  },
-  // tofindchange:function(e) {
-  //   clearTimeout(this.tofindtimer);
-  //   var that=this;
-  //   this.tofindtimer=setTimeout(function(){
-  //     that.dosearch(null,null,0);
-  //   },300);
-  //   //var field=e.target.parentElement.dataset.type;
-  // },
-  // removeLeadingEndingSpace:function(tofind) {
-  //   if (!tofind || tofind.length<2) return tofind;
-  //   return tofind.replace(/^་/,"").replace(/་$/,"");
-  // },
   genToc:function(texts,depths,voffs){
     var out=[{depth:0,text:"འཇང་བཀའ་འགྱུར།"}];
     for(var i=0; i<texts.length; i++){
@@ -158580,7 +158559,7 @@ var main = React.createClass({displayName: "main",
 
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: menuclass}, 
-          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db, wylie: this.state.wylie, gotofile: this.gotofile})
+          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db, wylie: this.state.wylie, gotofile: this.gotofile, toc: this.state.toc})
         ), 
         React.createElement("div", {className: bodytextcols}, 
           React.createElement("div", {className: "text text-content", ref: "text-content"}, 
@@ -158791,6 +158770,15 @@ var searcharea= React.createClass({displayName: "searcharea",
     $("label.searchmode").removeClass("active");
     $("label[data-type='fulltext']").addClass("active");
     this.dosearch(null,null,[voff,end,hit]);
+  },
+  searchtypechange:function(e) {
+    this.refs.tofind.getDOMNode().focus();
+    this.dosearch(null,null,0);
+  },
+  clicksearch:function(e) {
+    if (!e || !e.target) return null;
+    this.refs.tofind.getDOMNode().value=e.target.innerHTML;
+    this.searchtypechange();
   },
   renderInputSyntax:function() {
     if (!this.refs.searchtype) return;
@@ -159241,7 +159229,7 @@ var tabarea = React.createClass({displayName: "tabarea",
             ), 
 
             React.createElement("div", {className: "tab-pane fade", id: "Search"}, 
-              React.createElement(Searcharea, {db: this.props.db, wylie: this.props.wylie, gotofile: this.props.gotofile})
+              React.createElement(Searcharea, {db: this.props.db, wylie: this.props.wylie, gotofile: this.props.gotofile, toc: this.props.toc})
             )
           )
         )
