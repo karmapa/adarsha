@@ -158512,8 +158512,9 @@ var main = React.createClass({displayName: "main",
                      onReady: this.onReady})
   },
   gotofile:function(vpos){
-    var res=kse.vpos2filepage(this.state.db,vpos);
-    this.showPage(res.file,res.page);
+    //var res=kse.vpos2filepage(this.state.db,vpos);
+    var res=this.state.db.fileSegFromVpos(vpos);
+    this.showPage(res.file,res.seg);
   },
   showPage:function(f,p) {  
     window.location.hash = this.encodeHashTag(f,p);
@@ -158579,7 +158580,7 @@ var main = React.createClass({displayName: "main",
 
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: menuclass}, 
-          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db, wylie: this.state.wylie})
+          React.createElement(Tabarea, {toc: this.state.toc, showText: this.showText, menuclass: menuclass, db: this.state.db, wylie: this.state.wylie, gotofile: this.gotofile})
         ), 
         React.createElement("div", {className: bodytextcols}, 
           React.createElement("div", {className: "text text-content", ref: "text-content"}, 
@@ -158679,7 +158680,7 @@ var tibetan=require("ksana-tibetan").wylie;
 var resultlist=React.createClass({displayName: "resultlist",  //should search result
   show:function() {
     if(this.props.wylie == false) var tofind=this.props.tofind;
-    if(this.props.wylie == true ) var tofind=tibetan.romanize.toWylie(this.props.tofind,null,false);
+    if(this.props.wylie == true ) var tofind=tibetan.toWylie(this.props.tofind,null,false);
     
     try {
       var t = new RegExp(tofind,"g"); 
@@ -158687,9 +158688,9 @@ var resultlist=React.createClass({displayName: "resultlist",  //should search re
       
         var context="";
         if(this.props.wylie == false) context=r.text;//r.text.replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
-        if(this.props.wylie == true) context=tibetan.romanize.toWylie(r.text,null,false).replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
+        if(this.props.wylie == true) context=tibetan.toWylie(r.text,null,false).replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
         return React.createElement("div", {"data-vpos": r.hits[0][0]}, 
-        React.createElement("a", {onClick: this.gotopage, className: "pagename"}, r.pagename), 
+        React.createElement("a", {onClick: this.gotopage, className: "pagename"}, r.segname), 
           React.createElement("div", {className: "resultitem", dangerouslySetInnerHTML: {__html:context}})
         )
       },this);
@@ -158878,10 +158879,12 @@ var searcharea= React.createClass({displayName: "searcharea",
 
     field=field || this.state.field;
     if(field == "fulltext"){
-      kse.search(this.state.db,tofind,{phrase_sep:"།",
-        range:{start:start,end:end,maxhit:100}},function(data){ //call search engine          
+      var that=this;
+      kse.search(this.props.db,tofind,{phrase_sep:"།",
+        range:{start:start,end:end,maxhit:100}},function(engineContext,data){ //call search engine          
         data.tochit=tochit;
-        this.setState({res:data, tofind:tofind, res_toc:[] });  
+        data.excerptOverflow=false;
+        that.setState({res:data, tofind:tofind, res_toc:[] });  
       });
     }
     if(field == "kacha"){
@@ -158914,8 +158917,8 @@ var searcharea= React.createClass({displayName: "searcharea",
           )
         ), 
         this.renderInputSyntax(), 
-        React.createElement(Namelist, {wylie: this.state.wylie, res_toc: this.state.res_toc, tofind: this.state.tofind, gotofile: this.gotofile}), 
-        React.createElement(Resultlist, {wylie: this.state.wylie, res: this.state.res, tofind: this.state.tofind, gotofile: this.gotofile})
+        React.createElement(Namelist, {wylie: this.props.wylie, res_toc: this.state.res_toc, tofind: this.state.tofind, gotofile: this.props.gotofile}), 
+        React.createElement(Resultlist, {wylie: this.props.wylie, res: this.state.res, tofind: this.state.tofind, gotofile: this.props.gotofile})
       )
     );
   }
@@ -159238,7 +159241,7 @@ var tabarea = React.createClass({displayName: "tabarea",
             ), 
 
             React.createElement("div", {className: "tab-pane fade", id: "Search"}, 
-              React.createElement(Searcharea, {db: this.props.db})
+              React.createElement(Searcharea, {db: this.props.db, wylie: this.props.wylie, gotofile: this.props.gotofile})
             )
           )
         )
@@ -159741,11 +159744,12 @@ var getFileRange=function(i) {
 var myAbsSegToFileSeg=function(absoluteseg) {
 	var filesegcount=this.get("filesegcount");
 	var s=absoluteseg;
-	var file=0;	
+	var file=0 ,f=0;	
 	while(s>=filesegcount[file]) {file++}
-	var seg=s-filesegcount[file-1];
-
-	return {file:file,seg: seg};
+	if(file!=0) {
+		var seg=s-filesegcount[file-1];
+		return {file:file,seg: seg};
+	} else return {file:0,seg:absoluteseg};
 }
 
 var absSegToFileSeg=function(absoluteseg) {

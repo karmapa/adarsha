@@ -160,6 +160,10 @@ div.current {color:black; background:white ;border-bottom-right-radius:10px 10px
 div.current:hover {background:#D8F6CE;}
 /*stacktoc*/
 
+/*search area*/
+.pagename{cursor: pointer;}
+.hl{color:red;}
+/*search area*/
 
 /*defbox*/
 .term {

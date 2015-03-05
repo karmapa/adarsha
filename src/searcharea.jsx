@@ -109,10 +109,12 @@ var searcharea= React.createClass({
 
     field=field || this.state.field;
     if(field == "fulltext"){
-      kse.search(this.state.db,tofind,{phrase_sep:"།",
-        range:{start:start,end:end,maxhit:100}},function(data){ //call search engine          
+      var that=this;
+      kse.search(this.props.db,tofind,{phrase_sep:"།",
+        range:{start:start,end:end,maxhit:100}},function(engineContext,data){ //call search engine          
         data.tochit=tochit;
-        this.setState({res:data, tofind:tofind, res_toc:[] });  
+        data.excerptOverflow=false;
+        that.setState({res:data, tofind:tofind, res_toc:[] });  
       });
     }
     if(field == "kacha"){
@@ -145,8 +147,8 @@ var searcharea= React.createClass({
           </div> 
         </div>       
         {this.renderInputSyntax()}
-        <Namelist wylie={this.state.wylie} res_toc={this.state.res_toc} tofind={this.state.tofind} gotofile={this.gotofile} />
-        <Resultlist wylie={this.state.wylie} res={this.state.res} tofind={this.state.tofind} gotofile={this.gotofile} />
+        <Namelist wylie={this.props.wylie} res_toc={this.state.res_toc} tofind={this.state.tofind} gotofile={this.props.gotofile} />
+        <Resultlist wylie={this.props.wylie} res={this.state.res} tofind={this.state.tofind} gotofile={this.props.gotofile} />
       </div>
     );
   }

@@ -8,7 +8,7 @@ var tibetan=require("ksana-tibetan").wylie;
 var resultlist=React.createClass({  //should search result
   show:function() {
     if(this.props.wylie == false) var tofind=this.props.tofind;
-    if(this.props.wylie == true ) var tofind=tibetan.romanize.toWylie(this.props.tofind,null,false);
+    if(this.props.wylie == true ) var tofind=tibetan.toWylie(this.props.tofind,null,false);
     
     try {
       var t = new RegExp(tofind,"g"); 
@@ -16,9 +16,9 @@ var resultlist=React.createClass({  //should search result
       
         var context="";
         if(this.props.wylie == false) context=r.text;//r.text.replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
-        if(this.props.wylie == true) context=tibetan.romanize.toWylie(r.text,null,false).replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
+        if(this.props.wylie == true) context=tibetan.toWylie(r.text,null,false).replace(t,function(tofind){return "<hl>"+tofind+"</hl>"});
         return <div data-vpos={r.hits[0][0]}>
-        <a onClick={this.gotopage} className="pagename">{r.pagename}</a>
+        <a onClick={this.gotopage} className="pagename">{r.segname}</a>
           <div className="resultitem" dangerouslySetInnerHTML={{__html:context}}></div>
         </div>
       },this);

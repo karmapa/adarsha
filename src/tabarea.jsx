@@ -35,7 +35,7 @@ var tabarea = React.createClass({
             </div> 
 
             <div className="tab-pane fade" id="Search">
-              <Searcharea db={this.props.db} />
+              <Searcharea db={this.props.db} wylie={this.props.wylie} gotofile={this.props.gotofile} />
             </div>        
           </div>      
         </div>           

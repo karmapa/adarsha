@@ -131,8 +131,9 @@ var main = React.createClass({
                      onReady={this.onReady}/>
   },
   gotofile:function(vpos){
-    var res=kse.vpos2filepage(this.state.db,vpos);
-    this.showPage(res.file,res.page);
+    //var res=kse.vpos2filepage(this.state.db,vpos);
+    var res=this.state.db.fileSegFromVpos(vpos);
+    this.showPage(res.file,res.seg);
   },
   showPage:function(f,p) {  
     window.location.hash = this.encodeHashTag(f,p);
@@ -198,7 +199,7 @@ var main = React.createClass({
 
       <div className="row">
         <div className={menuclass}>
-          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} wylie={this.state.wylie} />
+          <Tabarea toc={this.state.toc} showText={this.showText} menuclass={menuclass} db={this.state.db} wylie={this.state.wylie} gotofile={this.gotofile} />
         </div>
         <div className={bodytextcols}>    
           <div className="text text-content" ref="text-content">
