@@ -1,0 +1,24 @@
+{
+  "name": "ksana2015-scaffold-default",
+  "description": "New Ksana application",
+  "version": "0.0.1",
+  "main": "index.html",
+  "inject-js-start": "nwmain.js",
+  "single-instance": true,
+  "window": {
+    "toolbar": true,
+    "width": 1060,
+    "height": 700
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karmapa/adarsha.git"
+  },
+  "readme": "scaffold for ksana2015 app\n====\n\ninstall github.com/ksanaforge/ksana2015\n\nks mkdb sample",
+  "readmeFilename": "README.md",
+  "_id": "ksana2015-scaffold-default@0.0.1",
+  "_shasum": "eb61c6c03fd6f2e2c000a9c2a03488aab161b482",
+  "_resolved": "git+https://github.com/ksanaforge/ksana2015-scaffold-default.git#27f97160f011939ee8842267a28ac9d96ad986e0",
+  "_from": "git+https://github.com/ksanaforge/ksana2015-scaffold-default.git"
+}
