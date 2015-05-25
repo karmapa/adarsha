@@ -3,10 +3,6 @@
 /* to rename the component,
  change name of ./component.js and  "dependencies" section of ../../component.js */
 var React=require("react");
-var require_kdb=[{
-  filename:"jiangkangyur.kdb"  , 
-  url:"http://ya.ksana.tw/kdb/jiangkangyur.kdb" , desc:"jiangkangyur"
-}];
 var Tabarea=require("./tabarea.jsx");
 var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
@@ -14,7 +10,7 @@ var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var tibetan=require("ksana-tibetan").wylie;
 var Showtext=require("./showtext.jsx");
 
-var version="v0.1.45";
+var version="v0.1.46";
 var main = React.createClass({
   getInitialState: function() {
     //for Mac OS X, edit info.plist
@@ -47,6 +43,7 @@ var main = React.createClass({
   },
   componentDidMount:function() {
     var that=this;
+    this.onReady();
     setTimeout(function(){
       that.hideBanner();
     },5000);
@@ -86,7 +83,7 @@ var main = React.createClass({
     }
     return out; 
   },// 轉換為stacktoc 目錄格式
-  onReady:function(usage,quota) {
+  onReady:function() {
     if (!this.state.db) kde.open("jiangkangyur",function(a,db){
         this.setState({db:db});
         db.get([["fields","head"],["fields","head_depth"],["fields","head_voff"]],function(){
@@ -97,17 +94,7 @@ var main = React.createClass({
           this.setState({toc:toc});
           this.goHashTag();
         }); //載入目錄
-    },this);    
-      
-    this.setState({dialog:false,quota:quota,usage:usage});
-    
-  },
-  openFileinstaller:function(autoclose) {
-    if (window.location.origin.indexOf("http://127.0.0.1")==0) {
-      require_kdb[0].url=window.location.origin+window.location.pathname+"jiangkangyur.kdb";
-    }
-    return <Fileinstaller quota="512M" autoclose={autoclose} needed={require_kdb} 
-                     onReady={this.onReady}/>
+    },this);          
   },
   gotofile:function(vpos,tofind){
     //var res=kse.vpos2filepage(this.state.db,vpos);
@@ -154,9 +141,6 @@ var main = React.createClass({
     this.setState({scrollto:null});
   },
   render: function() {
-    if (!this.state.quota) { // install required db
-        return this.openFileinstaller(true);
-    } else { 
       var text="",pagename="";
       if (this.state.bodytext) {
         text=this.state.bodytext.text;
@@ -189,7 +173,6 @@ var main = React.createClass({
     </div>
 
       );
-    }
   }
 });
 

@@ -1,11 +1,12 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/yu/ksana2015/adarsha/index.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"C:\\ksana2015\\adarsha\\index.js":[function(require,module,exports){
 var React=require("react");
-var runtime=require("ksana2015-webruntime");
-runtime.boot("adarsha",function(){
+require("ksana2015-webruntime/livereload")();
+require("ksana2015-webruntime/ksanagap").boot("adarsha",function(){
 	var Main=React.createElement(require("./src/main.jsx"));
-	ksana.mainComponent=React.render(Main,document.getElementById("main"));
+	ksana.mainComponent=React.render(Main,document.getElementById("main"));	
 });
-},{"./src/main.jsx":"/Users/yu/ksana2015/adarsha/src/main.jsx","ksana2015-webruntime":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/corres_api.js":[function(require,module,exports){
+
+},{"./src/main.jsx":"C:\\ksana2015\\adarsha\\src\\main.jsx","ksana2015-webruntime/ksanagap":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js","ksana2015-webruntime/livereload":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\corres_api.js":[function(require,module,exports){
 var dosearch=function(volpage,from,to) {
   var tmp=fromVolpage(volpage,from,to);
     //corresFromVolpage= [經號],[範圍],[對照經號],[對照範圍],[對照行],[K經號]
@@ -235,7 +236,7 @@ var snap2realpage=function(id){
 
 var corres_api={dosearch:dosearch}
 module.exports=corres_api;
-},{}],"/Users/yu/ksana2015/adarsha/src/dPedurma.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\dPedurma.js":[function(require,module,exports){
 var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
   [ '1_2', '001@015a7-001@025a2', '1_2' ],
   [ '1_3', '001@025a2-001@034b7', '1_3' ],
@@ -2711,7 +2712,7 @@ var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
 dPedurma.rcode="D";
 module.exports=dPedurma;
 
-},{}],"/Users/yu/ksana2015/adarsha/src/defbox.jsx":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\defbox.jsx":[function(require,module,exports){
 var React=require("react");
 var Defbox = React.createClass({displayName: "Defbox",
   getInitialState: function() {
@@ -2773,7 +2774,7 @@ var Defbox = React.createClass({displayName: "Defbox",
   }
 });
 module.exports=Defbox;
-},{"react":"react"}],"/Users/yu/ksana2015/adarsha/src/dict_api.js":[function(require,module,exports){
+},{"react":"react"}],"C:\\ksana2015\\adarsha\\src\\dict_api.js":[function(require,module,exports){
 var entries=require("./entries.js");
 var mahavyutpatti=require("./mahavyutpatti.js");
 var indexes=require("./indexes.js");
@@ -2812,7 +2813,7 @@ var exhaustiveFind=function(tofind) {
 
 var dict_api={exhaustiveFind:exhaustiveFind};
 module.exports=dict_api;
-},{"./entries.js":"/Users/yu/ksana2015/adarsha/src/entries.js","./indexes.js":"/Users/yu/ksana2015/adarsha/src/indexes.js","./mahavyutpatti.js":"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js"}],"/Users/yu/ksana2015/adarsha/src/entries.js":[function(require,module,exports){
+},{"./entries.js":"C:\\ksana2015\\adarsha\\src\\entries.js","./indexes.js":"C:\\ksana2015\\adarsha\\src\\indexes.js","./mahavyutpatti.js":"C:\\ksana2015\\adarsha\\src\\mahavyutpatti.js"}],"C:\\ksana2015\\adarsha\\src\\entries.js":[function(require,module,exports){
 var entries=[
  "bcu pa dang po la",
  "་ཀུན་ཤེས་པ་ཐོབ་པར་བྱེད་",
@@ -12503,7 +12504,7 @@ var entries=[
  "ཨོལ་མདུད"
 ];
 module.exports=entries;
-},{}],"/Users/yu/ksana2015/adarsha/src/hPedurma.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\hPedurma.js":[function(require,module,exports){
 var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '1_2', '001@020b7-001@033b6', '1_2' ],
   [ '1_3', '001@033b6-001@047a3', '1_3' ],
@@ -14670,7 +14671,7 @@ var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '809', '100@001a1-510a6', '1152' ] ];
 hPedurma.rcode="H";
 module.exports=hPedurma;
-},{}],"/Users/yu/ksana2015/adarsha/src/indexes.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\indexes.js":[function(require,module,exports){
 var indexes=[
  8556,
  7747,
@@ -24361,7 +24362,7 @@ var indexes=[
  4126
 ];
 module.exports=indexes;
-},{}],"/Users/yu/ksana2015/adarsha/src/jPedurma.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\jPedurma.js":[function(require,module,exports){
 var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1_2', '001@017b8-001@027b4', '1_2' ],
   [ '1_3', '001@027b4-001@037b3', '1_3' ],
@@ -26823,7 +26824,7 @@ var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1007', '109@001a1-021b7', '1146' ] ];
 jPedurma.rcode="J";
 module.exports=jPedurma;
-},{}],"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\mahavyutpatti.js":[function(require,module,exports){
 var mahavyutpatti=[
  [
   [
@@ -158378,16 +158379,12 @@ var mahavyutpatti=[
  ]
 ];
 module.exports=mahavyutpatti;
-},{}],"/Users/yu/ksana2015/adarsha/src/main.jsx":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\main.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component,
  change name of ./component.js and  "dependencies" section of ../../component.js */
 var React=require("react");
-var require_kdb=[{
-  filename:"jiangkangyur.kdb"  , 
-  url:"http://ya.ksana.tw/kdb/jiangkangyur.kdb" , desc:"jiangkangyur"
-}];
 var Tabarea=require("./tabarea.jsx");
 var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
@@ -158395,7 +158392,7 @@ var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var tibetan=require("ksana-tibetan").wylie;
 var Showtext=require("./showtext.jsx");
 
-var version="v0.1.45";
+var version="v0.1.46";
 var main = React.createClass({displayName: "main",
   getInitialState: function() {
     //for Mac OS X, edit info.plist
@@ -158428,6 +158425,7 @@ var main = React.createClass({displayName: "main",
   },
   componentDidMount:function() {
     var that=this;
+    this.onReady();
     setTimeout(function(){
       that.hideBanner();
     },5000);
@@ -158467,7 +158465,7 @@ var main = React.createClass({displayName: "main",
     }
     return out; 
   },// 轉換為stacktoc 目錄格式
-  onReady:function(usage,quota) {
+  onReady:function() {
     if (!this.state.db) kde.open("jiangkangyur",function(a,db){
         this.setState({db:db});
         db.get([["fields","head"],["fields","head_depth"],["fields","head_voff"]],function(){
@@ -158478,17 +158476,7 @@ var main = React.createClass({displayName: "main",
           this.setState({toc:toc});
           this.goHashTag();
         }); //載入目錄
-    },this);    
-      
-    this.setState({dialog:false,quota:quota,usage:usage});
-    
-  },
-  openFileinstaller:function(autoclose) {
-    if (window.location.origin.indexOf("http://127.0.0.1")==0) {
-      require_kdb[0].url=window.location.origin+window.location.pathname+"jiangkangyur.kdb";
-    }
-    return React.createElement(Fileinstaller, {quota: "512M", autoclose: autoclose, needed: require_kdb, 
-                     onReady: this.onReady})
+    },this);          
   },
   gotofile:function(vpos,tofind){
     //var res=kse.vpos2filepage(this.state.db,vpos);
@@ -158535,9 +158523,6 @@ var main = React.createClass({displayName: "main",
     this.setState({scrollto:null});
   },
   render: function() {
-    if (!this.state.quota) { // install required db
-        return this.openFileinstaller(true);
-    } else { 
       var text="",pagename="";
       if (this.state.bodytext) {
         text=this.state.bodytext.text;
@@ -158570,12 +158555,11 @@ var main = React.createClass({displayName: "main",
     )
 
       );
-    }
   }
 });
 
 module.exports=main;
-},{"./showtext.jsx":"/Users/yu/ksana2015/adarsha/src/showtext.jsx","./tabarea.jsx":"/Users/yu/ksana2015/adarsha/src/tabarea.jsx","ksana-database":"/Users/yu/ksana2015/node_modules/ksana-database/index.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","ksana2015-webruntime":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/namelist.jsx":[function(require,module,exports){
+},{"./showtext.jsx":"C:\\ksana2015\\adarsha\\src\\showtext.jsx","./tabarea.jsx":"C:\\ksana2015\\adarsha\\src\\tabarea.jsx","ksana-database":"C:\\ksana2015\\node_modules\\ksana-database\\index.js","ksana-search":"C:\\ksana2015\\node_modules\\ksana-search\\index.js","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","ksana2015-webruntime":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\namelist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component, change name of ./component.js and  "dependencies" section of ../../component.js */
@@ -158648,7 +158632,7 @@ var namelist = React.createClass({displayName: "namelist",
   }
 });
 module.exports=namelist;
-},{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/resultlist.jsx":[function(require,module,exports){
+},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\resultlist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component, change name of ./component.js and  "dependencies" section of ../../component.js */
@@ -158710,7 +158694,7 @@ var resultlist=React.createClass({displayName: "resultlist",  //should search re
   }
 });
 module.exports=resultlist; 
-},{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/search_api.js":[function(require,module,exports){
+},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\search_api.js":[function(require,module,exports){
 var searchSutra=function(tofind,toc){
 	var out=[];
 	try {
@@ -158746,7 +158730,7 @@ var searchKacha=function(tofind,toc){
 
 var search_api={searchSutra:searchSutra,searchKacha:searchKacha}
 module.exports=search_api;
-},{}],"/Users/yu/ksana2015/adarsha/src/searcharea.jsx":[function(require,module,exports){
+},{}],"C:\\ksana2015\\adarsha\\src\\searcharea.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
@@ -158912,7 +158896,7 @@ var searcharea= React.createClass({displayName: "searcharea",
   }
 });
 module.exports=searcharea;
-},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showseg.jsx":[function(require,module,exports){
+},{"./namelist.jsx":"C:\\ksana2015\\adarsha\\src\\namelist.jsx","./resultlist.jsx":"C:\\ksana2015\\adarsha\\src\\resultlist.jsx","./search_api":"C:\\ksana2015\\adarsha\\src\\search_api.js","ksana-search":"C:\\ksana2015\\node_modules\\ksana-search\\index.js","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\showseg.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
@@ -159044,7 +159028,7 @@ var showseg= React.createClass({displayName: "showseg",
   }
 });
 module.exports=showseg;
-},{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
+},{"./corres_api":"C:\\ksana2015\\adarsha\\src\\corres_api.js","./dPedurma":"C:\\ksana2015\\adarsha\\src\\dPedurma.js","./defbox.jsx":"C:\\ksana2015\\adarsha\\src\\defbox.jsx","./dict_api":"C:\\ksana2015\\adarsha\\src\\dict_api.js","./hPedurma":"C:\\ksana2015\\adarsha\\src\\hPedurma.js","./jPedurma":"C:\\ksana2015\\adarsha\\src\\jPedurma.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\showtext.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
@@ -159191,7 +159175,7 @@ var showtext = React.createClass({displayName: "showtext",
   }
 });
 module.exports=showtext;
-},{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
+},{"./showseg.jsx":"C:\\ksana2015\\adarsha\\src\\showseg.jsx","./textcontrolbar.jsx":"C:\\ksana2015\\adarsha\\src\\textcontrolbar.jsx","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\tabarea.jsx":[function(require,module,exports){
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
@@ -159238,7 +159222,7 @@ var tabarea = React.createClass({displayName: "tabarea",
   }
 });
 module.exports=tabarea;
-},{"./searcharea.jsx":"/Users/yu/ksana2015/adarsha/src/searcharea.jsx","ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","ksana2015-stacktoc":"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx":[function(require,module,exports){
+},{"./searcharea.jsx":"C:\\ksana2015\\adarsha\\src\\searcharea.jsx","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","ksana2015-stacktoc":"C:\\ksana2015\\node_modules\\ksana2015-stacktoc\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\textcontrolbar.jsx":[function(require,module,exports){
 var React=require("react");
 var tibetan=require("ksana-tibetan").wylie;
 var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
@@ -159353,7 +159337,7 @@ var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
   }  
 });
 module.exports=Textcontrolbar;
-},{"ksana-tibetan":"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/configs.js":[function(require,module,exports){
+},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\configs.js":[function(require,module,exports){
 var tokenizers=require('./tokenizers');
 var normalizeTbl=null;
 var setNormalizeTable=function(tbl,obj) {
@@ -159410,7 +159394,7 @@ var tibetan1={
 	}
 }
 module.exports={"simple1":simple1,"tibetan1":tibetan1}
-},{"./tokenizers":"/Users/yu/ksana2015/node_modules/ksana-analyzer/tokenizers.js"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/index.js":[function(require,module,exports){
+},{"./tokenizers":"C:\\ksana2015\\node_modules\\ksana-analyzer\\tokenizers.js"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\index.js":[function(require,module,exports){
 /* 
   custom func for building and searching ydb
 
@@ -159448,10 +159432,11 @@ var getAPI=function(config) {
 }
 
 module.exports={getAPI:getAPI};
-},{"./configs":"/Users/yu/ksana2015/node_modules/ksana-analyzer/configs.js"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/tokenizers.js":[function(require,module,exports){
+},{"./configs":"C:\\ksana2015\\node_modules\\ksana-analyzer\\configs.js"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\tokenizers.js":[function(require,module,exports){
 var tibetan =function(s) {
 	//continuous tsheg grouped into same token
 	//shad and space grouped into same token
+	if (!s) return {tokens:[],offsets:[]};
 	var offset=0;
 	var tokens=[],offsets=[];
 	s=s.replace(/\r\n/g,'\n').replace(/\r/g,'\n');
@@ -159467,7 +159452,7 @@ var tibetan =function(s) {
 		});
 		if (last<str.length) {
 			tokens.push(str.substring(last));
-			offsets.push(last);
+			offsets.push(offset+last);
 		}
 		if (i===arr.length-1) break;
 		tokens.push('\n');
@@ -159483,6 +159468,7 @@ var isSpace=function(c) {
 var isCJK =function(c) {return ((c>=0x3000 && c<=0x9FFF) 
 || (c>=0xD800 && c<0xDC00) || (c>=0xFF00) ) ;}
 var simple1=function(s) {
+	if (!s) return {tokens:[],offsets:[]};
 	var offset=0;
 	var tokens=[],offsets=[];
 	s=s.replace(/\r\n/g,'\n').replace(/\r/g,'\n');
@@ -159602,7 +159588,7 @@ var simple=function(s) {
 	return {tokens:tokens,offsets:offsets};
 }
 module.exports={simple:simple,tibetan:tibetan};
-},{}],"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js":[function(require,module,exports){
 var indexOfSorted = function (array, obj, near) { 
   var low = 0,
   high = array.length;
@@ -159637,38 +159623,431 @@ var bsearchNear=function(array,value) {
 	return bsearch(array,value,true);
 }
 
-module.exports=bsearch;//{bsearchNear:bsearchNear,bsearch:bsearch};
-},{}],"/Users/yu/ksana2015/node_modules/ksana-database/index.js":[function(require,module,exports){
-var KDE=require("./kde");
-//currently only support node.js fs, ksanagap native fs, html5 file system
-//use socket.io to read kdb from remote server in future
-module.exports=KDE;
-},{"./kde":"/Users/yu/ksana2015/node_modules/ksana-database/kde.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/kde.js":[function(require,module,exports){
-/* Ksana Database Engine
+module.exports=bsearch;
+},{}],"C:\\ksana2015\\node_modules\\ksana-database\\index.js":[function(require,module,exports){
+module.exports=require("./kde");
+},{"./kde":"C:\\ksana2015\\node_modules\\ksana-database\\kde.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\kde.js":[function(require,module,exports){
+// Ksana Database Engine
 
-   2015/1/2 , 
-   move to ksana-database
-   simplified by removing document support and socket.io support
+//   2015/1/2 , 
+//   move to ksana-database
+//   simplified by removing document support and socket.io support
+//   2015/5/18 , add RPC support, move common method to method.js
 
-
-*/
-var pool={},localPool={};
+var localPool={};
 var apppath="";
 var bsearch=require("./bsearch");
 var Kdb=require('ksana-jsonrom');
 var kdbs=[]; //available kdb , id and absolute path
 var strsep="\uffff";
 var kdblisted=false;
-/*
-var _getSync=function(paths,opts) {
-	var out=[];
-	for (var i in paths) {
-		out.push(this.getSync(paths[i],opts));	
+
+var method=require("./method");
+
+var createLocalEngine=function(kdb,opts,cb,context) {
+	var engine={kdb:kdb, queryCache:{}, postingCache:{}, cache:{}, TOC:{} };
+	if (typeof context=="object") engine.context=context;
+	method.setup(engine);
+	//speedy native functions
+	if (kdb.fs.mergePostings) {
+		engine.mergePostings=kdb.fs.mergePostings.bind(kdb.fs);
 	}
-	return out;
+	var setPreload=function(res) {
+		engine.dbname=res[0].name;
+		//engine.customfunc=customfunc.getAPI(res[0].config);
+		engine.ready=true;
+	}
+	var preload=method.getPreloadField(opts.preload);
+	var opts={recursive:true};
+	method.gets.apply(engine,[ preload, opts,function(res){
+		setPreload(res);
+		cb.apply(engine.context,[engine]);
+	}]);
+	return engine;
 }
-*/
-var _gets=function(paths,opts,cb) { //get many data with one call
+
+
+ //TODO delete directly from kdb instance
+ //kdb.free();
+var closeLocal=function(kdbid) {
+	var engine=localPool[kdbid];
+	if (engine) {
+		engine.kdb.free();
+		delete localPool[kdbid];
+	}
+}
+
+
+var getLocalTries=function(kdbfn,cb) {
+	kdbid=kdbfn.replace('.kdb','');
+	var tries= ["./"+kdbid+".kdb"
+	           ,"../"+kdbid+".kdb"
+	];
+
+	for (var i=0;i<kdbs.length;i++) {
+		if (kdbs[i][0]==kdbid) {
+			tries.push(kdbs[i][1]);
+		}
+	}
+	return tries;;
+}
+
+var openLocalReactNative=function(kdbid,opts,cb,context) {
+
+	if (kdbid.indexOf(".kdb")==-1) kdbid+=".kdb";
+	new Kdb.open(kdbid,function(err,kdb){
+		if (err) {
+			cb.apply(context,[err]);
+		} else {
+			createLocalEngine(kdb,opts,function(engine){
+				localPool[kdbid]=engine;
+				cb.apply(context||engine.context,[0,engine]);
+			},context);
+		}
+	});
+}
+
+
+var openLocalKsanagap=function(kdbid,opts,cb,context) {
+	var kdbfn=kdbid;
+	var tries=getLocalTries(kdbfn);
+
+	for (var i=0;i<tries.length;i++) {
+		if (fs.existsSync(tries[i])) {
+			//console.log("kdb path: "+nodeRequire('path').resolve(tries[i]));
+			var kdb=new Kdb.open(tries[i],function(err,kdb){
+				if (err) {
+					cb.apply(context,[err]);
+				} else {
+					createLocalEngine(kdb,opts,function(engine){
+						localPool[kdbid]=engine;
+						cb.apply(context||engine.context,[0,engine]);
+					},context);
+				}
+			});
+			return null;
+		}
+	}
+	if (cb) cb.apply(context,[kdbid+" not found"]);
+	return null;
+
+}
+var openLocalNode=function(kdbid,opts,cb,context) {
+	var fs=require('fs');
+	var tries=getLocalTries(kdbid);
+	for (var i=0;i<tries.length;i++) {
+		if (fs.existsSync(tries[i])) {
+
+			new Kdb.open(tries[i],function(err,kdb){
+				if (err) {
+					cb.apply(context||engine.content,[err]);
+				} else {
+					createLocalEngine(kdb,opts,function(engine){
+						localPool[kdbid]=engine;
+						cb.apply(context||engine.context,[0,engine]);
+					},context);
+				}
+			});
+			return null;
+		}
+	}
+	if (cb) cb.apply(context,[kdbid+" not found"]);
+	return null;
+}
+
+var openLocalHtml5=function(kdbid,opts,cb,context) {	
+	var engine=localPool[kdbid];
+	var kdbfn=kdbid;
+	if (kdbfn.indexOf(".kdb")==-1) kdbfn+=".kdb";
+	new Kdb.open(kdbfn,function(err,handle){
+		if (err) {
+			var remoteurl=window.location.origin+window.location.pathname+kdbid;
+			if (kdbid.indexOf("/")>-1) remoteurl=window.location.origin+'/'+kdbid;
+			return kde_remote(remoteurl,opts,cb,context);
+			//cb.apply(context,[err]);
+		} else {
+			createLocalEngine(handle,opts,function(engine){
+				localPool[kdbid]=engine;
+				cb.apply(context||engine.context,[0,engine]);
+			},context);
+		}
+	});
+}
+
+var kde_remote=require("./kde_remote");
+
+//omit cb for syncronize open
+var open=function(kdbid,opts,cb,context)  {
+	if (kdbid.indexOf("http")==0) {
+		return kde_remote(kdbid,opts,cb,context);
+	}
+
+	if (typeof opts=="function") { //no opts
+		if (typeof cb=="object") context=cb;
+		cb=opts;
+		opts={};
+	}
+	
+	var engine=localPool[kdbid];
+	if (engine) {
+		if (cb) cb.apply(context||engine.context,[0,engine]);
+		return engine;
+	}
+
+	var platform=require("./platform").getPlatform();
+	if (platform=="node-webkit" || platform=="node") {
+		openLocalNode(kdbid,opts,cb,context);
+	} else if (platform=="html5" || platform=="chrome"){
+		openLocalHtml5(kdbid,opts,cb,context);		
+	} else if (platform=="react-native") {
+		openLocalReactNative(kdbid,opts,cb,context);	
+	} else {
+		openLocalKsanagap(kdbid,opts,cb,context);	
+	}
+}
+var setPath=function(path) {
+	apppath=path;
+	console.log("set path",path)
+}
+
+var enumKdb=function(cb,context){
+	require("./listkdb")(function(files){
+		kdbs=files;
+		if (cb) cb.call(context, kdbs.map(function(k){return k[0]}) );
+	});
+}
+
+var API={open:open,setPath:setPath, close:closeLocal, enumKdb:enumKdb, bsearch:bsearch,
+kdbs:kdbs};
+
+var platform=require("./platform").getPlatform();
+if (platform=="node-webkit" || platform=="node") {
+	enumKdb();
+} else {
+	API.rpc=require("./rpc_kde"); //for browser only
+}
+module.exports=API;
+},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js","./kde_remote":"C:\\ksana2015\\node_modules\\ksana-database\\kde_remote.js","./listkdb":"C:\\ksana2015\\node_modules\\ksana-database\\listkdb.js","./method":"C:\\ksana2015\\node_modules\\ksana-database\\method.js","./platform":"C:\\ksana2015\\node_modules\\ksana-database\\platform.js","./rpc_kde":"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js","fs":false,"ksana-jsonrom":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\index.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\kde_remote.js":[function(require,module,exports){
+var pool={};
+var strsep="\uffff";
+var method=require("./method");
+
+
+var getRemote=function(path,opts,cb) {
+
+	if (typeof opts==="function") {
+		cb=opts;
+		opts={};
+	}
+
+	opts=opts||{};
+	
+	var $kde=require("./rpc_kde");
+
+	var engine=this;
+	var kdbid=engine.kdb;
+	kdbid=kdbid.substr(window.location.origin.length+1).replace(".kdb","");	
+
+	if (typeof opts=="function") {
+		cb=opts;
+		opts={recursive:false};
+	}
+	opts.recursive=opts.recursive||false;
+	if (typeof path=="string") path=[path];
+
+	if (path[0] instanceof Array) { //multiple paths
+		var paths=[],output=[];
+		for (var i=0;i<path.length;i++) {
+			var cachepath=path[i].join(strsep);
+			var data=engine.cache[cachepath];
+			if (typeof data!="undefined") {
+				paths.push(null);//  place holder for LINE 28
+				output.push(data); //put cached data into output
+			} else{
+				engine.fetched++;
+				paths.push(path[i]); //need to ask server
+				output.push(null); //data is unknown yet
+			}
+		}
+		//now ask server for unknown datum
+		engine.traffic++;
+		var newopts={recursive:!!opts.recursive, address:opts.address,
+			key:paths,db:kdbid};
+		$kde.get(newopts,function(datum){
+			//merge the server result with cached 
+			for (var i=0;i<output.length;i++) {
+				if (datum[i] && paths[i]) {
+					var cachekey=paths[i].join(strsep);
+					engine.cache[cachekey]=datum[i];
+					output[i]=datum[i];
+				}
+			}
+			if (cb) cb.apply(engine.context,[output]);	
+		});
+	} else { //single path
+		var cachepath=path.join(strsep);
+		var data=engine.cache[cachepath];
+		if (typeof data!="undefined") {
+			if (cb) cb.apply(engine.context,[data]);
+			return data;//in cache , return immediately
+		} else {
+			engine.traffic++;
+			engine.fetched++;
+			var opts={key:path,recursive:!!opts.recursive,db:kdbid};
+			$kde.get(opts,function(data){
+				engine.cache[cachepath]=data;
+				if (cb) cb.apply(engine.context,[data]);	
+			});
+		}
+	}
+}
+
+var createRemoteEngine=function(kdb,opts,cb,context) {
+
+	var engine={kdb:kdb, queryCache:{}, postingCache:{}, cache:{}, TOC:{}, fetched:0, traffic:0};
+	if (typeof context=="object") engine.context=context;
+	method.setup(engine);
+	engine.get=getRemote;
+
+	var setPreload=function(res) {
+		engine.dbname=res[0].name;
+		//engine.customfunc=customfunc.getAPI(res[0].config);
+		engine.ready=true;
+	}
+	var preload=method.getPreloadField(opts.preload);
+	var opts={recursive:true};
+	method.gets.apply(engine,[ preload, opts,function(res){
+		setPreload(res);
+		cb.apply(engine.context,[engine]);
+	}]);
+	return engine;
+}
+
+var openRemote=function(kdbid,opts,cb,context) {
+	if (typeof opts=="function") {
+		cb=opts;
+		context=cb;
+		opts={};
+	}
+
+	var engine=pool[kdbid];
+	if (engine) {
+		if (cb) cb.apply(context||engine.context,[0,engine]);
+		return engine;
+	}
+	console.log("open remote",kdbid);
+
+	createRemoteEngine(kdbid,opts,function(engine){
+		pool[kdbid]=engine;
+		cb.apply(context||engine.context,[0,engine]);
+	},context);
+
+	pool[kdbid]=engine;
+}
+
+var close=function(kdbid) {
+	var engine=pool[kdbid];
+	if (engine) {
+		delete pool[kdbid];
+	}
+}
+
+module.exports=openRemote;
+},{"./method":"C:\\ksana2015\\node_modules\\ksana-database\\method.js","./rpc_kde":"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\listkdb.js":[function(require,module,exports){
+/* return array of dbid and absolute path*/
+//var html5fs=require("./html5fs");
+
+var listkdb_html5=function(cb,context) {
+	kfs.readDir(function(kdbs){
+			cb.call(this,kdbs);
+	},context||this);		
+}
+var listkdb_rpc=function() {
+	var fs=require("fs");
+	var path=require("path");
+	var dir=process.cwd();
+	var files=fs.readdirSync(dir);
+	var output=filterkdb(files,dir);
+	return output;
+}
+var filterkdb=function(files,parent){
+	var output=[];
+	var fs=require("fs");
+	var path=require("path");
+	files.map(function(f){
+		var subdir=parent+path.sep+f;
+		var stat=fs.statSync(subdir);
+		if (stat.isDirectory()) {
+			var subfiles=fs.readdirSync(subdir);
+			for (var i=0;i<subfiles.length;i++) {
+				var file=subfiles[i];
+				var idx=file.indexOf(".kdb");
+				if (idx>-1&&idx==file.length-4) {
+					var fn=subdir+path.sep+file;
+					fn=fn.replace(/\\/g,"/");
+					output.push([ file.substr(0,file.length-4), fn]);
+				}
+			}
+		}
+	});
+	return output;
+}	
+
+var listkdb_node=function(cb,context){
+	var fs=require("fs");
+	var path=require("path")
+	var parent=path.resolve(process.cwd(),"..");
+	var files=fs.readdirSync(parent);
+	var output=filterkdb(files,parent);
+
+	if (cb) cb.call(context,output);
+	return output;
+}
+var fileNameOnly=function(fn) {
+	var at=fn.lastIndexOf("/");
+	if (at>-1) return fn.substr(at+1);
+	return fn;
+}
+var listkdb_ksanagap=function(cb,context) {
+	var output=[];
+
+	var formatoutput=function(apps) {
+		for (var i=0;i<apps.length;i++) {
+			var app=apps[i];
+			if (app.files) for (var j=0;j<app.files.length;j++) {
+				var file=app.files[j];
+				if (file.substr(file.length-4)==".kdb") {
+					output.push([app.dbid,fileNameOnly(file)]);
+				}
+			}
+		};	
+		cb.call(context,output);	
+	}
+	if (kfs.listApps.length==1) {
+		formatoutput(JSON.parse(kfs.listApps()));
+	} else {
+		kfs.listApps(function(apps){
+			formatoutput(JSON.parse(apps));
+		});
+	}
+}
+var listkdb=function(cb,context) {
+	var platform=require("./platform").getPlatform();
+	var files=[];
+	if (platform=="node" || platform=="node-webkit") {
+		listkdb_node(cb,context);
+	} else if (platform=="chrome") {
+		listkdb_html5(cb,context);
+	} else {
+		listkdb_ksanagap(cb,context);
+	}
+}
+
+listkdb.sync=listkdb_rpc;
+module.exports=listkdb;
+},{"./platform":"C:\\ksana2015\\node_modules\\ksana-database\\platform.js","fs":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana-database\\method.js":[function(require,module,exports){
+var bsearch=require("./bsearch");
+var gets=function(paths,opts,cb) { //get many data with one call
 
 	if (!paths) return ;
 	if (typeof paths=='string') {
@@ -159700,6 +160079,35 @@ var _gets=function(paths,opts,cb) { //get many data with one call
 	taskqueue.shift()({__empty:true}); //run the task
 }
 
+
+var localengine_get=function(path,opts,cb,context) {
+	var engine=this;
+	if (typeof opts=="function") {
+		context=cb;
+		cb=opts;
+		opts={recursive:false};
+	}
+	if (!path) {
+		if (cb) cb.apply(context,[null]);
+		return null;
+	}
+
+	if (typeof cb!="function") {
+		return engine.kdb.get(path,opts);
+	}
+
+	if (typeof path=="string") {
+		return engine.kdb.get([path],opts,cb,context);
+	} else if (typeof path[0] =="string") {
+		return engine.kdb.get(path,opts,cb,context);
+	} else if (typeof path[0] =="object") {
+		return gets.apply(engine,[path,opts,cb,context]);
+	} else {
+		engine.kdb.get([],opts,function(data){
+			cb.apply(context,[data]);//return top level keys
+		},context);
+	}
+};	
 var getFileRange=function(i) {
 	var engine=this;
 
@@ -159722,22 +160130,11 @@ var getFileRange=function(i) {
 	//if (segOffsets[start]==fileStart) start--;
 	
 	//work around for jiangkangyur
-	while (segNames[start+1]=="_") start++;
+	//while (segNames[start+1]=="_") start++;
 
   //if (i==0) start=0; //work around for first file
 	var end=bsearch(segoffsets,fileend,true);
 	return {start:start,end:end};
-}
-
-var myAbsSegToFileSeg=function(absoluteseg) {
-	var filesegcount=this.get("filesegcount");
-	var s=absoluteseg;
-	var file=0 ,f=0;	
-	while(s>=filesegcount[file]) {file++}
-	if(file!=0) {
-		var seg=s-filesegcount[file-1];
-		return {file:file,seg: seg};
-	} else return {file:0,seg:absoluteseg};
 }
 
 var absSegToFileSeg=function(absoluteseg) {
@@ -159745,37 +160142,61 @@ var absSegToFileSeg=function(absoluteseg) {
 	var s=absoluteseg;
 	var file=0;
 	while (s>filesegcount[file]) {
-		s-=filesegcount[file];
 		file++;
 	}
+	s=Math.abs(filesegcount[file-1]-s);
 	return {file:file,seg:s};
 }
 
 var fileSegToAbsSeg=function(file,seg) {
 	if (file==0)return seg;
-	return this.get("filesegcount")[file]+(seg);
+	return this.get("filesegcount")[file-1]+(seg);
 }
-/*
-var vposToFileSeg=function(engine,vpos) {
-    var segoffsets=engine.get("segoffsets");
-    var fileoffsets=engine.get(["fileoffsets"]);
-    var segnames=engine.get("segnames");
-    var fileid=bsearch(fileoffsets,vpos+1,true);
-    fileid--;
-    var segid=bsearch(segoffsets,vpos+1,true);
-	var range=engine.getFileRange(fileid);
-	segid-=range.start;
-    return {file:fileid,seg:segid};
+
+//var vposToFileSeg=function(engine,vpos) {
+//    var segoffsets=engine.get("segoffsets");
+//    var fileoffsets=engine.get(["fileoffsets"]);
+//    var segnames=engine.get("segnames");
+//    var fileid=bsearch(fileoffsets,vpos+1,true);
+//    fileid--;
+//    var segid=bsearch(segoffsets,vpos+1,true);
+//	var range=engine.getFileRange(fileid);
+//	segid-=range.start;
+//    return {file:fileid,seg:segid};
+//}
+var indexOfSorted_str = function (array, obj, near) { 
+  var low = 0,
+  high = array.length;
+  while (low < high) {
+    var mid = (low + high) >> 1;
+    if (array[mid]==obj) return mid;
+    (array[mid].localeCompare(obj)<0) ? low = mid + 1 : high = mid;
+  }
+  if (near) return low;
+  else if (array[low]==obj) return low;else return -1;
+};
+var searchSeg=function(segname,near) {
+	var i=bsearch(this.get("segnames"),segname,near);
+	if (i>-1) {
+		var fileseg=absSegToFileSeg.apply(this,[i]);
+		return {file:fileseg.file,seg:fileseg.seg,absseg:i};
+	}
+	return null;
 }
-*/
+
 //return array of object of nfile nseg given segname
-var findSeg=function(segname) {
+var findSeg=function(segname,max) {
+	meta=this.get("meta");
+	if (meta.sortedSegNames) {
+		return findSeg_sorted(segname);
+	}
 	var segnames=this.get("segnames");
 	var out=[];
 	for (var i=0;i<segnames.length;i++) {
 		if (segnames[i]==segname) {
 			var fileseg=absSegToFileSeg.apply(this,[i]);
 			out.push({file:fileseg.file,seg:fileseg.seg,absseg:i});
+			if (out.length>=max) break;
 		}
 	}
 	return out;
@@ -159796,8 +160217,6 @@ var getFileSegOffsets=function(i) {
 	} else {
 		return segoffsets.slice(range.start,range.end+1);	
 	}
-	
-
 }
 var absSegFromVpos=function(vpos) { 
 	var segoffsets=this.get(["segoffsets"]);
@@ -159808,11 +160227,11 @@ var absSegFromVpos=function(vpos) {
 
 var fileSegFromVpos=function(vpos) { 
 	var seg=absSegFromVpos.call(this,vpos);
-	return myAbsSegToFileSeg.call(this,seg);//it was absSegToFileSeg
+	return absSegToFileSeg.call(this,seg);
 }
 var fileSegToVpos=function(f,s) {
 	var segoffsets=this.get(["segoffsets"]);
-	var seg=fileSegToAbsSeg(f,s);
+	var seg=fileSegToAbsSeg.call(this,f,s);
 	return segoffsets[seg-1];
 }
 
@@ -159821,34 +160240,6 @@ var getFileSegNames=function(i) {
 	var segnames=this.get("segnames");
 	return segnames.slice(range.start,range.end+1);
 }
-var localengine_get=function(path,opts,cb,context) {
-	var engine=this;
-	if (typeof opts=="function") {
-		context=cb;
-		cb=opts;
-		opts={recursive:false};
-	}
-	if (!path) {
-		if (cb) cb.apply(context,[null]);
-		return null;
-	}
-
-	if (typeof cb!="function") {
-		return engine.kdb.get(path,opts);
-	}
-
-	if (typeof path=="string") {
-		return engine.kdb.get([path],opts,cb,context);
-	} else if (typeof path[0] =="string") {
-		return engine.kdb.get(path,opts,cb,context);
-	} else if (typeof path[0] =="object") {
-		return _gets.apply(engine,[path,opts,cb,context]);
-	} else {
-		engine.kdb.get([],opts,function(data){
-			cb.apply(context,[data]);//return top level keys
-		},context);
-	}
-};	
 
 var getPreloadField=function(user) {
 	var preload=[["meta"],["filenames"],["fileoffsets"],["segnames"],["segoffsets"],["filesegcount"]];
@@ -159862,54 +160253,7 @@ var getPreloadField=function(user) {
 	}
 	return preload;
 }
-var createLocalEngine=function(kdb,opts,cb,context) {
-	var engine={kdb:kdb, queryCache:{}, postingCache:{}, cache:{}};
 
-	if (typeof context=="object") engine.context=context;
-	engine.get=localengine_get;
-
-	engine.segOffset=segOffset;
-	engine.fileOffset=fileOffset;
-	engine.folderOffset=folderOffset;
-	engine.getFileSegNames=getFileSegNames;
-	engine.getFileSegOffsets=getFileSegOffsets;
-	engine.getFileRange=getFileRange;
-	engine.findSeg=findSeg;
-	engine.findFile=findFile;
-	engine.absSegToFileSeg=absSegToFileSeg;
-	engine.fileSegToAbsSeg=fileSegToAbsSeg;
-	engine.fileSegFromVpos=fileSegFromVpos;
-	engine.absSegFromVpos=absSegFromVpos;
-	engine.fileSegToVpos=fileSegToVpos;
-	
-	//engine.fileSegToVpos=fileSegToVpos;
-	//engine.vposToFileSeg=vposToFileSeg;
-	//only local engine allow getSync
-	//if (kdb.fs.getSync) engine.getSync=engine.kdb.getSync;
-	
-	//speedy native functions
-	if (kdb.fs.mergePostings) {
-		engine.mergePostings=kdb.fs.mergePostings.bind(kdb.fs);
-	}
-	
-	var setPreload=function(res) {
-		engine.dbname=res[0].name;
-		//engine.customfunc=customfunc.getAPI(res[0].config);
-		engine.ready=true;
-	}
-
-	var preload=getPreloadField(opts.preload);
-	var opts={recursive:true};
-	//if (typeof cb=="function") {
-		_gets.apply(engine,[ preload, opts,function(res){
-			setPreload(res);
-			cb.apply(engine.context,[engine]);
-		}]);
-	//} else {
-	//	setPreload(_getSync.apply(engine,[preload,opts]));
-	//}
-	return engine;
-}
 
 var segOffset=function(segname) {
 	var engine=this;
@@ -159943,219 +160287,156 @@ var folderOffset=function(folder) {
 	}
 	return {start:start,end:end};
 }
-
- //TODO delete directly from kdb instance
- //kdb.free();
-var closeLocal=function(kdbid) {
-	var engine=localPool[kdbid];
-	if (engine) {
-		engine.kdb.free();
-		delete localPool[kdbid];
-	}
-}
-var close=function(kdbid) {
-	var engine=pool[kdbid];
-	if (engine) {
-		engine.kdb.free();
-		delete pool[kdbid];
-	}
-}
-
-var getLocalTries=function(kdbfn) {
-	if (!kdblisted) {
-		kdbs=require("./listkdb")();
-		kdblisted=true;
-	}
-
-	var kdbid=kdbfn.replace('.kdb','');
-	var tries= ["./"+kdbid+".kdb"
-	           ,"../"+kdbid+".kdb"
-	];
-
-	for (var i=0;i<kdbs.length;i++) {
-		if (kdbs[i][0]==kdbid) {
-			tries.push(kdbs[i][1]);
-		}
-	}
-	return tries;
-}
-var openLocalKsanagap=function(kdbid,opts,cb,context) {
-	var kdbfn=kdbid;
-	var tries=getLocalTries(kdbfn);
-
-	for (var i=0;i<tries.length;i++) {
-		if (fs.existsSync(tries[i])) {
-			//console.log("kdb path: "+nodeRequire('path').resolve(tries[i]));
-			var kdb=new Kdb.open(tries[i],function(err,kdb){
-				if (err) {
-					cb.apply(context,[err]);
-				} else {
-					createLocalEngine(kdb,opts,function(engine){
-						localPool[kdbid]=engine;
-						cb.apply(context||engine.context,[0,engine]);
-					},context);
-				}
-			});
-			return null;
-		}
-	}
-	if (cb) cb.apply(context,[kdbid+" not found"]);
-	return null;
-
-}
-var openLocalNode=function(kdbid,opts,cb,context) {
-	var fs=require('fs');
-	var tries=getLocalTries(kdbid);
-
-	for (var i=0;i<tries.length;i++) {
-		if (fs.existsSync(tries[i])) {
-
-			new Kdb.open(tries[i],function(err,kdb){
-				if (err) {
-					cb.apply(context||engine.content,[err]);
-				} else {
-					createLocalEngine(kdb,opts,function(engine){
-							localPool[kdbid]=engine;
-							cb.apply(context||engine.context,[0,engine]);
-					},context);
-				}
-			});
-			return null;
-		}
-	}
-	if (cb) cb.apply(context,[kdbid+" not found"]);
-	return null;
-}
-
-var openLocalHtml5=function(kdbid,opts,cb,context) {	
-	var engine=localPool[kdbid];
-	var kdbfn=kdbid;
-	if (kdbfn.indexOf(".kdb")==-1) kdbfn+=".kdb";
-	new Kdb.open(kdbfn,function(err,handle){
-		if (err) {
-			cb.apply(context,[err]);
-		} else {
-			createLocalEngine(handle,opts,function(engine){
-				localPool[kdbid]=engine;
-				cb.apply(context||engine.context,[0,engine]);
-			},context);
-		}
+var getTOCNames=function(cb,context) {
+	//need to have a new fields to record TOCs
+	var out=[];
+	engine.get(["fields"],{recursive:false},function(data){
+		if (data.mulu) out.push("mulu");
+			cb(out,context);
 	});
 }
-//omit cb for syncronize open
-var openLocal=function(kdbid,opts,cb,context)  {
-	if (typeof opts=="function") { //no opts
-		if (typeof cb=="object") context=cb;
-		cb=opts;
-		opts={};
+var getTOC=function(opts,cb,context) {
+	var engine=this;
+	opts=opts||{};
+	var tocname=opts.tocname;
+	var rootname=opts.rootname||opts.tocname;
+	if (!tocname) return;
+
+	var toc=engine.TOC[tocname];
+	if (toc) {
+		cb.call(context,toc);
+		return toc;
 	}
 
-	var engine=localPool[kdbid];
-	if (engine) {
-		if (cb) cb.apply(context||engine.context,[0,engine]);
-		return engine;
-	}
+	var keys=[["fields",tocname],["fields",tocname+"_depth"],["fields",tocname+"_voff"]];
+	engine.get(keys,{recursive:true},function(){
+	  var texts=engine.get(["fields",tocname]);
+	  var depths=engine.get(["fields",tocname+"_depth"]);
+	  var voffs=engine.get(["fields",tocname+"_voff"]);
 
-	var platform=require("./platform").getPlatform();
-	if (platform=="node-webkit" || platform=="node") {
-		openLocalNode(kdbid,opts,cb,context);
-	} else if (platform=="html5" || platform=="chrome"){
-		openLocalHtml5(kdbid,opts,cb,context);		
-	} else {
-		openLocalKsanagap(kdbid,opts,cb,context);	
-	}
-}
-var setPath=function(path) {
-	apppath=path;
-	console.log("set path",path)
+	  var out=[{d:0,t:rootname}];
+	  if (texts) for (var i=0;i<texts.length;i++) {
+	      out.push({t:texts[i],d:depths[i], vpos:voffs[i]});
+	  }
+
+	  engine.TOC[tocname]=out;
+	  cb.call(context,out);
+	  return out; 		
+	});
 }
 
-var enumKdb=function(cb,context){
-	if (kdbs.length) return kdbs.map(function(k){return k[0]});
-
-	if (!kdblisted) {
-		require("./listkdb")(function(files){
-			kdbs=files;
-			cb.call(context, kdbs.map(function(k){return k[0]}) );
-		});
-		kdblisted=true;
-	}
+var setup=function(engine) {
+	engine.get=localengine_get;
+	engine.segOffset=segOffset;
+	engine.fileOffset=fileOffset;
+	engine.folderOffset=folderOffset;
+	engine.getFileSegNames=getFileSegNames;
+	engine.getFileSegOffsets=getFileSegOffsets;
+	engine.getFileRange=getFileRange;
+	engine.findSeg=findSeg;
+	engine.searchSeg=searchSeg;
+	engine.findFile=findFile;
+	engine.absSegToFileSeg=absSegToFileSeg;
+	engine.fileSegToAbsSeg=fileSegToAbsSeg;
+	engine.fileSegFromVpos=fileSegFromVpos;
+	engine.absSegFromVpos=absSegFromVpos;
+	engine.fileSegToVpos=fileSegToVpos;
+	engine.getTOC=getTOC;
+	engine.getTOCNames=getTOCNames;
 }
 
-module.exports={open:openLocal,setPath:setPath, close:closeLocal, enumKdb:enumKdb, bsearch:bsearch};
-},{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js","./listkdb":"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js","./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"ksana-jsonrom":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js":[function(require,module,exports){
-/* return array of dbid and absolute path*/
-var listkdb_html5=function(cb,context) {
-	ksana.runtime.html5fs.readdir(function(kdbs){
-			cb.apply(this,[kdbs]);
-	},context||this);		
-}
-
-var listkdb_node=function(){
-	var fs=require("fs");
-	var path=require("path")
-	var parent=path.resolve(process.cwd(),"..");
-	var files=fs.readdirSync(parent);
-	var output=[];
-	files.map(function(f){
-		var subdir=parent+path.sep+f;
-		var stat=fs.statSync(subdir );
-		if (stat.isDirectory()) {
-			var subfiles=fs.readdirSync(subdir);
-			for (var i=0;i<subfiles.length;i++) {
-				var file=subfiles[i];
-				var idx=file.indexOf(".kdb");
-				if (idx>-1&&idx==file.length-4) {
-					output.push([ file.substr(0,file.length-4), subdir+path.sep+file]);
-				}
-			}
-		}
-	})
-	return output;
-}
-var fileNameOnly=function(fn) {
-	var at=fn.lastIndexOf("/");
-	if (at>-1) return fn.substr(at+1);
-	return fn;
-}
-var listkdb_ksanagap=function() {
-	var output=[];
-	var apps=JSON.parse(kfs.listApps());
-	for (var i=0;i<apps.length;i++) {
-		var app=apps[i];
-		if (app.files) for (var j=0;j<app.files.length;j++) {
-			var file=app.files[j];
-			if (file.substr(file.length-4)==".kdb") {
-				output.push([app.dbid,fileNameOnly(file)]);
-			}
-		}
-	};
-	return output;
-}
-var listkdb=function(cb,context) {
-	var platform=require("./platform").getPlatform();
-	var files=[];
-	if (platform=="node" || platform=="node-webkit") {
-		files=listkdb_node();
-	} else if (platform=="chrome") {
-		files=listkdb_html5(cb,context);
-	} else {
-		files=listkdb_ksanagap();
-	}
-	return files;
-}
-module.exports=listkdb;
-},{"./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana-database/platform.js":[function(require,module,exports){
+module.exports={setup:setup,getPreloadField:getPreloadField,gets:gets};
+},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\platform.js":[function(require,module,exports){
 var getPlatform=function() {
 	if (typeof ksanagap=="undefined") {
-		platform="node";
+		try {
+			require("react-native");
+			platform="react-native";
+		} catch (e) {
+			if (typeof process=="undefined") {
+				platform="chrome";
+			} else {
+				platform="node";		
+			}
+		}
 	} else {
 		platform=ksanagap.platform;
 	}
 	return platform;
 }
 module.exports={getPlatform:getPlatform};
-},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/html5read.js":[function(require,module,exports){
+},{"react-native":"react-native"}],"C:\\ksana2015\\node_modules\\ksana-database\\rpc.js":[function(require,module,exports){
+/*
+	this is for browser, a simple wrapper for socket.io rpc
+	
+	for each call to server, create a unique id
+	when server return, get the slot by unique id, and invoke callbacks.
+*/
+function GUID () {
+  var S4 = function ()    {    return Math.floor(        Math.random() * 0x10000  ).toString(16);  };
+  return (   S4() + S4() + "-" + S4() + "-" +  S4() + "-" + S4() + "-" +S4() + S4() + S4()    );
+}
+
+var RPCs={}; //*  key: unique calling id  */
+
+var socket = io.connect(window.location.host);
+
+var returnfromserver=function(res) {
+	var slot=RPCs[res.fid];
+	
+	if (!slot) {
+		throw "invalid fid "+res.fid;
+		return;
+	}
+	
+	if (res.success) {
+		if (slot.successCB)  slot.successCB(res.err,res.response);
+	} else {
+		if (slot.errorCB)  slot.errorCB(res.err,res.response);
+	}
+	delete RPCs[res.fid]; //drop the slot
+}
+
+var pchost={
+	exec: function(successCB, errorCB, service, action, params) {
+		var fid=GUID();
+		//create a slot to hold
+		var slot={  fid:fid, successCB:successCB, errorCB:errorCB ,params:params, action:action, service:service};
+		RPCs[fid]=slot;
+		socket.emit('rpc',  { service: service, action:action, params: params , fid:fid });
+	}
+}
+
+socket.on( 'rpc', returnfromserver );	 
+window.host=pchost;
+module.exports=pchost;
+},{}],"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js":[function(require,module,exports){
+var host=require("./rpc");
+
+var makeinf=function(name) {
+	return (
+		function(opts,callback) {
+			host.exec(callback,0,"kde",name,opts);
+		});
+}
+
+var API={};
+//TODO , create a cache object on client side to save network trafic on
+//same getRaw
+API.get=makeinf("get");
+API.list=makeinf("list");
+
+//API.closeAll=makeinf("closeAll");
+//exports.version='0.0.13'; //this is a quick hack
+
+host.exec(function(err,data){
+	//console.log('version',err,data)
+	exports.version=data;
+},0,"kde","version",{});
+
+
+module.exports=API;
+},{"./rpc":"C:\\ksana2015\\node_modules\\ksana-database\\rpc.js"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\html5read.js":[function(require,module,exports){
 
 /* emulate filesystem on html5 browser */
 /* emulate filesystem on html5 browser */
@@ -160247,12 +160528,12 @@ var API={
 	,fstat:fstat
 }
 module.exports=API;
-},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\index.js":[function(require,module,exports){
 module.exports={
 	open:require("./kdb")
 }
 
-},{"./kdb":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js":[function(require,module,exports){
+},{"./kdb":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdb.js"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdb.js":[function(require,module,exports){
 /*
 	KDB version 3.0 GPL
 	yapcheahshen@gmail.com
@@ -160269,7 +160550,12 @@ module.exports={
 var Kfs=null;
 
 if (typeof ksanagap=="undefined") {
-	Kfs=require('./kdbfs');			
+	try {
+		require("react-native");
+		Kfs=require("./kdbfs_ios");
+	} catch(e) {
+		Kfs=require('./kdbfs');	
+	}			
 } else {
 	if (ksanagap.platform=="ios") {
 		Kfs=require("./kdbfs_ios");
@@ -160761,7 +161047,7 @@ Create.datatypes=DT;
 if (module) module.exports=Create;
 //return Create;
 
-},{"./kdbfs":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs.js","./kdbfs_android":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_android.js","./kdbfs_ios":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_ios.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs.js":[function(require,module,exports){
+},{"./kdbfs":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs.js","./kdbfs_android":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_android.js","./kdbfs_ios":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_ios.js","react-native":"react-native"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs.js":[function(require,module,exports){
 /* node.js and html5 file system abstraction layer*/
 try {
 	var fs=require("fs");
@@ -160864,7 +161150,7 @@ var Open=function(path,opts,cb) {
 		});
 	}
 
-	//work around for chrome fromCharCode cannot accept huge array
+	//work around for chrome fromCharCode cannot accept huge zarray
 	//https://code.google.com/p/chromium/issues/detail?id=56588
 	var buf2stringarr=function(buf,enc) {
 		if (enc=="utf8") 	var arr=new Uint8Array(buf);
@@ -160889,6 +161175,7 @@ var Open=function(path,opts,cb) {
 		return out;
 	}
 	var readStringArray = function(pos,blocksize,encoding,cb) {
+		//console.log("blocksize of string array",blocksize);
 		var that=this,out=null;
 		if (blocksize==0) return [];
 		encoding=encoding||'utf8';
@@ -161036,6 +161323,7 @@ var Open=function(path,opts,cb) {
 		this.readStringArray=readStringArray;
 		this.signature_size=signature_size;
 		this.free=free;
+
 		if (html5fs) {
 			var fn=path;
 			if (path.indexOf("filesystem:")==0) fn=path.substr(path.lastIndexOf("/"));
@@ -161078,7 +161366,7 @@ var Open=function(path,opts,cb) {
 	return this;
 }
 module.exports=Open;
-},{"./html5read":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/html5read.js","buffer":false,"fs":false}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_android.js":[function(require,module,exports){
+},{"./html5read":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\html5read.js","buffer":false,"fs":false}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_android.js":[function(require,module,exports){
 /*
   JAVA can only return Number and String
 	array and buffer return in string format
@@ -161157,8 +161445,8 @@ var readStringArray = function(pos,blocksize,encoding,cb) {
 }
 var mergePostings=function(positions,cb) {
 	var buf=kfs.mergePostings(this.handle,JSON.stringify(positions));
-	if (!buf || buf.length==0) return [];
-	else return JSON.parse(buf);
+	if (!buf || buf.length==0) return cb([]);
+	else return cb(JSON.parse(buf));
 }
 
 var free=function() {
@@ -161193,90 +161481,182 @@ var Open=function(path,opts,cb) {
 }
 
 module.exports=Open;
-},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_ios.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_ios.js":[function(require,module,exports){
 /*
   JSContext can return all Javascript types.
 */
-var verbose=1;
+var verbose=0,async=!!kfs.async;
 
 var readSignature=function(pos,cb) {
 	if (verbose)  ksanagap.log("read signature at "+pos);
-	var signature=kfs.readUTF8String(this.handle,pos,1);
-	if (verbose)  ksanagap.log(signature+" "+signature.charCodeAt(0));
-	cb.apply(this,[signature]);
+	if (async) {
+		var that=this;
+		kfs.readUTF8String(this.handle,pos,1,function(signature){
+			cb.call(that,signature);
+		});
+	} else {
+		
+		var signature=kfs.readUTF8String(this.handle,pos,1);
+		if (verbose)  ksanagap.log(signature+" "+signature.charCodeAt(0));
+		cb.apply(this,[signature]);
+	}
 }
 var readI32=function(pos,cb) {
-	if (verbose)  ksanagap.log("read i32 at "+pos);
-	var i32=kfs.readInt32(this.handle,pos);
-	if (verbose)  ksanagap.log(i32);
-	cb.apply(this,[i32]);	
+	if (async) {
+		var that=this;
+		kfs.readInt32(this.handle,pos,function(i32){
+			cb.call(that,i32);
+		});
+	} else {	
+		if (verbose)  ksanagap.log("read i32 at "+pos);
+		var i32=kfs.readInt32(this.handle,pos);
+		if (verbose)  ksanagap.log(i32);
+		cb.apply(this,[i32]);	
+	}
 }
 var readUI32=function(pos,cb) {
-	if (verbose)  ksanagap.log("read ui32 at "+pos);
-	var ui32=kfs.readUInt32(this.handle,pos);
-	if (verbose)  ksanagap.log(ui32);
-	cb.apply(this,[ui32]);
+	if (async) {
+		var that=this;
+		kfs.readUInt32(this.handle,pos,function(ui32){
+			cb.call(that,ui32);
+		});
+	} else {	
+		if (verbose)  ksanagap.log("read ui32 at "+pos);
+		var ui32=kfs.readUInt32(this.handle,pos);
+		if (verbose)  ksanagap.log(ui32);
+		cb.apply(this,[ui32]);
+	}
 }
 var readUI8=function(pos,cb) {
-	if (verbose)  ksanagap.log("read ui8 at "+pos); 
-	var ui8=kfs.readUInt8(this.handle,pos);
-	if (verbose)  ksanagap.log(ui8);
-	cb.apply(this,[ui8]);
+	if (async) {
+		var that=this;
+		kfs.readUInt8(this.handle,pos,function(ui8){
+			cb.call(that,ui8);
+		});
+	} else {
+		if (verbose)  ksanagap.log("read ui8 at "+pos); 
+		var ui8=kfs.readUInt8(this.handle,pos);
+		if (verbose)  ksanagap.log(ui8);
+		cb.apply(this,[ui8]);
+	}
 }
 var readBuf=function(pos,blocksize,cb) {
-	if (verbose)  ksanagap.log("read buffer at "+pos);
-	var buf=kfs.readBuf(this.handle,pos,blocksize);
-	if (verbose)  ksanagap.log("buffer length"+buf.length);
-	cb.apply(this,[buf]);	
+	if (async) {
+		var that=this;
+		kfs.readBuf(this.handle,pos,blocksize,function(buf){
+			cb.call(that,buf);
+		});
+	} else {
+
+		if (verbose)  ksanagap.log("read buffer at "+pos);
+		var buf=kfs.readBuf(this.handle,pos,blocksize);
+		if (verbose)  ksanagap.log("buffer length"+buf.length);
+		cb.apply(this,[buf]);	
+	}
 }
 var readBuf_packedint=function(pos,blocksize,count,reset,cb) {
-	if (verbose)  ksanagap.log("read packed int fast, blocksize "+blocksize+" at "+pos);var t=new Date();
-	var buf=kfs.readBuf_packedint(this.handle,pos,blocksize,count,reset);
-	if (verbose)  ksanagap.log("return from packedint, time" + (new Date()-t));
-	if (typeof buf.data=="string") {
-		buf.data=eval("["+buf.data.substr(0,buf.data.length-1)+"]");
+	if (async) {
+		var that=this;
+		kfs.readBuf_packedint(this.handle,pos,blocksize,count,reset,function(buf){
+			if (typeof buf.data=="string") {
+				buf.data=eval("["+buf.data.substr(0,buf.data.length-1)+"]");
+			}			
+			cb.call(that,buf);
+		});
+	} else {
+
+		if (verbose)  ksanagap.log("read packed int fast, blocksize "+blocksize+" at "+pos);var t=new Date();
+		var buf=kfs.readBuf_packedint(this.handle,pos,blocksize,count,reset);
+		if (verbose)  ksanagap.log("return from packedint, time" + (new Date()-t));
+		if (typeof buf.data=="string") {
+			buf.data=eval("["+buf.data.substr(0,buf.data.length-1)+"]");
+		}
+		if (verbose)  ksanagap.log("unpacked length"+buf.data.length+" time" + (new Date()-t) );
+		cb.apply(this,[buf]);
 	}
-	if (verbose)  ksanagap.log("unpacked length"+buf.data.length+" time" + (new Date()-t) );
-	cb.apply(this,[buf]);
 }
 
 
 var readString= function(pos,blocksize,encoding,cb) {
-
 	if (verbose)  ksanagap.log("readstring at "+pos+" blocksize "+blocksize+" "+encoding);var t=new Date();
 	if (encoding=="ucs2") {
-		var str=kfs.readULE16String(this.handle,pos,blocksize);
+		if (async) {
+			var that=this;
+			kfs.readULE16String(this.handle,pos,blocksize,function(str){
+				cb.call(that,str);
+			});
+			return;
+		} else {
+			var str=kfs.readULE16String(this.handle,pos,blocksize);
+		}
+		
 	} else {
-		var str=kfs.readUTF8String(this.handle,pos,blocksize);	
+		if (async) {
+			var that=this;
+			kfs.readUTF8String(this.handle,pos,blocksize,function(str){
+				cb.call(that,str);
+			});
+			return;	
+		} else {
+			var str=kfs.readUTF8String(this.handle,pos,blocksize);	
+		}
 	}
 	if (verbose)  ksanagap.log(str+" time"+(new Date()-t));
 	cb.apply(this,[str]);	
 }
 
 var readFixedArray = function(pos ,count, unitsize,cb) {
-	if (verbose)  ksanagap.log("read fixed array at "+pos); var t=new Date();
-	var buf=kfs.readFixedArray(this.handle,pos,count,unitsize);
-	if (verbose)  ksanagap.log("array length "+buf.length+" time"+(new Date()-t));
-	cb.apply(this,[buf]);	
+	if (async) {
+		var that=this;
+		kfs.readFixedArray(this.handle,pos,count,unitsize,function(buf){
+			cb.call(that,buf);
+		});
+	} else {
+
+		if (verbose)  ksanagap.log("read fixed array at "+pos); var t=new Date();
+		var buf=kfs.readFixedArray(this.handle,pos,count,unitsize);
+		if (verbose)  ksanagap.log("array length "+buf.length+" time"+(new Date()-t));
+		cb.apply(this,[buf]);		
+	}
+
 }
 var readStringArray = function(pos,blocksize,encoding,cb) {
 	//if (verbose)  ksanagap.log("read String array "+blocksize +" "+encoding); 
 	encoding = encoding||"utf8";
-	if (verbose)  ksanagap.log("read string array at "+pos);var t=new Date();
-	var buf=kfs.readStringArray(this.handle,pos,blocksize,encoding);
-	if (typeof buf=="string") buf=buf.split("\0");
-	//var buff=JSON.parse(buf);
-	//var buff=buf.split("\uffff"); //cannot return string with 0
-	if (verbose)  ksanagap.log("string array length"+buf.length+" time"+(new Date()-t));
-	cb.apply(this,[buf]);
+
+	if (async) {
+		var that=this;
+		kfs.readStringArray(this.handle,pos,blocksize,encoding,function(buf){
+			if (typeof buf=="string") buf=buf.split("\0");
+			cb.call(that,buf);
+		});
+	} else {
+		if (verbose)  ksanagap.log("read string array at "+pos);var t=new Date();
+		var buf=kfs.readStringArray(this.handle,pos,blocksize,encoding);
+		if (typeof buf=="string") buf=buf.split("\0");
+		//var buff=JSON.parse(buf);
+		//var buff=buf.split("\uffff"); //cannot return string with 0
+		if (verbose)  ksanagap.log("string array length"+buf.length+" time"+(new Date()-t));
+		cb.apply(this,[buf]);
+	}
 }
 
-var mergePostings=function(positions) {
-	var buf=kfs.mergePostings(this.handle,positions);
-	if (typeof buf=="string") {
-		buf=eval("["+buf.substr(0,buf.length-1)+"]");
-	}
-	return buf;
+var mergePostings=function(positions,cb) {
+	if (kfs.async) {
+		kfs.mergePostings(this.handle,positions,function(buf){
+			if (typeof buf=="string") {
+				buf=eval("["+buf.substr(0,buf.length-1)+"]");
+			}
+			cb(buf);
+		});
+	} else {
+		var buf=kfs.mergePostings(this.handle,positions,cb);
+		if (typeof buf=="string") {
+			buf=eval("["+buf.substr(0,buf.length-1)+"]");
+		}
+		cb(buf);
+	}		
+	
 }
 var free=function() {
 	////if (verbose)  ksanagap.log('closing ',handle);
@@ -161298,19 +161678,36 @@ var Open=function(path,opts,cb) {
 		this.signature_size=signature_size;
 		this.mergePostings=mergePostings;
 		this.free=free;
-		this.size=kfs.getFileSize(this.handle);
-		if (verbose)  ksanagap.log("filesize  "+this.size);
-		if (cb)	cb.call(this);
+		if (kfs.getFileSize.length==1) {
+			this.size=kfs.getFileSize(this.handle);
+			if (cb)	cb.call(this);	
+		} else {
+			var that=this;
+			kfs.getFileSize(this.handle,function(size){
+				that.size=size;
+				if (cb)	cb.call(that);
+			});
+		}		
 	}
 
-	this.handle=kfs.open(path);
-	this.opened=true;
-	setupapi.call(this);
-	return this;
+	if (kfs.open.length==1) {
+		this.handle=kfs.open(path);
+		this.opened=true;
+		setupapi.call(this);
+		return this;		
+	} else { //react-native
+		var that=this;
+		this.async=true;
+		kfs.open(path,function(handle){
+			that.opened=true;
+			that.handle=handle;
+			setupapi.call(that);
+		});
+	}
 }
 
 module.exports=Open;
-},{}],"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana-search\\boolsearch.js":[function(require,module,exports){
 /*
   TODO
   and not
@@ -161405,7 +161802,7 @@ var boolSearch=function(opts) {
 	return this;
 }
 module.exports={search:boolSearch}
-},{"./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/bsearch.js":[function(require,module,exports){
+},{"./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\bsearch.js":[function(require,module,exports){
 var indexOfSorted = function (array, obj, near) { 
   var low = 0,
   high = array.length;
@@ -161439,8 +161836,8 @@ var bsearchNear=function(array,value) {
 	return bsearch(array,value,true);
 }
 
-module.exports=bsearch;//{bsearchNear:bsearchNear,bsearch:bsearch};
-},{}],"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js":[function(require,module,exports){
+module.exports=bsearch;
+},{}],"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js":[function(require,module,exports){
 var plist=require("./plist");
 
 var getPhraseWidths=function (Q,phraseid,vposs) {
@@ -161483,7 +161880,7 @@ var hitInRange=function(Q,startvpos,endvpos) {
 		if (!P.posting) continue;
 		var s=plist.indexOfSorted(P.posting,startvpos);
 		var e=plist.indexOfSorted(P.posting,endvpos);
-		var r=P.posting.slice(s,e+1);
+		var r=P.posting.slice(s,e);
 		var width=getPhraseWidths(Q,i,r);
 
 		res=res.concat(r.map(function(vpos,idx){ return [vpos,width[idx],i] }));
@@ -161586,6 +161983,28 @@ var getFileWithHits=function(engine,Q,range) {
 	}
 	return fileWithHits;
 }
+var calculateRealPos=function(Q,vpos,text,hits) {
+	var out=[];
+	var tokens=Q.tokenize(text).tokens;
+	var i=0,j=0,end=0;
+	var hitstart=0,hitend=0,textnow=0;
+	while (i<tokens.length) {
+		var skip=Q.isSkip(tokens[i]);
+		if (!skip && j<hits.length && vpos===hits[j][0]) {
+			out.push([textnow,0,hits[j][2]]);
+			end=vpos+hits[j][1];
+			j++;
+		}
+		if (vpos==end && out.length) {
+			var start=out[out.length-1][0];
+			out[out.length-1][1]=textnow-start;
+		}
+		textnow+=tokens[i].length;
+		if (!skip) vpos++;
+		i++;
+	}
+	return out;
+}
 var resultlist=function(engine,Q,opts,cb) {
 	var output=[];
 	if (!Q.rawresult || !Q.rawresult.length) {
@@ -161647,6 +162066,7 @@ var resultlist=function(engine,Q,opts,cb) {
 			if (opts.nohighlight) {
 				hl.text=segs[i];
 				hl.hits=hitInRange(Q,startvpos,endvpos);
+				hl.realHits=calculateRealPos(Q,startvpos,hl.text,hl.hits);
 			} else {
 				var o={nocrlf:true,nospan:true,
 					text:segs[i],startvpos:startvpos, endvpos: endvpos, 
@@ -161656,6 +162076,7 @@ var resultlist=function(engine,Q,opts,cb) {
 			if (hl.text) {
 				output[i].text=hl.text;
 				output[i].hits=hl.hits;
+				output[i].realHits=hl.realHits;
 				output[i].seq=seq;
 				seq+=hl.hits.length;
 
@@ -161894,13 +162315,12 @@ module.exports={resultlist:resultlist,
 	//highlightRange:highlightRange,
   //getRange:getRange,
 };
-},{"./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/index.js":[function(require,module,exports){
-/*
-  Ksana Search Engine.
+},{"./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\index.js":[function(require,module,exports){
+//
+// Ksana Search Engine.
 
-  need a KDE instance to be functional
-  
-*/
+//  need a KDE instance to be functional
+
 var bsearch=require("./bsearch");
 var dosearch=require("./search");
 
@@ -161928,6 +162348,7 @@ var _search=function(engine,q,opts,cb,context) {
 			cb=opts;
 			opts={};
 		}
+		if (!opts) opts={};
 		opts.q=q;
 		opts.dbid=engine;
 		kde.open(opts.dbid,function(err,db){
@@ -161945,6 +162366,7 @@ var _search=function(engine,q,opts,cb,context) {
 		});
 	}
 }
+
 
 var _highlightSeg=function(engine,fileid,segid,opts,cb,context){
 	if (!opts.q) {
@@ -161977,27 +162399,15 @@ var _highlightFile=function(engine,fileid,opts,cb){
 	_search(engine,opts.q,opts,function(err,Q){
 		api.excerpt.highlightFile(Q,fileid,opts,cb);
 	});
-	/*
-	} else {
-		api.excerpt.getFile(engine,fileid,function(data) {
-			cb.apply(engine.context,[data]);
-		});
-	}
-	*/
 }
-
 var api={
 	search:_search
-//	,concordance:require("./concordance")
-//	,regex:require("./regex")
 	,highlightSeg:_highlightSeg
 	,highlightFile:_highlightFile
-//	,highlightRange:_highlightRange
-	,excerpt:require("./excerpt")
-	//,vpos2fileseg:vpos2fileseg
+	,excerpt:require("./excerpt")	
 }
 module.exports=api;
-},{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-search/bsearch.js","./excerpt":"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js","./search":"/Users/yu/ksana2015/node_modules/ksana-search/search.js","ksana-analyzer":"/Users/yu/ksana2015/node_modules/ksana-analyzer/index.js","ksana-database":"/Users/yu/ksana2015/node_modules/ksana-database/index.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/plist.js":[function(require,module,exports){
+},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-search\\bsearch.js","./excerpt":"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js","./search":"C:\\ksana2015\\node_modules\\ksana-search\\search.js","ksana-analyzer":"C:\\ksana2015\\node_modules\\ksana-analyzer\\index.js","ksana-database":"C:\\ksana2015\\node_modules\\ksana-database\\index.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\plist.js":[function(require,module,exports){
 
 var unpack = function (ar) { // unpack variable length integer list
   var r = [],
@@ -162423,7 +162833,7 @@ plist.groupbyposting2=groupbyposting2;
 plist.groupsum=groupsum;
 plist.combine=combine;
 module.exports=plist;
-},{}],"/Users/yu/ksana2015/node_modules/ksana-search/search.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana-search\\search.js":[function(require,module,exports){
 /*
 var dosearch2=function(engine,opts,cb,context) {
 	opts
@@ -162704,7 +163114,7 @@ var splitPhrase=function(engine,simplephrase,bigram) {
 	return {tokens:loadtokens, lengths: lengths , tokenlength: tokens.length};
 }
 /* host has fast native function */
-var fastPhrase=function(engine,phrase) {
+var fastPhrase=function(engine,phrase,cb) {
 	var phrase_term=newPhrase();
 	//var tokens=engine.analyzer.tokenize(phrase).tokens;
 	var splitted=splitPhrase(engine,phrase);
@@ -162722,11 +163132,13 @@ var fastPhrase=function(engine,phrase) {
 			if (splitted.lengths[i]>1) {
 				postingAddressWithWildcard.push([splitted.lengths[i],0]); //wildcard has blocksize==0 
 			}
-		}
-		engine.postingCache[phrase]=engine.mergePostings(postingAddressWithWildcard);
+		};
+		engine.mergePostings(postingAddressWithWildcard,function(r){
+			engine.postingCache[phrase]=r;
+			cb(phrase_term);
+		});
+		
 	});
-	return phrase_term;
-	// put posting into cache[phrase.key]
 }
 var slowPhrase=function(engine,terms,phrase) {
 	var j=0,tokens=engine.analyzer.tokenize(phrase).tokens;
@@ -162789,8 +163201,15 @@ var slowPhrase=function(engine,terms,phrase) {
 	} while(T);		
 	return phrase_term;
 }
-var newQuery =function(engine,query,opts) {
-	//if (!query) return;
+
+
+var newQuery =function(engine,query,opts,cb) {
+	var Q=engine.queryCache[query];
+	if (Q) {
+		cb(Q);
+		return;
+	}
+
 	opts=opts||{};
 	query=trimSpace(engine,query);
 
@@ -162801,6 +163220,7 @@ var newQuery =function(engine,query,opts) {
 	
 	var phrase_terms=[], terms=[],variants=[],operators=[];
 	var pc=0;//phrase count
+	var that=this,taskqueue=[];
 	for  (var i=0;i<phrases.length;i++) {
 		var op=getOperator(phrases[pc]);
 		if (op) phrases[pc]=phrases[pc].substring(1);
@@ -162809,30 +163229,46 @@ var newQuery =function(engine,query,opts) {
 		//if (!opts.rank && op!='exclude' &&i) op='include';
 		operators.push(op);
 
-		if (isSimplePhrase(phrases[pc]) && engine.mergePostings ) {
-			var phrase_term=fastPhrase(engine,phrases[pc]);
-		} else {
-			var phrase_term=slowPhrase(engine,terms,phrases[pc]);
-		}
-		phrase_terms.push(phrase_term);
+		taskqueue.push(function(data){
 
-		if (!engine.mergePostings && phrase_terms[pc].termid.length==0) {
-			phrase_terms.pop();
-		} else pc++;
+			if (typeof data=='object' && data.__empty) {
+				//not pushing the first call
+			} else {
+				if (engine.mergePostings || data.termid.length!=0) {
+					phrase_terms.push(data);
+					pc++;
+				}
+			}
+
+			if (isSimplePhrase(phrases[pc]) && engine.mergePostings ) {
+				
+				fastPhrase(engine,phrases[pc],function(res){
+					taskqueue.shift()(res);
+				});
+			} else {
+				taskqueue.shift()(slowPhrase(engine,terms,phrases[pc] ));
+			}
+		});
 	}
-	opts.op=operators;
 
-	var Q={dbname:engine.dbname,engine:engine,opts:opts,query:query,
-		phrases:phrase_terms,terms:terms
-	};
+	//last call to child load
+	taskqueue.push(function(data){
+		if (engine.mergePostings || (data.termid && data.termid.length!=0))  {
+			phrase_terms.push(data);
+			pc++;
+		}
+		opts.op=operators;
+		cb.call(that,Q);
+	});
+
+
+	var Q={dbname:engine.dbname,engine:engine,opts:opts,query:query,phrases:phrase_terms,terms:terms,segWithHit:segWithHit};
 	Q.tokenize=function() {return engine.analyzer.tokenize.apply(engine,arguments);}
 	Q.isSkip=function() {return engine.analyzer.isSkip.apply(engine,arguments);}
-	Q.normalize=function() {return engine.analyzer.normalize.apply(engine,arguments);}
-	Q.segWithHit=segWithHit;
+	Q.normalize=function() {return engine.analyzer.normalize.apply(engine,arguments);}	
 
-	//Q.getRange=function() {return that.getRange.apply(that,arguments)};
-	//API.queryid='Q'+(Math.floor(Math.random()*10000000)).toString(16);
-	return Q;
+	//invoke task queue
+	taskqueue.shift()({__empty:true});
 }
 var postingPathFromTokens=function(engine,tokens) {
 	var alltokens=engine.get("tokens");
@@ -162942,71 +163378,72 @@ var main=function(engine,q,opts,cb){
 	}
 	if (typeof opts=="function") cb=opts;
 	opts=opts||{};
-	var Q=engine.queryCache[q];
-	if (!Q) Q=newQuery(engine,q,opts); 
-	if (!Q) {
-		engine.searchtime=new Date()-starttime;
-		engine.totaltime=engine.searchtime;
-		if (engine.context) cb.apply(engine.context,["empty result",{rawresult:[]}]);
-		else cb("empty result",{rawresult:[]});
-		return;
-	};
-	engine.queryCache[q]=Q;
-	if (Q.phrases.length) {
-		
-		loadPostings(engine,Q.terms,function(){
-			if (!Q.phrases[0].posting) {
-				engine.searchtime=new Date()-starttime;
-				engine.totaltime=engine.searchtime;
-				cb.apply(engine.context,["no such posting",{rawresult:[]}]);
-				return;			
-			}
+	
+	newQuery(engine,q,opts,function(Q){ 
+		if (!Q) {
+			engine.searchtime=new Date()-starttime;
+			engine.totaltime=engine.searchtime;
+			if (engine.context) cb.apply(engine.context,["empty result",{rawresult:[]}]);
+			else cb("empty result",{rawresult:[]});
+			return;
+		};
+		engine.queryCache[q]=Q;
+		if (Q.phrases.length) {
 			
-			if (!Q.phrases[0].posting.length) { //
-				Q.phrases.forEach(loadPhrase.bind(Q));
-			}
-			if (Q.phrases.length==1) {
-				Q.rawresult=Q.phrases[0].posting;
-			} else {
-				phrase_intersect(engine,Q);
-			}
-			var fileoffsets=Q.engine.get("fileoffsets");
-			//console.log("search opts "+JSON.stringify(opts));
+			loadPostings(engine,Q.terms,function(){
+				if (!Q.phrases[0].posting) {
+					engine.searchtime=new Date()-starttime;
+					engine.totaltime=engine.searchtime;
+					cb.apply(engine.context,["no such posting",{rawresult:[]}]);
+					return;			
+				}
+				
+				if (!Q.phrases[0].posting.length) { //
+					Q.phrases.forEach(loadPhrase.bind(Q));
+				}
+				if (Q.phrases.length==1) {
+					Q.rawresult=Q.phrases[0].posting;
+				} else {
+					phrase_intersect(engine,Q);
+				}
+				var fileoffsets=Q.engine.get("fileoffsets");
+				//console.log("search opts "+JSON.stringify(opts));
 
-			if (!Q.byFile && Q.rawresult && !opts.nogroup) {
-				Q.byFile=plist.groupbyposting2(Q.rawresult, fileoffsets);
-				Q.byFile.shift();Q.byFile.pop();
-				Q.byFolder=groupByFolder(engine,Q.byFile);
+				if (!Q.byFile && Q.rawresult && !opts.nogroup) {
+					Q.byFile=plist.groupbyposting2(Q.rawresult, fileoffsets);
+					Q.byFile.shift();Q.byFile.pop();
+					Q.byFolder=groupByFolder(engine,Q.byFile);
 
-				countFolderFile(Q);
-			}
+					countFolderFile(Q);
+				}
 
-			if (opts.range) {
-				engine.searchtime=new Date()-starttime;
-				excerpt.resultlist(engine,Q,opts,function(data) { 
-					//console.log("excerpt ok");
-					Q.excerpt=data;
+				if (opts.range) {
+					engine.searchtime=new Date()-starttime;
+					excerpt.resultlist(engine,Q,opts,function(data) { 
+						//console.log("excerpt ok");
+						Q.excerpt=data;
+						engine.totaltime=new Date()-starttime;
+						cb.apply(engine.context,[0,Q]);
+					});
+				} else {
+					engine.searchtime=new Date()-starttime;
 					engine.totaltime=new Date()-starttime;
 					cb.apply(engine.context,[0,Q]);
-				});
-			} else {
-				engine.searchtime=new Date()-starttime;
-				engine.totaltime=new Date()-starttime;
-				cb.apply(engine.context,[0,Q]);
-			}
-		});
-	} else { //empty search
-		engine.searchtime=new Date()-starttime;
-		engine.totaltime=new Date()-starttime;
-		cb.apply(engine.context,[0,Q]);
-	};
+				}
+			});
+		} else { //empty search
+			engine.searchtime=new Date()-starttime;
+			engine.totaltime=new Date()-starttime;
+			cb.apply(engine.context,[0,Q]);
+		};
+	});
 }
 
 main.splitPhrase=splitPhrase; //just for debug
 module.exports=main;
-},{"./boolsearch":"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js","./excerpt":"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js","./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana-tibetan/index.js":[function(require,module,exports){
+},{"./boolsearch":"C:\\ksana2015\\node_modules\\ksana-search\\boolsearch.js","./excerpt":"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js","./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js":[function(require,module,exports){
 module.exports={wylie:require("./wylie")};
-},{"./wylie":"/Users/yu/ksana2015/node_modules/ksana-tibetan/wylie.js"}],"/Users/yu/ksana2015/node_modules/ksana-tibetan/wylie.js":[function(require,module,exports){
+},{"./wylie":"C:\\ksana2015\\node_modules\\ksana-tibetan\\wylie.js"}],"C:\\ksana2015\\node_modules\\ksana-tibetan\\wylie.js":[function(require,module,exports){
 var opt = { check:false, check_strict:false, print_warnings:false, fix_spacing:false }
 
 function setopt(arg_opt) {
@@ -164866,7 +165303,7 @@ module.exports= {
 
 
 
-},{}],"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana2015-stacktoc\\index.js":[function(require,module,exports){
 var React=(window&&window.React)||require("react");
 var E=React.createElement;
 var trimHit=function(hit) {
@@ -165224,7 +165661,7 @@ var genToc=function(toc,title) {
 }
 module.exports={component:stacktoc,genToc:genToc,enumChildren:enumChildren,enumAncestors:enumAncestors};
 
-},{"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/checkbrowser.js":[function(require,module,exports){
+},{"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\checkbrowser.js":[function(require,module,exports){
 /*
 convert to pure js
 save -g reactify
@@ -165303,7 +165740,7 @@ var checkbrowser = React.createClass({
 });
 
 module.exports=checkbrowser;
-},{"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js":[function(require,module,exports){
+},{"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js":[function(require,module,exports){
 
 var userCancel=false;
 var files=[];
@@ -165412,15 +165849,184 @@ var downloadingFile=function() {
 var downloader={startDownload:startDownload, downloadedByte:downloadedByte,
 	downloadingFile:downloadingFile, cancelDownload:cancelDownload,doneDownload:doneDownload};
 module.exports=downloader;
-},{"./mkdirp":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/mkdirp.js","fs":false,"http":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/fileinstaller.js":[function(require,module,exports){
+},{"./mkdirp":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\mkdirp.js","fs":false,"http":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js":[function(require,module,exports){
 /* todo , optional kdb */
 var React=(window&&window.React)||require("react");
 var HtmlFS=require("./htmlfs");
 var html5fs=require("./html5fs");
 var CheckBrowser=require("./checkbrowser");
 var E=React.createElement;
-  
 
+
+var FileList=null;
+
+/*TODO kdb check version*/
+var Filemanager = React.createClass({
+	getInitialState:function() {
+		var quota=this.getQuota();
+		return {browserReady:false,noupdate:true,	requestQuota:quota,remain:0};
+	},
+	componentWillMount:function(){
+	  if (ksanagap.bootopts.material) FileList=require("./filelist_mui");
+	  else FileList=require("./filelist");
+	},
+	getQuota:function() {
+		var q=this.props.quota||"128M";
+		var unit=q[q.length-1];
+		var times=1;
+		if (unit=="M") times=1024*1024;
+		else if (unit="K") times=1024;
+		return parseInt(q) * times;
+	},
+	missingKdb:function() {
+		if (ksanagap.platform!="chrome") return [];
+		var missing=this.props.needed.filter(function(kdb){
+			for (var i in html5fs.files) {
+				if (html5fs.files[i][0]==kdb.filename) return false;
+			}
+			return true;
+		},this);
+		return missing;
+	},
+	getRemoteUrl:function(fn) {
+		var f=this.props.needed.filter(function(f){return f.filename==fn});
+		if (f.length ) return f[0].url;
+	},
+	genFileList:function(existing,missing){
+		var out=[];
+		for (var i in existing) {
+			var url=this.getRemoteUrl(existing[i][0]);
+			out.push({filename:existing[i][0], url :url, ready:true });
+		}
+		for (var i in missing) {
+			out.push(missing[i]);
+		}
+		return out;
+	},
+	reload:function() {
+		html5fs.readdir(function(files){
+  			this.setState({files:this.genFileList(files,this.missingKdb())});
+  		},this);
+	 },
+	deleteFile:function(fn) {
+	  html5fs.rm(fn,function(){
+	  	this.reload();
+	  },this);
+	},
+	onQuoteOk:function(quota,usage) {
+		if (ksanagap.platform!="chrome") {
+			//console.log("onquoteok");
+			this.setState({noupdate:true,missing:[],files:[],autoclose:true
+				,quota:quota,remain:quota-usage,usage:usage});
+			return;
+		}
+		//console.log("quote ok");
+		var files=this.genFileList(html5fs.files,this.missingKdb());
+		var that=this;
+		that.checkIfUpdate(files,function(hasupdate) {
+			var missing=this.missingKdb();
+			var autoclose=this.props.autoclose;
+			if (missing.length) autoclose=false;
+			that.setState({autoclose:autoclose,
+				quota:quota,usage:usage,files:files,
+				missing:missing,
+				noupdate:!hasupdate,
+				remain:quota-usage});
+		});
+	},  
+	onBrowserOk:function() {
+	  this.totalDownloadSize();
+
+	}, 
+	dismiss:function() {
+		this.props.onReady(this.state.usage,this.state.quota);
+		
+		setTimeout(function(){
+			if (typeof $ !== "undefined") {
+				var modalin=$(".modal.in");
+				if (modalin.modal) modalin.modal('hide');				
+			}
+		},500);
+	}, 
+
+	totalDownloadSize:function() {
+		var files=this.missingKdb();
+		var taskqueue=[],totalsize=0;
+		for (var i=0;i<files.length;i++) {
+			taskqueue.push(
+				(function(idx){
+					return (function(data){
+						if (!(typeof data=='object' && data.__empty)) totalsize+=data;
+						html5fs.getDownloadSize(files[idx].url,taskqueue.shift());
+					});
+				})(i)
+			);
+		}
+		var that=this;
+		taskqueue.push(function(data){	
+			totalsize+=data;
+			setTimeout(function(){that.setState({requireSpace:totalsize,browserReady:true})},0);
+		});
+		taskqueue.shift()({__empty:true});
+	},
+	checkIfUpdate:function(files,cb) {
+		var taskqueue=[];
+		for (var i=0;i<files.length;i++) {
+			taskqueue.push(
+				(function(idx){
+					return (function(data){
+						if (!(typeof data=='object' && data.__empty)) files[idx-1].hasUpdate=data;
+						html5fs.checkUpdate(files[idx].url,files[idx].filename,taskqueue.shift());
+					});
+				})(i)
+			);
+		}
+		var that=this;
+		taskqueue.push(function(data){	
+			if (files.length) files[files.length-1].hasUpdate=data;
+			var hasupdate=files.some(function(f){return f.hasUpdate});
+			if (cb) cb.apply(that,[hasupdate]);
+		});
+		taskqueue.shift()({__empty:true});
+	},
+	render:function(){
+    		if (!this.state.browserReady) {   
+      			return E(CheckBrowser, {feature: "fs", onReady: this.onBrowserOk})
+    		} if (!this.state.quota || this.state.remain<this.state.requireSpace) {  
+    			var quota=this.state.requestQuota;
+    			if (this.state.usage+this.state.requireSpace>quota) {
+    				quota=(this.state.usage+this.state.requireSpace)*1.5;
+    			}
+      			return E(HtmlFS, {quota: quota, autoclose: "true", onReady: this.onQuoteOk})
+      		} else {
+			if (!this.state.noupdate || this.missingKdb().length || !this.state.autoclose) {
+				var remain=Math.round((this.state.usage/this.state.quota)*100);				
+				return E(FileList, {action: this.action, files: this.state.files, remainPercent: remain})
+			} else {
+				setTimeout( this.dismiss ,0);
+				return E("span", null, "Success");
+			}
+      		}
+	},
+	action:function() {
+	  var args = Array.prototype.slice.call(arguments);
+	  var type=args.shift();
+	  var res=null, that=this;
+	  if (type=="delete") {
+	    this.deleteFile(args[0]);
+	  }  else if (type=="reload") {
+	  	this.reload();
+	  } else if (type=="dismiss") {
+	  	this.dismiss();
+	  }
+	}
+});
+
+module.exports=Filemanager;
+},{"./checkbrowser":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\checkbrowser.js","./filelist":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist.js","./filelist_mui":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist_mui.js","./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","./htmlfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist.js":[function(require,module,exports){
+var React=require("react");
+var E=React.createElement;
+var html5fs=require("./html5fs");
 var FileList = React.createClass({
 	getInitialState:function() {
 		return {downloading:false,progress:0};
@@ -165453,7 +166059,7 @@ var FileList = React.createClass({
 	      f.filename), 
 	      E("td", null, f.desc), 
 	      E("td", null, 
-	      E("span", {"data-filename": f.filename, "data-url": f.url, 
+	      E("button", {"data-filename": f.filename, "data-url": f.url, 
 	            className: classes, 
 	            onClick: this.download}, "Download")
 	      )
@@ -165558,161 +166164,161 @@ var FileList = React.createClass({
 		$(this.refs.dialog1.getDOMNode()).modal('show');
 	}
 });
-/*TODO kdb check version*/
-var Filemanager = React.createClass({
+
+module.exports=FileList;
+},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist_mui.js":[function(require,module,exports){
+var React=require("react");
+//var mui=require("material-ui");
+var E=React.createElement;
+var html5fs=require("./html5fs");
+
+var FileList = React.createClass({
 	getInitialState:function() {
-		var quota=this.getQuota();
-		return {browserReady:false,noupdate:true,	requestQuota:quota,remain:0};
+		return {downloading:false,progress:0};
 	},
-	getQuota:function() {
-		var q=this.props.quota||"128M";
-		var unit=q[q.length-1];
-		var times=1;
-		if (unit=="M") times=1024*1024;
-		else if (unit="K") times=1024;
-		return parseInt(q) * times;
+	updatable:function(f) {
+        var classes="btn btn-warning";
+        if (this.state.downloading) classes+=" disabled";
+		if (f.hasUpdate) return   E("button", {className: classes, 
+			"data-filename": f.filename, "data-url": f.url, 
+	            onClick: this.download
+	       }, "Update")
+		else return null;
 	},
-	missingKdb:function() {
-		if (ksanagap.platform!="chrome") return [];
-		var missing=this.props.needed.filter(function(kdb){
-			for (var i in html5fs.files) {
-				if (html5fs.files[i][0]==kdb.filename) return false;
+	showLocal:function(f) {
+        var classes="btn btn-danger";
+        if (this.state.downloading) classes+=" disabled";
+	  return E("tr", null, E("td", null, f.filename), 
+	      E("td", null), 
+	      E("td", {className: "pull-right"}, 
+	      this.updatable(f), E("button", {className: classes, 
+	               onClick: this.deleteFile, "data-filename": f.filename}, "Delete")
+	        
+	      )
+	  )
+	},  
+	showRemote:function(f) { 
+	  var classes="btn btn-warning";
+	  if (this.state.downloading) classes+=" disabled";
+	  return (E("tr", {"data-id": f.filename}, E("td", null, 
+	      f.filename), 
+	      E("td", null, f.desc), 
+	      E("td", null, 
+	      E("button", {"data-filename": f.filename, "data-url": f.url, 
+	            className: classes, 
+	            onClick: this.download}, "Download")
+	      )
+	  ));
+	},
+	showFile:function(f) {
+	//	return <span data-id={f.filename}>{f.url}</span>
+		return (f.ready)?this.showLocal(f):this.showRemote(f);
+	},
+	reloadDir:function() {
+		this.props.action("reload");
+	},
+	download:function(e) {
+		var url=e.target.dataset["url"];
+		var filename=e.target.dataset["filename"];
+		this.setState({downloading:true,progress:0,url:url});
+		this.userbreak=false;
+		html5fs.download(url,filename,function(){
+			this.reloadDir();
+			this.setState({downloading:false,progress:1});
+			},function(progress,total){
+				if (progress==0) {
+					this.setState({message:"total "+total})
+			 	}
+			 	this.setState({progress:progress});
+			 	//if user press abort return true
+			 	return this.userbreak;
 			}
-			return true;
-		},this);
-		return missing;
+		,this);
 	},
-	getRemoteUrl:function(fn) {
-		var f=this.props.needed.filter(function(f){return f.filename==fn});
-		if (f.length ) return f[0].url;
+	deleteFile:function( e) {
+		var filename=e.target.attributes["data-filename"].value;
+		this.props.action("delete",filename);
 	},
-	genFileList:function(existing,missing){
+	allFilesReady:function(e) {
+		return this.props.files.every(function(f){ return f.ready});
+	},
+	abortdownload:function() {
+		this.userbreak=true;
+	},
+	showProgress:function() {
+	     if (this.state.downloading) {
+	      var progress=Math.round(this.state.progress*100);
+	      return (
+	      	E("div", null, 
+	      	"Downloading from ", this.state.url, 
+	      E("div", {key: "progress", className: "progress col-md-8"}, 
+	          E("div", {className: "progress-bar", role: "progressbar", 
+	              "aria-valuenow": progress, "aria-valuemin": "0", 
+	              "aria-valuemax": "100", style: {width: progress+"%"}}, 
+	            progress, "%"
+	          )
+	        ), 
+	        E("button", {onClick: this.abortdownload, 
+	        	className: "btn btn-danger col-md-4"}, "Abort")
+	        )
+	        );
+	      } else {
+	      		if ( this.allFilesReady() ) {
+	      			return E("button", {onClick: this.dismiss, className: "btn btn-success"}, "Ok")
+	      		} else return null;
+	      		
+	      }
+	},
+	showUsage:function() {
+		var percent=this.props.remainPercent;
+        return E("span", null,  "remaining space "+percent+"%");
+	},
+	onToggle:function(e,idx,toggle) {
+		console.log("toggle",idx);
+	}
+	,buildmenuitems:function(files) {
 		var out=[];
-		for (var i in existing) {
-			var url=this.getRemoteUrl(existing[i][0]);
-			out.push({filename:existing[i][0], url :url, ready:true });
-		}
-		for (var i in missing) {
-			out.push(missing[i]);
+		for (var i=0;i<files.length;i++) {
+			var f=files[i];
+			
+			out.push({
+					payload:i,
+					text:this.showFile(f),
+					toggle:true, defaultToggled: f.ready
+				});
 		}
 		return out;
-	},
-	reload:function() {
-		html5fs.readdir(function(files){
-  			this.setState({files:this.genFileList(files,this.missingKdb())});
-  		},this);
-	 },
-	deleteFile:function(fn) {
-	  html5fs.rm(fn,function(){
-	  	this.reload();
-	  },this);
-	},
-	onQuoteOk:function(quota,usage) {
-		if (ksanagap.platform!="chrome") {
-			//console.log("onquoteok");
-			this.setState({noupdate:true,missing:[],files:[],autoclose:true
-				,quota:quota,remain:quota-usage,usage:usage});
-			return;
-		}
-		//console.log("quote ok");
-		var files=this.genFileList(html5fs.files,this.missingKdb());
-		var that=this;
-		that.checkIfUpdate(files,function(hasupdate) {
-			var missing=this.missingKdb();
-			var autoclose=this.props.autoclose;
-			if (missing.length) autoclose=false;
-			that.setState({autoclose:autoclose,
-				quota:quota,usage:usage,files:files,
-				missing:missing,
-				noupdate:!hasupdate,
-				remain:quota-usage});
-		});
-	},  
-	onBrowserOk:function() {
-	  this.totalDownloadSize();
-	}, 
-	dismiss:function() {
-		this.props.onReady(this.state.usage,this.state.quota);
-		setTimeout(function(){
-			var modalin=$(".modal.in");
-			if (modalin.modal) modalin.modal('hide');
-		},500);
-	}, 
-	totalDownloadSize:function() {
-		var files=this.missingKdb();
-		var taskqueue=[],totalsize=0;
-		for (var i=0;i<files.length;i++) {
-			taskqueue.push(
-				(function(idx){
-					return (function(data){
-						if (!(typeof data=='object' && data.__empty)) totalsize+=data;
-						html5fs.getDownloadSize(files[idx].url,taskqueue.shift());
-					});
-				})(i)
-			);
-		}
-		var that=this;
-		taskqueue.push(function(data){	
-			totalsize+=data;
-			setTimeout(function(){that.setState({requireSpace:totalsize,browserReady:true})},0);
-		});
-		taskqueue.shift()({__empty:true});
-	},
-	checkIfUpdate:function(files,cb) {
-		var taskqueue=[];
-		for (var i=0;i<files.length;i++) {
-			taskqueue.push(
-				(function(idx){
-					return (function(data){
-						if (!(typeof data=='object' && data.__empty)) files[idx-1].hasUpdate=data;
-						html5fs.checkUpdate(files[idx].url,files[idx].filename,taskqueue.shift());
-					});
-				})(i)
-			);
-		}
-		var that=this;
-		taskqueue.push(function(data){	
-			if (files.length) files[files.length-1].hasUpdate=data;
-			var hasupdate=files.some(function(f){return f.hasUpdate});
-			if (cb) cb.apply(that,[hasupdate]);
-		});
-		taskqueue.shift()({__empty:true});
-	},
-	render:function(){
-    		if (!this.state.browserReady) {   
-      			return E(CheckBrowser, {feature: "fs", onReady: this.onBrowserOk})
-    		} if (!this.state.quota || this.state.remain<this.state.requireSpace) {  
-    			var quota=this.state.requestQuota;
-    			if (this.state.usage+this.state.requireSpace>quota) {
-    				quota=(this.state.usage+this.state.requireSpace)*1.5;
-    			}
-      			return E(HtmlFS, {quota: quota, autoclose: "true", onReady: this.onQuoteOk})
-      		} else {
-			if (!this.state.noupdate || this.missingKdb().length || !this.state.autoclose) {
-				var remain=Math.round((this.state.usage/this.state.quota)*100);				
-				return E(FileList, {action: this.action, files: this.state.files, remainPercent: remain})
-			} else {
-				setTimeout( this.dismiss ,0);
-				return E("span", null, "Success");
-			}
-      		}
-	},
-	action:function() {
-	  var args = Array.prototype.slice.call(arguments);
-	  var type=args.shift();
-	  var res=null, that=this;
-	  if (type=="delete") {
-	    this.deleteFile(args[0]);
-	  }  else if (type=="reload") {
-	  	this.reload();
-	  } else if (type=="dismiss") {
-	  	this.dismiss();
-	  }
+	}
+	,render:function() {
+	  	return (
+		E("div", {ref: "dialog1", className: "modal fade", "data-backdrop": "static"}, 
+		    E("div", {className: "modal-dialog"}, 
+		      E("div", {className: "modal-content"}, 
+		        E("div", {className: "modal-header"}, 
+		          E("h4", {className: "modal-title"}, "File Installer")
+		        ), 
+		        E("div", {className: "modal-body"}, 
+		        	E("table", {className: "table"}, 
+		        	E("tbody", null, 
+		          	this.props.files.map(this.showFile)
+		          	)
+		          )
+		        ), 
+		        E("div", {className: "modal-footer"}, 
+		        	this.showUsage(), 
+		           this.showProgress()
+		        )
+		      )
+		    )
+		  )
+		);
+	},	
+	componentDidMount:function() {
 	}
 });
 
-module.exports=Filemanager;
-},{"./checkbrowser":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/checkbrowser.js","./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js","./htmlfs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/htmlfs.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js":[function(require,module,exports){
+module.exports=FileList;
+},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js":[function(require,module,exports){
 /* emulate filesystem on html5 browser */
 var get_head=function(url,field,cb){
 	var xhr = new XMLHttpRequest();
@@ -165724,9 +166330,9 @@ var get_head=function(url,field,cb){
 				if (this.status!==200&&this.status!==206) {
 					cb("");
 				}
-			} 
+			}
 	};
-	xhr.send();	
+	xhr.send();
 }
 var get_date=function(url,cb) {
 	get_head(url,"Last-Modified",function(value){
@@ -165771,11 +166377,11 @@ var download=function(url,fn,cb,statuscb,context) {
 	 var finish=function() {
 		 rm(fn,function(){
 				fileEntry.moveTo(fileEntry.filesystem.root, fn,function(){
-					setTimeout( cb.bind(context,false) , 0) ; 
+					setTimeout( cb.bind(context,false) , 0) ;
 				},function(e){
 					console.log("failed",e)
 				});
-		 },this); 
+		 },this);
 	 };
 		var tempfn="temp.kdb";
 		var batch=function(b) {
@@ -165784,7 +166390,7 @@ var download=function(url,fn,cb,statuscb,context) {
 		var requesturl=url+"?"+Math.random();
 		xhr.open('get', requesturl, true);
 		xhr.setRequestHeader('Range', 'bytes='+batches[b]+'-'+(batches[b+1]-1));
-		xhr.responseType = 'blob';    
+		xhr.responseType = 'blob';
 		xhr.addEventListener('load', function() {
 			var blob=this.response;
 			fileEntry.createWriter(function(fileWriter) {
@@ -165825,22 +166431,61 @@ var download=function(url,fn,cb,statuscb,context) {
 }
 
 var readFile=function(filename,cb,context) {
-	API.fs.root.getFile(filename, function(fileEntry) {
+	API.fs.root.getFile(filename, {create: false, exclusive: false},function(fileEntry) {
+		fileEntry.file(function(file){
 			var reader = new FileReader();
 			reader.onloadend = function(e) {
-					if (cb) cb.apply(cb,[this.result]);
-				};            
+				if (cb) cb.call(cb,this.result);
+			};
+			reader.readAsText(file,"utf8");
+		});
 	}, console.error);
 }
+
+function createDir(rootDirEntry, folders,  cb) {
+  // Throw out './' or '/' and move on to prevent something like '/foo/.//bar'.
+  if (folders[0] == '.' || folders[0] == '') {
+    folders = folders.slice(1);
+  }
+  rootDirEntry.getDirectory(folders[0], {create: true}, function(dirEntry) {
+    // Recursively add the new subfolder (if we still have another to create).
+    if (folders.length) {
+      createDir(dirEntry, folders.slice(1),cb);
+    } else {
+			cb();
+		}
+  }, cb);
+};
+
+
 var writeFile=function(filename,buf,cb,context){
-	API.fs.root.getFile(filename, {create: true, exclusive: true}, function(fileEntry) {
-			fileEntry.createWriter(function(fileWriter) {
-				fileWriter.write(buf);
-				fileWriter.onwriteend = function(e) {
-					if (cb) cb.apply(cb,[buf.byteLength]);
-				};            
-			}, console.error);
-	}, console.error);
+	var write=function(fileEntry){
+		fileEntry.createWriter(function(fileWriter) {
+			fileWriter.write(buf);
+			fileWriter.onwriteend = function(e) {
+				if (cb) cb.apply(cb,[buf.byteLength]);
+			};
+		}, console.error);
+	}
+
+	var getFile=function(filename){
+		API.fs.root.getFile(filename, {exclusive:true}, function(fileEntry) {
+			write(fileEntry);
+		}, function(){
+				API.fs.root.getFile(filename, {create:true,exclusive:true}, function(fileEntry) {
+					write(fileEntry);
+				});
+
+		});
+	}
+	var slash=filename.lastIndexOf("/");
+	if (slash>-1) {
+		createDir(API.fs.root, filename.substr(0,slash).split("/"),function(){
+			getFile(filename);
+		});
+	} else {
+		getFile(filename);
+	}
 }
 
 var readdir=function(cb,context) {
@@ -165894,7 +166539,7 @@ var initfs=function(grantedBytes,cb,context) {
 	}, errorHandler);
 }
 var init=function(quota,cb,context) {
-	navigator.webkitPersistentStorage.requestQuota(quota, 
+	navigator.webkitPersistentStorage.requestQuota(quota,
 			function(grantedBytes) {
 				initfs(grantedBytes,cb,context);
 		}, errorHandler
@@ -165902,7 +166547,7 @@ var init=function(quota,cb,context) {
 }
 var queryQuota=function(cb,context) {
 	var that=this;
-	navigator.webkitPersistentStorage.queryUsageAndQuota( 
+	navigator.webkitPersistentStorage.queryUsageAndQuota(
 	 function(usage,quota){
 			initfs(quota,function(){
 				cb.apply(context,[usage,quota]);
@@ -165926,7 +166571,8 @@ var API={
 	,queryQuota:queryQuota
 }
 module.exports=API;
-},{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/htmlfs.js":[function(require,module,exports){
+
+},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js":[function(require,module,exports){
 var html5fs=require("./html5fs");
 var React=(window&&window.React)||require("react");
 var E=React.createElement;
@@ -166040,7 +166686,7 @@ var htmlfs = React.createClass({
 });
 
 module.exports=htmlfs;
-},{"./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/index.js":[function(require,module,exports){
+},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\index.js":[function(require,module,exports){
 var ksana={"platform":"remote"};
 if (typeof window!="undefined") {
 	window.ksana=ksana;
@@ -166077,7 +166723,13 @@ if (typeof process !="undefined") {
 }
 var timer=null;
 var React=window.React||require("react");
-var boot=function(appId,cb) {
+var boot=function(appId,opts,cb) {
+
+	if (typeof opts=="function") {
+		cb=opts;
+		opts={};
+	}
+	ksanagap.bootopts=opts;
 	if (typeof React!="undefined") {
 		React.initializeTouchEvents(true);
 	}
@@ -166086,7 +166738,7 @@ var boot=function(appId,cb) {
 		timer=setInterval(function(){
 			if (ksana.ready){
 				clearInterval(timer);
-				if (ksana.js && ksana.js.files && ksana.js.files.length) {
+				if ( (opts.chromeFileSystem) && ksana.js && ksana.js.files && ksana.js.files.length) {
 					require("./installkdb")(ksana.js,cb);
 				} else {
 					cb();		
@@ -166106,7 +166758,7 @@ module.exports={boot:boot
 	,downloader:require("./downloader")
 	,installkdb:require("./installkdb")
 };
-},{"./downloader":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js","./fileinstaller":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/fileinstaller.js","./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js","./htmlfs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/htmlfs.js","./installkdb":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/installkdb.js","./kfs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs.js","./kfs_html5":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs_html5.js","./ksanagap":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/ksanagap.js","./livereload":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/livereload.js","./liveupdate":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/liveupdate.js","fs":false,"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/installkdb.js":[function(require,module,exports){
+},{"./downloader":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js","./fileinstaller":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js","./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","./htmlfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js","./installkdb":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\installkdb.js","./kfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs.js","./kfs_html5":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs_html5.js","./ksanagap":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js","./livereload":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js","./liveupdate":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\liveupdate.js","fs":false,"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\installkdb.js":[function(require,module,exports){
 var React=(window&&window.React)||require("react");
 var Fileinstaller=require("./fileinstaller");
 
@@ -166146,7 +166798,7 @@ var installkdb=function(ksanajs,cb,context) {
 	callback=cb;
 }
 module.exports=installkdb;
-},{"./fileinstaller":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/fileinstaller.js","react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs.js":[function(require,module,exports){
+},{"./fileinstaller":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs.js":[function(require,module,exports){
 //Simulate feature in ksanagap
 /* 
   runs on node-webkit only
@@ -166203,16 +166855,20 @@ var listApps=function() {
 var kfs={readDir:readDir,listApps:listApps};
 
 module.exports=kfs;
-},{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/kfs_html5.js":[function(require,module,exports){
-var readDir=function(){
-	return "[]";
+},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs_html5.js":[function(require,module,exports){
+
+var readDir=function(cb,context){
+	require("./html5fs").readdir(cb,context);
 }
 var listApps=function(){
 	return "[]";
 }
 module.exports={readDir:readDir,listApps:listApps};
-},{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/ksanagap.js":[function(require,module,exports){
+},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js":[function(require,module,exports){
 var appname="installer";
+if (typeof ksana=="undefined") {
+	window.ksana={platform:"chrome"};
+}
 var switchApp=function(path) {
 	var fs=require("fs");
 	path="../"+path;
@@ -166260,6 +166916,42 @@ var jsonp=function(url,dbid,callback,context) {
   document.getElementsByTagName('head')[0].appendChild(script); 
 }
 
+
+var loadKsanajs=function(){
+	if (typeof process!="undefined" && !process.browser) {
+		var ksanajs=require("fs").readFileSync("./ksana.js","utf8").trim();
+		downloader=require("./downloader");
+		//ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
+		rootPath=process.cwd();
+		rootPath=require("path").resolve(rootPath,"..").replace(/\\/g,"/")+'/';
+		ksana.ready=true;
+	} else{
+		var url=window.location.origin+window.location.pathname.replace("index.html","")+"ksana.js";
+		jsonp(url,appname,function(data){
+			ksana.js=data;
+			ksana.ready=true;
+		});
+	}
+}
+
+loadKsanajs();
+
+var boot=function(appId,cb) {
+	if (typeof appId=="function") {
+		cb=appId;
+		appId="unknownapp";
+	}
+
+	ksana.appId=appId;
+	var timer=setInterval(function(){
+			if (ksana.ready){
+				clearInterval(timer);
+				cb();
+			}
+		});
+}
+
+
 var ksanagap={
 	platform:"node-webkit",
 	startDownload:downloader.startDownload,
@@ -166273,25 +166965,10 @@ var ksanagap={
 	username:username, //not support on PC
 	useremail:username,
 	runtime_version:runtime_version,
-	
-}
-
-if (typeof process!="undefined" && !process.browser) {
-	var ksanajs=require("fs").readFileSync("./ksana.js","utf8").trim();
-	downloader=require("./downloader");
-	//ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
-	rootPath=process.cwd();
-	rootPath=require("path").resolve(rootPath,"..").replace(/\\/g,"/")+'/';
-	ksana.ready=true;
-} else{
-	var url=window.location.origin+window.location.pathname.replace("index.html","")+"ksana.js";
-	jsonp(url,appname,function(data){
-		ksana.js=data;
-		ksana.ready=true;
-	});
+	boot:boot
 }
 module.exports=ksanagap;
-},{"./downloader":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js","fs":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/livereload.js":[function(require,module,exports){
+},{"./downloader":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js","fs":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js":[function(require,module,exports){
 var started=false;
 var timer=null;
 var bundledate=null;
@@ -166314,7 +166991,7 @@ var livereload=function() {
 }
 
 module.exports=livereload;
-},{"./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/liveupdate.js":[function(require,module,exports){
+},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\liveupdate.js":[function(require,module,exports){
 
 var jsonp=function(url,dbid,callback,context) {
   var script=document.getElementById("jsonp");
@@ -166472,7 +167149,7 @@ var liveupdate={ humanFileSize: humanFileSize, humanDate:humanDate,
   status:status
   };
 module.exports=liveupdate;
-},{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/mkdirp.js":[function(require,module,exports){
+},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\mkdirp.js":[function(require,module,exports){
 function mkdirP (p, mode, f, made) {
      var path = nodeRequire('path');
      var fs = nodeRequire('fs');
@@ -166558,7 +167235,7 @@ mkdirP.sync = function sync (p, mode, made) {
 
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
 
-},{}]},{},["/Users/yu/ksana2015/adarsha/index.js"])
+},{}]},{},["C:\\ksana2015\\adarsha\\index.js"])
 
 
 //# sourceMappingURL=bundle.js.map
