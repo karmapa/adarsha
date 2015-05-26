@@ -1,0 +1,1 @@
+browserify --bare -r extra > extra-bundle.js

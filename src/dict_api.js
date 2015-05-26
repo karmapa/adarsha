@@ -1,5 +1,5 @@
 var entries=require("./entries.js");
-var mahavyutpatti=require("./mahavyutpatti.js");
+var mahavyutpatti=require("extra").mahavyutpatti;
 var indexes=require("./indexes.js");
 
 var indexOfSorted=function (array, obj) { 
