@@ -161,8 +161,11 @@ div.current:hover {background:#D8F6CE;}
 /*stacktoc*/
 
 /*search area*/
-.pagename{cursor: pointer;}
+.pagename{line-height: 180%; font-size: 150%;cursor: pointer;}
 .hl{color:red;}
+.resultitem{line-height: 180%; font-size: 150%; font-family: 'tibetan1';}
+.item{line-height: 180%; font-size: 120%; font-family: 'tibetan1';}
+.item span{line-height: 180%; font-size: 120%;}
 /*search area*/
 
 /*defbox*/
@@ -177,7 +180,8 @@ div.current:hover {background:#D8F6CE;}
 
 .modalDialog {
   position: absolute;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 200%;
   width: 500px;
   height: 200px;
   top: 0;
@@ -185,9 +189,10 @@ div.current:hover {background:#D8F6CE;}
   bottom: 0;
   left: 0;  
   text-align: center; 
-  background: rgba(0,0,0,0.8);
+  background: rgba(255,255,255,0.9);
   z-index: 99999;
   opacity:0;
+  box-shadow:0px 2px 12px 2px rgba(20%,20%,40%,0.5);
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
@@ -196,7 +201,7 @@ div.current:hover {background:#D8F6CE;}
 
 .modalDialog.opened {
   position: absolute;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow-y:auto;
   width: 500px;
   height: 200px;
@@ -204,7 +209,7 @@ div.current:hover {background:#D8F6CE;}
   opacity:1;
   pointer-events: auto;
   font-size: 200%;
-  color:white;
+  color:black;
 }
 
 /*.modalDialog > div {

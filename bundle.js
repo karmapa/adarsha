@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"C:\\ksana2015\\adarsha\\index.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/yu/ksana2015/adarsha/index.js":[function(require,module,exports){
 var React=require("react");
 require("ksana2015-webruntime/livereload")();
 require("ksana2015-webruntime/ksanagap").boot("adarsha",function(){
@@ -6,7 +6,7 @@ require("ksana2015-webruntime/ksanagap").boot("adarsha",function(){
 	ksana.mainComponent=React.render(Main,document.getElementById("main"));	
 });
 
-},{"./src/main.jsx":"C:\\ksana2015\\adarsha\\src\\main.jsx","ksana2015-webruntime/ksanagap":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js","ksana2015-webruntime/livereload":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\corres_api.js":[function(require,module,exports){
+},{"./src/main.jsx":"/Users/yu/ksana2015/adarsha/src/main.jsx","ksana2015-webruntime/ksanagap":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/ksanagap.js","ksana2015-webruntime/livereload":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/livereload.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/corres_api.js":[function(require,module,exports){
 var dosearch=function(volpage,from,to) {
   var tmp=fromVolpage(volpage,from,to);
     //corresFromVolpage= [經號],[範圍],[對照經號],[對照範圍],[對照行],[K經號]
@@ -236,7 +236,7 @@ var snap2realpage=function(id){
 
 var corres_api={dosearch:dosearch}
 module.exports=corres_api;
-},{}],"C:\\ksana2015\\adarsha\\src\\dPedurma.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/dPedurma.js":[function(require,module,exports){
 var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
   [ '1_2', '001@015a7-001@025a2', '1_2' ],
   [ '1_3', '001@025a2-001@034b7', '1_3' ],
@@ -2712,7 +2712,7 @@ var dPedurma=[ [ '1_1', '001@001b1-001@015a7', '1_1' ],
 dPedurma.rcode="D";
 module.exports=dPedurma;
 
-},{}],"C:\\ksana2015\\adarsha\\src\\defbox.jsx":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/defbox.jsx":[function(require,module,exports){
 var React=require("react");
 var Defbox = React.createClass({displayName: "Defbox",
   getInitialState: function() {
@@ -2774,7 +2774,7 @@ var Defbox = React.createClass({displayName: "Defbox",
   }
 });
 module.exports=Defbox;
-},{"react":"react"}],"C:\\ksana2015\\adarsha\\src\\dict_api.js":[function(require,module,exports){
+},{"react":"react"}],"/Users/yu/ksana2015/adarsha/src/dict_api.js":[function(require,module,exports){
 var entries=require("./entries.js");
 var mahavyutpatti=require("./mahavyutpatti.js");
 var indexes=require("./indexes.js");
@@ -2813,7 +2813,7 @@ var exhaustiveFind=function(tofind) {
 
 var dict_api={exhaustiveFind:exhaustiveFind};
 module.exports=dict_api;
-},{"./entries.js":"C:\\ksana2015\\adarsha\\src\\entries.js","./indexes.js":"C:\\ksana2015\\adarsha\\src\\indexes.js","./mahavyutpatti.js":"C:\\ksana2015\\adarsha\\src\\mahavyutpatti.js"}],"C:\\ksana2015\\adarsha\\src\\entries.js":[function(require,module,exports){
+},{"./entries.js":"/Users/yu/ksana2015/adarsha/src/entries.js","./indexes.js":"/Users/yu/ksana2015/adarsha/src/indexes.js","./mahavyutpatti.js":"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js"}],"/Users/yu/ksana2015/adarsha/src/entries.js":[function(require,module,exports){
 var entries=[
  "bcu pa dang po la",
  "་ཀུན་ཤེས་པ་ཐོབ་པར་བྱེད་",
@@ -10712,7 +10712,7 @@ var entries=[
  "ལུས་ཀྱིས་མངོན་དུ་བྱེད་པ",
  "ལུས་ཀྱིས་རེག་པ་",
  "ལུས་གཅིག་ལ་འདུ་ཤེས་གཅིག་པ་དག་དཔེར་ན་དགེ་རྒྱས་ཀྱི་ལྷ་རྣམས་སོ་",
- "ལུས་གཅ���ག་ལ་འདུ་ཤེས་ཐ་དད་པ་དག་དཔེར་ན་འདོད་གསལ་བ་རྣམས་སོ་",
+ "ལུས་གཅཽ��ག་ལ་འདུ་ཤེས་ཐ་དད་པ་དག་དཔེར་ན་འདོད་གསལ་བ་རྣམས་སོ་",
  "ལུས་གཉེར་མས་གང་བ་",
  "ལུས་གླེབས་པ་འདྲ་བ་",
  "ལུས་ངན་གྱི་ཕྱོགས་",
@@ -12504,7 +12504,7 @@ var entries=[
  "ཨོལ་མདུད"
 ];
 module.exports=entries;
-},{}],"C:\\ksana2015\\adarsha\\src\\hPedurma.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/hPedurma.js":[function(require,module,exports){
 var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '1_2', '001@020b7-001@033b6', '1_2' ],
   [ '1_3', '001@033b6-001@047a3', '1_3' ],
@@ -14671,7 +14671,7 @@ var hPedurma=[ [ '1_1', '001@001b1-001@020b7', '1_1' ],
   [ '809', '100@001a1-510a6', '1152' ] ];
 hPedurma.rcode="H";
 module.exports=hPedurma;
-},{}],"C:\\ksana2015\\adarsha\\src\\indexes.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/indexes.js":[function(require,module,exports){
 var indexes=[
  8556,
  7747,
@@ -24362,7 +24362,7 @@ var indexes=[
  4126
 ];
 module.exports=indexes;
-},{}],"C:\\ksana2015\\adarsha\\src\\jPedurma.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/jPedurma.js":[function(require,module,exports){
 var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1_2', '001@017b8-001@027b4', '1_2' ],
   [ '1_3', '001@027b4-001@037b3', '1_3' ],
@@ -26824,7 +26824,7 @@ var jPedurma=[ [ '1_1', '001@001b1-001@017b8', '1_1' ],
   [ '1007', '109@001a1-021b7', '1146' ] ];
 jPedurma.rcode="J";
 module.exports=jPedurma;
-},{}],"C:\\ksana2015\\adarsha\\src\\mahavyutpatti.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/mahavyutpatti.js":[function(require,module,exports){
 var mahavyutpatti=[
  [
   [
@@ -158379,17 +158379,17 @@ var mahavyutpatti=[
  ]
 ];
 module.exports=mahavyutpatti;
-},{}],"C:\\ksana2015\\adarsha\\src\\main.jsx":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/main.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component,
  change name of ./component.js and  "dependencies" section of ../../component.js */
 var React=require("react");
 var Tabarea=require("./tabarea.jsx");
-var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
+//var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
 var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var Showtext=require("./showtext.jsx");
 
 var version="v0.1.46";
@@ -158559,14 +158559,14 @@ var main = React.createClass({displayName: "main",
 });
 
 module.exports=main;
-},{"./showtext.jsx":"C:\\ksana2015\\adarsha\\src\\showtext.jsx","./tabarea.jsx":"C:\\ksana2015\\adarsha\\src\\tabarea.jsx","ksana-database":"C:\\ksana2015\\node_modules\\ksana-database\\index.js","ksana-search":"C:\\ksana2015\\node_modules\\ksana-search\\index.js","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","ksana2015-webruntime":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\namelist.jsx":[function(require,module,exports){
+},{"./showtext.jsx":"/Users/yu/ksana2015/adarsha/src/showtext.jsx","./tabarea.jsx":"/Users/yu/ksana2015/adarsha/src/tabarea.jsx","ksana-database":"/Users/yu/ksana2015/node_modules/ksana-database/index.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/namelist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component, change name of ./component.js and  "dependencies" section of ../../component.js */
 
 //var othercomponent=Require("other"); 
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var namelist = React.createClass({displayName: "namelist",
   getInitialState: function() {
     return {selected:null};
@@ -158632,14 +158632,14 @@ var namelist = React.createClass({displayName: "namelist",
   }
 });
 module.exports=namelist;
-},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\resultlist.jsx":[function(require,module,exports){
+},{"react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/resultlist.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 /* to rename the component, change name of ./component.js and  "dependencies" section of ../../component.js */
 
 //var othercomponent=Require("other"); 
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var resultlist=React.createClass({displayName: "resultlist",  //should search result
   show:function() {
     if(this.props.wylie == false) var tofind=this.props.tofind;
@@ -158694,7 +158694,7 @@ var resultlist=React.createClass({displayName: "resultlist",  //should search re
   }
 });
 module.exports=resultlist; 
-},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\search_api.js":[function(require,module,exports){
+},{"react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/search_api.js":[function(require,module,exports){
 var searchSutra=function(tofind,toc){
 	var out=[];
 	try {
@@ -158730,14 +158730,14 @@ var searchKacha=function(tofind,toc){
 
 var search_api={searchSutra:searchSutra,searchKacha:searchKacha}
 module.exports=search_api;
-},{}],"C:\\ksana2015\\adarsha\\src\\searcharea.jsx":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/adarsha/src/searcharea.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
 var React=require("react");
 var Namelist=require("./namelist.jsx");
 var Resultlist=require("./resultlist.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var search_api=require("./search_api");
 
@@ -158890,13 +158890,13 @@ var searcharea= React.createClass({displayName: "searcharea",
         ), 
         this.renderInputSyntax(), 
         React.createElement(Namelist, {wylie: this.props.wylie, res_toc: this.state.res_toc, tofind: this.state.tofind, gotofile: this.props.gotofile}), 
-        React.createElement(Resultlist, {wylie: this.props.wylie, res: this.state.res, tofind: this.state.tofind, gotofile: this.props.gotofile})
+        React.createElement(Resultlist, {className: "resultlist", wylie: this.props.wylie, res: this.state.res, tofind: this.state.tofind, gotofile: this.props.gotofile})
       )
     );
   }
 });
 module.exports=searcharea;
-},{"./namelist.jsx":"C:\\ksana2015\\adarsha\\src\\namelist.jsx","./resultlist.jsx":"C:\\ksana2015\\adarsha\\src\\resultlist.jsx","./search_api":"C:\\ksana2015\\adarsha\\src\\search_api.js","ksana-search":"C:\\ksana2015\\node_modules\\ksana-search\\index.js","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\showseg.jsx":[function(require,module,exports){
+},{"./namelist.jsx":"/Users/yu/ksana2015/adarsha/src/namelist.jsx","./resultlist.jsx":"/Users/yu/ksana2015/adarsha/src/resultlist.jsx","./search_api":"/Users/yu/ksana2015/adarsha/src/search_api.js","ksana-search":"/Users/yu/ksana2015/node_modules/ksana-search/index.js","react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/showseg.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
@@ -159028,14 +159028,14 @@ var showseg= React.createClass({displayName: "showseg",
   }
 });
 module.exports=showseg;
-},{"./corres_api":"C:\\ksana2015\\adarsha\\src\\corres_api.js","./dPedurma":"C:\\ksana2015\\adarsha\\src\\dPedurma.js","./defbox.jsx":"C:\\ksana2015\\adarsha\\src\\defbox.jsx","./dict_api":"C:\\ksana2015\\adarsha\\src\\dict_api.js","./hPedurma":"C:\\ksana2015\\adarsha\\src\\hPedurma.js","./jPedurma":"C:\\ksana2015\\adarsha\\src\\jPedurma.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\showtext.jsx":[function(require,module,exports){
+},{"./corres_api":"/Users/yu/ksana2015/adarsha/src/corres_api.js","./dPedurma":"/Users/yu/ksana2015/adarsha/src/dPedurma.js","./defbox.jsx":"/Users/yu/ksana2015/adarsha/src/defbox.jsx","./dict_api":"/Users/yu/ksana2015/adarsha/src/dict_api.js","./hPedurma":"/Users/yu/ksana2015/adarsha/src/hPedurma.js","./jPedurma":"/Users/yu/ksana2015/adarsha/src/jPedurma.js","react":"react"}],"/Users/yu/ksana2015/adarsha/src/showtext.jsx":[function(require,module,exports){
 /** @jsx React.DOM */
 
 //var othercomponent=Require("other"); 
 var React=require("react");
 var Textcontrolbar=require("./textcontrolbar.jsx");
 var Showseg=require("./showseg.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 
 var showtext = React.createClass({displayName: "showtext",
   getInitialState: function() {
@@ -159154,6 +159154,9 @@ var showtext = React.createClass({displayName: "showtext",
     //console.log("pb:",pb.length,"text:",text.length);
     return segs;
   },
+  scroll:function() {
+    console.log("scrolled!");
+  },
   render: function() {
     var content=this.props.text||"";
     if (this.props.wylie) content=tibetan.toWylie(content,null,false);
@@ -159166,7 +159169,7 @@ var showtext = React.createClass({displayName: "showtext",
     });
 
     return (
-      React.createElement("div", {className: "cursor"}, 
+      React.createElement("div", {className: "cursor", onScroll: this.scroll}, 
         React.createElement(Textcontrolbar, {message: this.state.message, sidemenu: this.props.sidemenu, toggleMenu: this.props.toggleMenu, dataN: this.props.dataN, setwylie: this.props.setwylie, wylie: this.props.wylie, page: this.props.page, bodytext: this.props.bodytext, next: this.props.nextfile, prev: this.props.prevfile, setpage: this.props.setpage, db: this.props.db, toc: this.props.toc}), 
         React.createElement("br", null), React.createElement("br", null), 
         React.createElement("div", {ref: "pagetext"}, segs)
@@ -159175,11 +159178,11 @@ var showtext = React.createClass({displayName: "showtext",
   }
 });
 module.exports=showtext;
-},{"./showseg.jsx":"C:\\ksana2015\\adarsha\\src\\showseg.jsx","./textcontrolbar.jsx":"C:\\ksana2015\\adarsha\\src\\textcontrolbar.jsx","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\tabarea.jsx":[function(require,module,exports){
+},{"./showseg.jsx":"/Users/yu/ksana2015/adarsha/src/showseg.jsx","./textcontrolbar.jsx":"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx","react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/tabarea.jsx":[function(require,module,exports){
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var tabarea = React.createClass({displayName: "tabarea",
   getInitialState: function() {
     return {res:{},res_toc:[]};
@@ -159222,9 +159225,9 @@ var tabarea = React.createClass({displayName: "tabarea",
   }
 });
 module.exports=tabarea;
-},{"./searcharea.jsx":"C:\\ksana2015\\adarsha\\src\\searcharea.jsx","ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","ksana2015-stacktoc":"C:\\ksana2015\\node_modules\\ksana2015-stacktoc\\index.js","react":"react"}],"C:\\ksana2015\\adarsha\\src\\textcontrolbar.jsx":[function(require,module,exports){
+},{"./searcharea.jsx":"/Users/yu/ksana2015/adarsha/src/searcharea.jsx","ksana2015-stacktoc":"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js","react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/adarsha/src/textcontrolbar.jsx":[function(require,module,exports){
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
   getInitialState: function() {
     return {address:0,fontsize:125,message:""};
@@ -159274,9 +159277,10 @@ var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
   },
   getAddress: function() {
     if (!this.props.bodytext)return;
-    var file=this.props.bodytext.file;
-    var page=this.props.page;
-    var res=this.filepage2vpos(file,page);
+    // var file=this.props.bodytext.file;
+    // var page=this.props.page;
+    // var res=this.filepage2vpos(file,page);
+   var res = "";
    if(this.props.wylie == false) return res;
    if(this.props.wylie == true) return tibetan.toWylie(res,null,false);    
   },
@@ -159337,7 +159341,7 @@ var Textcontrolbar = React.createClass({displayName: "Textcontrolbar",
   }  
 });
 module.exports=Textcontrolbar;
-},{"ksana-tibetan":"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\configs.js":[function(require,module,exports){
+},{"react":"react","tibetan/wylie":"/Users/yu/ksana2015/node_modules/tibetan/wylie.js"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/configs.js":[function(require,module,exports){
 var tokenizers=require('./tokenizers');
 var normalizeTbl=null;
 var setNormalizeTable=function(tbl,obj) {
@@ -159394,7 +159398,7 @@ var tibetan1={
 	}
 }
 module.exports={"simple1":simple1,"tibetan1":tibetan1}
-},{"./tokenizers":"C:\\ksana2015\\node_modules\\ksana-analyzer\\tokenizers.js"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\index.js":[function(require,module,exports){
+},{"./tokenizers":"/Users/yu/ksana2015/node_modules/ksana-analyzer/tokenizers.js"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/index.js":[function(require,module,exports){
 /* 
   custom func for building and searching ydb
 
@@ -159432,7 +159436,7 @@ var getAPI=function(config) {
 }
 
 module.exports={getAPI:getAPI};
-},{"./configs":"C:\\ksana2015\\node_modules\\ksana-analyzer\\configs.js"}],"C:\\ksana2015\\node_modules\\ksana-analyzer\\tokenizers.js":[function(require,module,exports){
+},{"./configs":"/Users/yu/ksana2015/node_modules/ksana-analyzer/configs.js"}],"/Users/yu/ksana2015/node_modules/ksana-analyzer/tokenizers.js":[function(require,module,exports){
 var tibetan =function(s) {
 	//continuous tsheg grouped into same token
 	//shad and space grouped into same token
@@ -159472,7 +159476,7 @@ var simple1=function(s) {
 	var offset=0;
 	var tokens=[],offsets=[];
 	s=s.replace(/\r\n/g,'\n').replace(/\r/g,'\n');
-	arr=s.split('\n');
+	var arr=s.split('\n');
 
 	var pushtoken=function(t,off) {
 		var i=0;
@@ -159588,7 +159592,7 @@ var simple=function(s) {
 	return {tokens:tokens,offsets:offsets};
 }
 module.exports={simple:simple,tibetan:tibetan};
-},{}],"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js":[function(require,module,exports){
 var indexOfSorted = function (array, obj, near) { 
   var low = 0,
   high = array.length;
@@ -159624,9 +159628,9 @@ var bsearchNear=function(array,value) {
 }
 
 module.exports=bsearch;
-},{}],"C:\\ksana2015\\node_modules\\ksana-database\\index.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-database/index.js":[function(require,module,exports){
 module.exports=require("./kde");
-},{"./kde":"C:\\ksana2015\\node_modules\\ksana-database\\kde.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\kde.js":[function(require,module,exports){
+},{"./kde":"/Users/yu/ksana2015/node_modules/ksana-database/kde.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/kde.js":[function(require,module,exports){
 // Ksana Database Engine
 
 //   2015/1/2 , 
@@ -159827,7 +159831,7 @@ if (platform=="node-webkit" || platform=="node") {
 	API.rpc=require("./rpc_kde"); //for browser only
 }
 module.exports=API;
-},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js","./kde_remote":"C:\\ksana2015\\node_modules\\ksana-database\\kde_remote.js","./listkdb":"C:\\ksana2015\\node_modules\\ksana-database\\listkdb.js","./method":"C:\\ksana2015\\node_modules\\ksana-database\\method.js","./platform":"C:\\ksana2015\\node_modules\\ksana-database\\platform.js","./rpc_kde":"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js","fs":false,"ksana-jsonrom":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\index.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\kde_remote.js":[function(require,module,exports){
+},{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js","./kde_remote":"/Users/yu/ksana2015/node_modules/ksana-database/kde_remote.js","./listkdb":"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js","./method":"/Users/yu/ksana2015/node_modules/ksana-database/method.js","./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","./rpc_kde":"/Users/yu/ksana2015/node_modules/ksana-database/rpc_kde.js","fs":false,"ksana-jsonrom":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/kde_remote.js":[function(require,module,exports){
 var pool={};
 var strsep="\uffff";
 var method=require("./method");
@@ -159953,7 +159957,7 @@ var close=function(kdbid) {
 }
 
 module.exports=openRemote;
-},{"./method":"C:\\ksana2015\\node_modules\\ksana-database\\method.js","./rpc_kde":"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\listkdb.js":[function(require,module,exports){
+},{"./method":"/Users/yu/ksana2015/node_modules/ksana-database/method.js","./rpc_kde":"/Users/yu/ksana2015/node_modules/ksana-database/rpc_kde.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/listkdb.js":[function(require,module,exports){
 /* return array of dbid and absolute path*/
 //var html5fs=require("./html5fs");
 
@@ -160045,7 +160049,7 @@ var listkdb=function(cb,context) {
 
 listkdb.sync=listkdb_rpc;
 module.exports=listkdb;
-},{"./platform":"C:\\ksana2015\\node_modules\\ksana-database\\platform.js","fs":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana-database\\method.js":[function(require,module,exports){
+},{"./platform":"/Users/yu/ksana2015/node_modules/ksana-database/platform.js","fs":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana-database/method.js":[function(require,module,exports){
 var bsearch=require("./bsearch");
 var gets=function(paths,opts,cb) { //get many data with one call
 
@@ -160287,13 +160291,8 @@ var folderOffset=function(folder) {
 	}
 	return {start:start,end:end};
 }
-var getTOCNames=function(cb,context) {
-	//need to have a new fields to record TOCs
-	var out=[];
-	engine.get(["fields"],{recursive:false},function(data){
-		if (data.mulu) out.push("mulu");
-			cb(out,context);
-	});
+var getTOCNames=function() {
+	return engine.get("meta").tocs;
 }
 var getTOC=function(opts,cb,context) {
 	var engine=this;
@@ -160308,11 +160307,11 @@ var getTOC=function(opts,cb,context) {
 		return toc;
 	}
 
-	var keys=[["fields",tocname],["fields",tocname+"_depth"],["fields",tocname+"_voff"]];
+	var keys=[["fields",tocname],["fields",tocname+"_depth"],["fields",tocname+"_vpos"]];
 	engine.get(keys,{recursive:true},function(){
 	  var texts=engine.get(["fields",tocname]);
 	  var depths=engine.get(["fields",tocname+"_depth"]);
-	  var voffs=engine.get(["fields",tocname+"_voff"]);
+	  var voffs=engine.get(["fields",tocname+"_vpos"]);
 
 	  var out=[{d:0,t:rootname}];
 	  if (texts) for (var i=0;i<texts.length;i++) {
@@ -160346,7 +160345,7 @@ var setup=function(engine) {
 }
 
 module.exports={setup:setup,getPreloadField:getPreloadField,gets:gets};
-},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-database\\bsearch.js"}],"C:\\ksana2015\\node_modules\\ksana-database\\platform.js":[function(require,module,exports){
+},{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-database/bsearch.js"}],"/Users/yu/ksana2015/node_modules/ksana-database/platform.js":[function(require,module,exports){
 var getPlatform=function() {
 	if (typeof ksanagap=="undefined") {
 		try {
@@ -160365,7 +160364,7 @@ var getPlatform=function() {
 	return platform;
 }
 module.exports={getPlatform:getPlatform};
-},{"react-native":"react-native"}],"C:\\ksana2015\\node_modules\\ksana-database\\rpc.js":[function(require,module,exports){
+},{"react-native":"react-native"}],"/Users/yu/ksana2015/node_modules/ksana-database/rpc.js":[function(require,module,exports){
 /*
 	this is for browser, a simple wrapper for socket.io rpc
 	
@@ -160410,7 +160409,7 @@ var pchost={
 socket.on( 'rpc', returnfromserver );	 
 window.host=pchost;
 module.exports=pchost;
-},{}],"C:\\ksana2015\\node_modules\\ksana-database\\rpc_kde.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-database/rpc_kde.js":[function(require,module,exports){
 var host=require("./rpc");
 
 var makeinf=function(name) {
@@ -160436,7 +160435,7 @@ host.exec(function(err,data){
 
 
 module.exports=API;
-},{"./rpc":"C:\\ksana2015\\node_modules\\ksana-database\\rpc.js"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\html5read.js":[function(require,module,exports){
+},{"./rpc":"/Users/yu/ksana2015/node_modules/ksana-database/rpc.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/html5read.js":[function(require,module,exports){
 
 /* emulate filesystem on html5 browser */
 /* emulate filesystem on html5 browser */
@@ -160528,12 +160527,12 @@ var API={
 	,fstat:fstat
 }
 module.exports=API;
-},{}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\index.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/index.js":[function(require,module,exports){
 module.exports={
 	open:require("./kdb")
 }
 
-},{"./kdb":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdb.js"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdb.js":[function(require,module,exports){
+},{"./kdb":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdb.js":[function(require,module,exports){
 /*
 	KDB version 3.0 GPL
 	yapcheahshen@gmail.com
@@ -161047,7 +161046,7 @@ Create.datatypes=DT;
 if (module) module.exports=Create;
 //return Create;
 
-},{"./kdbfs":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs.js","./kdbfs_android":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_android.js","./kdbfs_ios":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_ios.js","react-native":"react-native"}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs.js":[function(require,module,exports){
+},{"./kdbfs":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs.js","./kdbfs_android":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_android.js","./kdbfs_ios":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_ios.js","react-native":"react-native"}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs.js":[function(require,module,exports){
 /* node.js and html5 file system abstraction layer*/
 try {
 	var fs=require("fs");
@@ -161150,7 +161149,7 @@ var Open=function(path,opts,cb) {
 		});
 	}
 
-	//work around for chrome fromCharCode cannot accept huge zarray
+	//work around for chrome fromCharCode cannot accept huge array
 	//https://code.google.com/p/chromium/issues/detail?id=56588
 	var buf2stringarr=function(buf,enc) {
 		if (enc=="utf8") 	var arr=new Uint8Array(buf);
@@ -161175,7 +161174,6 @@ var Open=function(path,opts,cb) {
 		return out;
 	}
 	var readStringArray = function(pos,blocksize,encoding,cb) {
-		//console.log("blocksize of string array",blocksize);
 		var that=this,out=null;
 		if (blocksize==0) return [];
 		encoding=encoding||'utf8';
@@ -161366,7 +161364,7 @@ var Open=function(path,opts,cb) {
 	return this;
 }
 module.exports=Open;
-},{"./html5read":"C:\\ksana2015\\node_modules\\ksana-jsonrom\\html5read.js","buffer":false,"fs":false}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_android.js":[function(require,module,exports){
+},{"./html5read":"/Users/yu/ksana2015/node_modules/ksana-jsonrom/html5read.js","buffer":false,"fs":false}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_android.js":[function(require,module,exports){
 /*
   JAVA can only return Number and String
 	array and buffer return in string format
@@ -161481,7 +161479,7 @@ var Open=function(path,opts,cb) {
 }
 
 module.exports=Open;
-},{}],"C:\\ksana2015\\node_modules\\ksana-jsonrom\\kdbfs_ios.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-jsonrom/kdbfs_ios.js":[function(require,module,exports){
 /*
   JSContext can return all Javascript types.
 */
@@ -161707,7 +161705,7 @@ var Open=function(path,opts,cb) {
 }
 
 module.exports=Open;
-},{}],"C:\\ksana2015\\node_modules\\ksana-search\\boolsearch.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js":[function(require,module,exports){
 /*
   TODO
   and not
@@ -161802,7 +161800,7 @@ var boolSearch=function(opts) {
 	return this;
 }
 module.exports={search:boolSearch}
-},{"./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\bsearch.js":[function(require,module,exports){
+},{"./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/bsearch.js":[function(require,module,exports){
 var indexOfSorted = function (array, obj, near) { 
   var low = 0,
   high = array.length;
@@ -161837,7 +161835,7 @@ var bsearchNear=function(array,value) {
 }
 
 module.exports=bsearch;
-},{}],"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js":[function(require,module,exports){
 var plist=require("./plist");
 
 var getPhraseWidths=function (Q,phraseid,vposs) {
@@ -162315,7 +162313,7 @@ module.exports={resultlist:resultlist,
 	//highlightRange:highlightRange,
   //getRange:getRange,
 };
-},{"./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\index.js":[function(require,module,exports){
+},{"./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/index.js":[function(require,module,exports){
 //
 // Ksana Search Engine.
 
@@ -162407,7 +162405,7 @@ var api={
 	,excerpt:require("./excerpt")	
 }
 module.exports=api;
-},{"./bsearch":"C:\\ksana2015\\node_modules\\ksana-search\\bsearch.js","./excerpt":"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js","./search":"C:\\ksana2015\\node_modules\\ksana-search\\search.js","ksana-analyzer":"C:\\ksana2015\\node_modules\\ksana-analyzer\\index.js","ksana-database":"C:\\ksana2015\\node_modules\\ksana-database\\index.js"}],"C:\\ksana2015\\node_modules\\ksana-search\\plist.js":[function(require,module,exports){
+},{"./bsearch":"/Users/yu/ksana2015/node_modules/ksana-search/bsearch.js","./excerpt":"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js","./search":"/Users/yu/ksana2015/node_modules/ksana-search/search.js","ksana-analyzer":"/Users/yu/ksana2015/node_modules/ksana-analyzer/index.js","ksana-database":"/Users/yu/ksana2015/node_modules/ksana-database/index.js"}],"/Users/yu/ksana2015/node_modules/ksana-search/plist.js":[function(require,module,exports){
 
 var unpack = function (ar) { // unpack variable length integer list
   var r = [],
@@ -162833,7 +162831,7 @@ plist.groupbyposting2=groupbyposting2;
 plist.groupsum=groupsum;
 plist.combine=combine;
 module.exports=plist;
-},{}],"C:\\ksana2015\\node_modules\\ksana-search\\search.js":[function(require,module,exports){
+},{}],"/Users/yu/ksana2015/node_modules/ksana-search/search.js":[function(require,module,exports){
 /*
 var dosearch2=function(engine,opts,cb,context) {
 	opts
@@ -163441,9 +163439,941 @@ var main=function(engine,q,opts,cb){
 
 main.splitPhrase=splitPhrase; //just for debug
 module.exports=main;
-},{"./boolsearch":"C:\\ksana2015\\node_modules\\ksana-search\\boolsearch.js","./excerpt":"C:\\ksana2015\\node_modules\\ksana-search\\excerpt.js","./plist":"C:\\ksana2015\\node_modules\\ksana-search\\plist.js"}],"C:\\ksana2015\\node_modules\\ksana-tibetan\\index.js":[function(require,module,exports){
-module.exports={wylie:require("./wylie")};
-},{"./wylie":"C:\\ksana2015\\node_modules\\ksana-tibetan\\wylie.js"}],"C:\\ksana2015\\node_modules\\ksana-tibetan\\wylie.js":[function(require,module,exports){
+},{"./boolsearch":"/Users/yu/ksana2015/node_modules/ksana-search/boolsearch.js","./excerpt":"/Users/yu/ksana2015/node_modules/ksana-search/excerpt.js","./plist":"/Users/yu/ksana2015/node_modules/ksana-search/plist.js"}],"/Users/yu/ksana2015/node_modules/ksana2015-stacktoc/index.js":[function(require,module,exports){
+var React=(window&&window.React)||require("react");
+var E=React.createElement;
+var trimHit=function(hit) {
+  if (hit>999) { 
+    return (Math.floor(hit/1000)).toString()+"K+";
+  } else return hit.toString();
+}
+var trimText=function(text,opts) {
+    if (opts.maxitemlength && text.length>opts.maxitemlength) {
+      var stopAt=opts.stopAt||"";
+      if (stopAt) {
+        var at=opts.maxitemlength;
+        while (at>10) {
+          if (text.charAt(at)==stopAt) return text.substr(0,at)+"...";
+          at--;
+        }
+      } else {
+        return text.substr(0,opts.maxitemlength)+"...";
+      }
+    } 
+    return text;
+}
+var ganzhi="　甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥";
+
+var renderDepth=function(depth,opts,nodetype) {
+  var out=[];
+  if (opts.tocstyle=="vertical_line") {
+    for (var i=0;i<depth;i++) {
+      if (i==depth-1) {
+        out.push(E("img", {src: opts.tocbar_start}));
+      } else {
+        out.push(E("img", {src: opts.tocbar}));  
+      }
+    }
+    return out;    
+  } else if (opts.tocstyle=="ganzhi") {
+    return E("span", null, ganzhi[depth]+".");
+  } else {
+    if (depth) return E("span", null, depth, ".")
+    else return null;
+  }
+  return null;
+};
+
+
+var Ancestors=React.createClass({
+  goback:function(e) {
+    var n=e.target.dataset["n"];  
+    if (typeof n=="undefined") n=e.target.parentNode.dataset["n"];
+    this.props.setCurrent(n); 
+  },
+  showExcerpt:function(e) {
+    var n=parseInt(e.target.parentNode.dataset["n"]);
+    e.stopPropagation();
+    e.preventDefault();
+    this.props.showExcerpt(n);
+  }, 
+  showHit:function(hit) {
+    if (hit)  return E("a", {href: "#", onClick: this.showExcerpt, className: "pull-right badge hitbadge"}, trimHit(hit))
+    else return E("span", null);
+  },
+  renderAncestor:function(n,idx) {
+    var hit=this.props.toc[n].hit;
+    var text=this.props.toc[n].text.trim();
+    text=trimText(text,this.props.opts);
+    if (this.props.textConverter) text=this.props.textConverter(text);
+    return E("div", {key: "a"+n, className: "node parent", "data-n": n, onClick: this.goback}, renderDepth(idx,this.props.opts,"ancestor"),
+              E("a", {className: "text", href: "#"}, text), this.showHit(hit))
+  },
+  render:function() {
+    if (!this.props.data || !this.props.data.length) return E("div",null);
+    return E("div", null, this.props.data.map(this.renderAncestor))
+  } 
+}); 
+var Children=React.createClass({
+  getInitialState:function() {
+    return {selected:0};
+  },
+  shouldComponentUpdate:function(nextProps,nextState) {
+    if (nextProps.data.join()!=this.props.data.join() ) {
+      nextState.selected=parseInt(nextProps.data[0]);
+    }
+    return true;
+  },
+  open:function(e) {
+    var n=e.target.parentNode.dataset["n"];
+    if (typeof n!=="undefined") this.props.setCurrent(parseInt(n));
+  }, 
+  showHit:function(hit) {
+    if (hit)  return E("a", {href: "#", onClick: this.showExcerpt, 
+      className: "pull-right badge hitbadge"}, trimHit(hit))
+    else return E("span",null);
+  },
+  showExcerpt:function(e) {
+    var n=parseInt(e.target.parentNode.dataset["n"]);
+    e.stopPropagation();
+    e.preventDefault();
+    this.props.hitClick(n);
+  }, 
+  nodeClicked:function(e) {
+    var target=e.target;
+    while (target && typeof target.dataset.n=="undefined")target=target.parentNode;
+    if (!target) return;
+    var n=parseInt(target.dataset.n);
+    var child=this.props.toc[n];
+    if (this.props.showTextOnLeafNodeOnly) {
+      if (child.hasChild) {
+        this.open(e);
+      } else {
+        this.showText(e);
+      }
+    } else {
+      if (n==this.state.selected) {
+        if (child.hasChild) this.open(e);
+        else this.showText(e);
+      } else {
+        this.showText(e);
+      }
+    }
+    this.setState({selected:n});
+  },
+  renderChild:function(n) {
+    var child=this.props.toc[n];
+    var hit=this.props.toc[n].hit;
+    var classes="node child",haschild=false;  
+    //if (child.extra) extra="<extra>"+child.extra+"</extra>";
+    if (!child.hasChild) classes+=" nochild";
+    else haschild=true;
+    var selected=this.state.selected;
+    if (this.props.showTextOnLeafNodeOnly) {
+      selected=n;
+    }
+
+    var classes="btn btn-link";
+    if (n==selected) {
+      if (haschild) classes="btn btn-default expandable";
+      else classes="btn btn-link link-selected";
+    }
+
+    var text=this.props.toc[n].text.trim();
+    var depth=this.props.toc[n].depth;
+    text=trimText(text,this.props.opts)
+    if (this.props.textConverter) text=this.props.textConverter(text);
+    return E("div", {key: "child"+n, "data-n": n}, renderDepth(depth,this.props.opts,"child"), 
+           E("a", {"data-n": n, className: classes +" tocitem text", onClick: this.nodeClicked}, text+" "), this.showHit(hit)
+           )
+  },
+  showText:function(e) { 
+    var target=e.target;
+    var n=e.target.dataset.n;
+    while (target && typeof target.dataset.n=="undefined") {
+      target=target.parentNode;
+    }
+    if (target && target.dataset.n && this.props.showText) {
+      this.props.showText(parseInt(target.dataset.n));
+    }
+  },
+  render:function() {
+    if (!this.props.data || !this.props.data.length) return E("div", null);
+    return E("div", null, this.props.data.map(this.renderChild))
+  }
+}); 
+
+var stacktoc = React.createClass({
+  getInitialState: function() {
+    return {bar: "world",cur:this.props.current|0};//403
+  },
+  buildtoc: function(toc) {
+    if (!toc || !toc.length) return;  
+      var depths=[];
+      var prev=0;
+      for (var i=0;i<toc.length;i++) {
+        var depth=toc[i].depth;
+        if (prev>depth) { //link to prev sibling
+          if (depths[depth]) toc[depths[depth]].next = i;
+          for (var j=depth;j<prev;j++) depths[j]=0;
+        }
+        if (i<toc.length-1 && toc[i+1].depth>depth) {
+          toc[i].hasChild=true;
+        }
+        depths[depth]=i;
+        prev=depth;
+      } 
+
+  }, 
+
+  componentWillReceiveProps:function(nextProps) {
+    if (nextProps.data && nextProps.data.length && nextProps.data != this.props.data) {
+      this.buildtoc(nextProps.data);
+    }
+  }, 
+  setCurrent:function(n) {
+    n=parseInt(n);
+    this.setState({cur:n});
+    var child=this.props.data[n];
+    if (!(child.hasChild && this.props.showTextOnLeafNodeOnly)) {
+		  if (this.props.showText)  this.props.showText(n);
+    }
+  },
+  findByVoff:function(voff) {
+    for (var i=0;i<this.props.data.length;i++) {
+      var t=this.props.data[i];
+      if (t.voff>voff) return i-1;
+    }
+    return 0; //return root node
+  },
+  shouldComponentUpdate:function(nextProps,nextState) {
+    if (nextProps.goVoff&&nextProps.goVoff !=this.props.goVoff) {
+      nextState.cur=this.findByVoff(nextProps.goVoff);
+    }
+    if (nextProps.current != this.props.current) {
+      nextState.cur=nextProps.current;
+    }
+    return true;
+  },
+  fillHit:function(nodeIds) {
+    if (typeof nodeIds=="undefined") return;
+    if (typeof nodeIds=="number") nodeIds=[nodeIds];
+    var toc=this.props.data;
+    var hits=this.props.hits;
+    if (toc.length<2) return;
+    var getRange=function(n) {
+      if (n+1>=toc.length) {
+        console.error("exceed toc length",n);
+        return;
+      }
+      var depth=toc[n].depth , nextdepth=toc[n+1].depth;
+      if (n==toc.length-1 || n==0) {
+          toc[n].end=Math.pow(2, 48);
+          return;
+      } else  if (nextdepth>depth){
+        if (toc[n].next) {
+          toc[n].end= toc[toc[n].next].voff;  
+        } else { //last sibling
+          var next=n+1;
+          while (next<toc.length && toc[next].depth>depth) next++;
+          if (next==toc.length) toc[n].end=Math.pow(2,48);
+          else toc[n].end=toc[next].voff;
+        }
+      } else { //same level or end of sibling
+        toc[n].end=toc[n+1].voff;
+      }
+    }
+    var getHit=function(n) {
+      var start=toc[n].voff;
+      var end=toc[n].end;
+      if (n==0) {
+        toc[0].hit=hits.length;
+      } else {
+        var hit=0;
+        for (var i=0;i<hits.length;i++) {
+          if (hits[i]>=start && hits[i]<end) hit++;
+        }
+        toc[n].hit=hit;
+      }
+    }
+    nodeIds.forEach(function(n){getRange(n)});
+    nodeIds.forEach(function(n){getHit(n)});
+  },
+  fillHits:function(ancestors,children) {
+      this.fillHit(ancestors);
+      this.fillHit(children);
+      this.fillHit(this.state.cur);
+  },
+  hitClick:function(n) {
+    if (this.props.showExcerpt)  this.props.showExcerpt(n);
+  },
+  onHitClick:function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.hitClick(this.state.cur);
+  },
+  showHit:function(hit) {
+    if (hit)  return E("a", {href: "#", onClick: this.onHitClick, className: "pull-right badge hitbadge"}, trimHit(hit))
+    else return E("span",null);
+  },
+  showText:function(e) {
+    var target=e.target;
+    var n=e.target.dataset.n;
+    while (target && typeof target.dataset.n=="undefined") {
+      target=target.parentNode;
+    }
+    if (target && target.dataset.n && this.props.showText) {
+      this.props.showText(parseInt(target.dataset.n));
+    }
+  },
+  render: function() {
+    if (!this.props.data || !this.props.data.length) return E("div",null);
+    var depth=this.props.data[this.state.cur].depth+1;
+    var ancestors=enumAncestors(this.props.data,this.state.cur);
+    var children=enumChildren(this.props.data,this.state.cur);
+    var opts=this.props.opts||{};
+    var current=this.props.data[this.state.cur];
+    if (this.props.hits && this.props.hits.length) {
+      this.fillHits(ancestors,children);
+    }
+
+    var text=current.text.trim();
+    text=trimText(text,opts);
+    if (this.props.textConverter) text=this.props.textConverter(text);
+    return ( 
+      E("div", {className: "stacktoc"}, 
+        E(Ancestors, {opts: opts, textConverter: this.props.textConverter, showExcerpt: this.hitClick, setCurrent: this.setCurrent, toc: this.props.data, data: ancestors}), 
+        E("div", {className: "node current"}, renderDepth(depth-1,opts,"current"), E("a", {href: "#", onClick: this.showText, "data-n": this.state.cur}, E("span", {className: "text"}, text)), this.showHit(current.hit)), 
+        E(Children, {opts: opts, textConverter: this.props.textConverter, showTextOnLeafNodeOnly: this.props.showTextOnLeafNodeOnly, 
+                  showText: this.props.showText, hitClick: this.hitClick, setCurrent: this.setCurrent, toc: this.props.data, data: children})
+      )
+    ); 
+  }
+});
+var enumAncestors=function(toc,cur) {
+    if (!toc || !toc.length) return;
+    if (cur==0) return [];
+    var n=cur-1;
+    var depth=toc[cur].depth - 1;
+    var parents=[];
+    while (n>=0 && depth>0) {
+      if (toc[n].depth==depth) {
+        parents.unshift(n);
+        depth--;
+      }
+      n--;
+    }
+    parents.unshift(0); //first ancestor is root node
+    return parents;
+}
+
+var enumChildren=function(toc,cur) {
+    var children=[];
+    if (!toc || !toc.length || toc.length==1) return children;
+
+    if (toc[cur+1].depth!= 1+toc[cur].depth) return children;  // no children node
+    var n=cur+1;
+    var child=toc[n];
+    
+    while (child) {
+      children.push(n);
+      var next=toc[n+1];
+      if (!next) break;
+      if (next.depth==child.depth) {
+        n++;
+      } else if (next.depth>child.depth) {
+        n=child.next;
+      } else break;
+      if (n) child=toc[n];else break;
+    }
+    return children;
+}
+var genToc=function(toc,title) {
+    var out=[{depth:0,text:title||ksana.js.title}];
+    if (toc.texts) for (var i=0;i<toc.texts.length;i++) {
+      out.push({text:toc.texts[i],depth:toc.depths[i], voff:toc.vpos[i]});
+    }
+    return out; 
+}
+module.exports={component:stacktoc,genToc:genToc,enumChildren:enumChildren,enumAncestors:enumAncestors};
+
+},{"react":"react"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js":[function(require,module,exports){
+
+var userCancel=false;
+var files=[];
+var totalDownloadByte=0;
+var targetPath="";
+var tempPath="";
+var nfile=0;
+var baseurl="";
+var result="";
+var downloading=false;
+var startDownload=function(dbid,_baseurl,_files) { //return download id
+	var fs     = require("fs");
+	var path   = require("path");
+
+	
+	files=_files.split("\uffff");
+	if (downloading) return false; //only one session
+	userCancel=false;
+	totalDownloadByte=0;
+	nextFile();
+	downloading=true;
+	baseurl=_baseurl;
+	if (baseurl[baseurl.length-1]!='/')baseurl+='/';
+	targetPath=ksanagap.rootPath+dbid+'/';
+	tempPath=ksanagap.rootPath+".tmp/";
+	result="";
+	return true;
+}
+
+var nextFile=function() {
+	setTimeout(function(){
+		if (nfile==files.length) {
+			nfile++;
+			endDownload();
+		} else {
+			downloadFile(nfile++);	
+		}
+	},100);
+}
+
+var downloadFile=function(nfile) {
+	var url=baseurl+files[nfile];
+	var tmpfilename=tempPath+files[nfile];
+	var mkdirp = require("./mkdirp");
+	var fs     = require("fs");
+	var http   = require("http");
+
+	mkdirp.sync(path.dirname(tmpfilename));
+	var writeStream = fs.createWriteStream(tmpfilename);
+	var datalength=0;
+	var request = http.get(url, function(response) {
+		response.on('data',function(chunk){
+			writeStream.write(chunk);
+			totalDownloadByte+=chunk.length;
+			if (userCancel) {
+				writeStream.end();
+				setTimeout(function(){nextFile();},100);
+			}
+		});
+		response.on("end",function() {
+			writeStream.end();
+			setTimeout(function(){nextFile();},100);
+		});
+	});
+}
+
+var cancelDownload=function() {
+	userCancel=true;
+	endDownload();
+}
+var verify=function() {
+	return true;
+}
+var endDownload=function() {
+	nfile=files.length+1;//stop
+	result="cancelled";
+	downloading=false;
+	if (userCancel) return;
+	var fs     = require("fs");
+	var mkdirp = require("./mkdirp");
+
+	for (var i=0;i<files.length;i++) {
+		var targetfilename=targetPath+files[i];
+		var tmpfilename   =tempPath+files[i];
+		mkdirp.sync(path.dirname(targetfilename));
+		fs.renameSync(tmpfilename,targetfilename);
+	}
+	if (verify()) {
+		result="success";
+	} else {
+		result="error";
+	}
+}
+
+var downloadedByte=function() {
+	return totalDownloadByte;
+}
+var doneDownload=function() {
+	if (nfile>files.length) return result;
+	else return "";
+}
+var downloadingFile=function() {
+	return nfile-1;
+}
+
+var downloader={startDownload:startDownload, downloadedByte:downloadedByte,
+	downloadingFile:downloadingFile, cancelDownload:cancelDownload,doneDownload:doneDownload};
+module.exports=downloader;
+},{"./mkdirp":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/mkdirp.js","fs":false,"http":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js":[function(require,module,exports){
+/* emulate filesystem on html5 browser */
+var get_head=function(url,field,cb){
+	var xhr = new XMLHttpRequest();
+	xhr.open("HEAD", url, true);
+	xhr.onreadystatechange = function() {
+			if (this.readyState == this.DONE) {
+				cb(xhr.getResponseHeader(field));
+			} else {
+				if (this.status!==200&&this.status!==206) {
+					cb("");
+				}
+			}
+	};
+	xhr.send();
+}
+var get_date=function(url,cb) {
+	get_head(url,"Last-Modified",function(value){
+		cb(value);
+	});
+}
+var get_size=function(url, cb) {
+	get_head(url,"Content-Length",function(value){
+		cb(parseInt(value));
+	});
+};
+var checkUpdate=function(url,fn,cb) {
+	if (!url) {
+		cb(false);
+		return;
+	}
+	get_date(url,function(d){
+		API.fs.root.getFile(fn, {create: false, exclusive: false}, function(fileEntry) {
+			fileEntry.getMetadata(function(metadata){
+				var localDate=Date.parse(metadata.modificationTime);
+				var urlDate=Date.parse(d);
+				cb(urlDate>localDate);
+			});
+		},function(){
+			cb(false);
+		});
+	});
+}
+var download=function(url,fn,cb,statuscb,context) {
+	 var totalsize=0,batches=null,written=0;
+	 var fileEntry=0, fileWriter=0;
+	 var createBatches=function(size) {
+		var bytes=1024*1024, out=[];
+		var b=Math.floor(size / bytes);
+		var last=size %bytes;
+		for (var i=0;i<=b;i++) {
+			out.push(i*bytes);
+		}
+		out.push(b*bytes+last);
+		return out;
+	 }
+	 var finish=function() {
+		 rm(fn,function(){
+				fileEntry.moveTo(fileEntry.filesystem.root, fn,function(){
+					setTimeout( cb.bind(context,false) , 0) ;
+				},function(e){
+					console.log("failed",e)
+				});
+		 },this);
+	 };
+		var tempfn="temp.kdb";
+		var batch=function(b) {
+		var abort=false;
+		var xhr = new XMLHttpRequest();
+		var requesturl=url+"?"+Math.random();
+		xhr.open('get', requesturl, true);
+		xhr.setRequestHeader('Range', 'bytes='+batches[b]+'-'+(batches[b+1]-1));
+		xhr.responseType = 'blob';
+		xhr.addEventListener('load', function() {
+			var blob=this.response;
+			fileEntry.createWriter(function(fileWriter) {
+				fileWriter.seek(fileWriter.length);
+				fileWriter.write(blob);
+				written+=blob.size;
+				fileWriter.onwriteend = function(e) {
+					if (statuscb) {
+						abort=statuscb.apply(context,[ fileWriter.length / totalsize,totalsize ]);
+						if (abort) setTimeout( cb.bind(context,false) , 0) ;
+				 	}
+					b++;
+					if (!abort) {
+						if (b<batches.length-1) setTimeout(batch.bind(context,b),0);
+						else                    finish();
+				 	}
+			 	};
+			}, console.error);
+		},false);
+		xhr.send();
+	}
+
+	get_size(url,function(size){
+		totalsize=size;
+		if (!size) {
+			if (cb) cb.apply(context,[false]);
+		} else {//ready to download
+			rm(tempfn,function(){
+				 batches=createBatches(size);
+				 if (statuscb) statuscb.apply(context,[ 0, totalsize ]);
+				 API.fs.root.getFile(tempfn, {create: 1, exclusive: false}, function(_fileEntry) {
+							fileEntry=_fileEntry;
+						batch(0);
+				 });
+			},this);
+		}
+	});
+}
+
+var readFile=function(filename,cb,context) {
+	API.fs.root.getFile(filename, {create: false, exclusive: false},function(fileEntry) {
+		fileEntry.file(function(file){
+			var reader = new FileReader();
+			reader.onloadend = function(e) {
+				if (cb) cb.call(cb,this.result);
+			};
+			reader.readAsText(file,"utf8");
+		});
+	}, console.error);
+}
+
+function createDir(rootDirEntry, folders,  cb) {
+  // Throw out './' or '/' and move on to prevent something like '/foo/.//bar'.
+  if (folders[0] == '.' || folders[0] == '') {
+    folders = folders.slice(1);
+  }
+  rootDirEntry.getDirectory(folders[0], {create: true}, function(dirEntry) {
+    // Recursively add the new subfolder (if we still have another to create).
+    if (folders.length) {
+      createDir(dirEntry, folders.slice(1),cb);
+    } else {
+			cb();
+		}
+  }, cb);
+};
+
+
+var writeFile=function(filename,buf,cb,context){
+	var write=function(fileEntry){
+		fileEntry.createWriter(function(fileWriter) {
+			fileWriter.write(buf);
+			fileWriter.onwriteend = function(e) {
+				if (cb) cb.apply(cb,[buf.byteLength]);
+			};
+		}, console.error);
+	}
+
+	var getFile=function(filename){
+		API.fs.root.getFile(filename, {exclusive:true}, function(fileEntry) {
+			write(fileEntry);
+		}, function(){
+				API.fs.root.getFile(filename, {create:true,exclusive:true}, function(fileEntry) {
+					write(fileEntry);
+				});
+
+		});
+	}
+	var slash=filename.lastIndexOf("/");
+	if (slash>-1) {
+		createDir(API.fs.root, filename.substr(0,slash).split("/"),function(){
+			getFile(filename);
+		});
+	} else {
+		getFile(filename);
+	}
+}
+
+var readdir=function(cb,context) {
+	var dirReader = API.fs.root.createReader();
+	var out=[],that=this;
+	dirReader.readEntries(function(entries) {
+		if (entries.length) {
+			for (var i = 0, entry; entry = entries[i]; ++i) {
+				if (entry.isFile) {
+					out.push([entry.name,entry.toURL ? entry.toURL() : entry.toURI()]);
+				}
+			}
+		}
+		API.files=out;
+		if (cb) cb.apply(context,[out]);
+	}, function(){
+		if (cb) cb.apply(context,[null]);
+	});
+}
+var getFileURL=function(filename) {
+	if (!API.files ) return null;
+	var file= API.files.filter(function(f){return f[0]==filename});
+	if (file.length) return file[0][1];
+}
+var rm=function(filename,cb,context) {
+	var url=getFileURL(filename);
+	if (url) rmURL(url,cb,context);
+	else if (cb) cb.apply(context,[false]);
+}
+
+var rmURL=function(filename,cb,context) {
+	webkitResolveLocalFileSystemURL(filename, function(fileEntry) {
+		fileEntry.remove(function() {
+			if (cb) cb.apply(context,[true]);
+		}, console.error);
+	},  function(e){
+		if (cb) cb.apply(context,[false]);//no such file
+	});
+}
+function errorHandler(e) {
+	console.error('Error: ' +e.name+ " "+e.message);
+}
+var initfs=function(grantedBytes,cb,context) {
+	webkitRequestFileSystem(PERSISTENT, grantedBytes,  function(fs) {
+		API.fs=fs;
+		API.quota=grantedBytes;
+		readdir(function(){
+			API.initialized=true;
+			cb.apply(context,[grantedBytes,fs]);
+		},context);
+	}, errorHandler);
+}
+var init=function(quota,cb,context) {
+	navigator.webkitPersistentStorage.requestQuota(quota,
+			function(grantedBytes) {
+				initfs(grantedBytes,cb,context);
+		}, errorHandler
+	);
+}
+var queryQuota=function(cb,context) {
+	var that=this;
+	navigator.webkitPersistentStorage.queryUsageAndQuota(
+	 function(usage,quota){
+			initfs(quota,function(){
+				cb.apply(context,[usage,quota]);
+			},context);
+	});
+}
+var API={
+	init:init
+	,readdir:readdir
+	,checkUpdate:checkUpdate
+	,rm:rm
+	,rmURL:rmURL
+	,getFileURL:getFileURL
+	,writeFile:writeFile
+	,readFile:readFile
+	,download:download
+	,get_head:get_head
+	,get_date:get_date
+	,get_size:get_size
+	,getDownloadSize:get_size
+	,queryQuota:queryQuota
+}
+module.exports=API;
+
+},{}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/ksanagap.js":[function(require,module,exports){
+var appname="installer";
+if (typeof ksana=="undefined") {
+	window.ksana={platform:"chrome"};
+}
+var switchApp=function(path) {
+	var fs=require("fs");
+	path="../"+path;
+	appname=path;
+	document.location.href= path+"/index.html"; 
+	process.chdir(path);
+}
+var downloader={};
+var rootPath="";
+
+var deleteApp=function(app) {
+	console.error("not allow on PC, do it in File Explorer/ Finder");
+}
+var username=function() {
+	return "";
+}
+var useremail=function() {
+	return ""
+}
+var runtime_version=function() {
+	return "1.4";
+}
+
+//copy from liveupdate
+var jsonp=function(url,dbid,callback,context) {
+  var script=document.getElementById("jsonp2");
+  if (script) {
+    script.parentNode.removeChild(script);
+  }
+  window.jsonp_handler=function(data) {
+    if (typeof data=="object") {
+      data.dbid=dbid;
+      callback.apply(context,[data]);    
+    }  
+  }
+  window.jsonp_error_handler=function() {
+    console.error("url unreachable",url);
+    callback.apply(context,[null]);
+  }
+  script=document.createElement('script');
+  script.setAttribute('id', "jsonp2");
+  script.setAttribute('onerror', "jsonp_error_handler()");
+  url=url+'?'+(new Date().getTime());
+  script.setAttribute('src', url);
+  document.getElementsByTagName('head')[0].appendChild(script); 
+}
+
+
+var loadKsanajs=function(){
+	if (typeof process!="undefined" && !process.browser) {
+		var ksanajs=require("fs").readFileSync("./ksana.js","utf8").trim();
+		downloader=require("./downloader");
+		//ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
+		rootPath=process.cwd();
+		rootPath=require("path").resolve(rootPath,"..").replace(/\\/g,"/")+'/';
+		ksana.ready=true;
+	} else{
+		var url=window.location.origin+window.location.pathname.replace("index.html","")+"ksana.js";
+		jsonp(url,appname,function(data){
+			ksana.js=data;
+			ksana.ready=true;
+		});
+	}
+}
+
+loadKsanajs();
+
+var boot=function(appId,cb) {
+	if (typeof appId=="function") {
+		cb=appId;
+		appId="unknownapp";
+	}
+
+	ksana.appId=appId;
+	var timer=setInterval(function(){
+			if (ksana.ready){
+				clearInterval(timer);
+				cb();
+			}
+		});
+}
+
+
+var ksanagap={
+	platform:"node-webkit",
+	startDownload:downloader.startDownload,
+	downloadedByte:downloader.downloadedByte,
+	downloadingFile:downloader.downloadingFile,
+	cancelDownload:downloader.cancelDownload,
+	doneDownload:downloader.doneDownload,
+	switchApp:switchApp,
+	rootPath:rootPath,
+	deleteApp: deleteApp,
+	username:username, //not support on PC
+	useremail:username,
+	runtime_version:runtime_version,
+	boot:boot
+}
+module.exports=ksanagap;
+},{"./downloader":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/downloader.js","fs":false,"path":false}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/livereload.js":[function(require,module,exports){
+var started=false;
+var timer=null;
+var bundledate=null;
+var get_date=require("./html5fs").get_date;
+var checkIfBundleUpdated=function() {
+	get_date("bundle.js",function(date){
+		if (bundledate &&bundledate!=date){
+			location.reload();
+		}
+		bundledate=date;
+	});
+}
+var livereload=function() {
+	if (started) return;
+
+	timer1=setInterval(function(){
+		checkIfBundleUpdated();
+	},2000);
+	started=true;
+}
+
+module.exports=livereload;
+},{"./html5fs":"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/html5fs.js"}],"/Users/yu/ksana2015/node_modules/ksana2015-webruntime/mkdirp.js":[function(require,module,exports){
+function mkdirP (p, mode, f, made) {
+     var path = nodeRequire('path');
+     var fs = nodeRequire('fs');
+	
+    if (typeof mode === 'function' || mode === undefined) {
+        f = mode;
+        mode = 0x1FF & (~process.umask());
+    }
+    if (!made) made = null;
+
+    var cb = f || function () {};
+    if (typeof mode === 'string') mode = parseInt(mode, 8);
+    p = path.resolve(p);
+
+    fs.mkdir(p, mode, function (er) {
+        if (!er) {
+            made = made || p;
+            return cb(null, made);
+        }
+        switch (er.code) {
+            case 'ENOENT':
+                mkdirP(path.dirname(p), mode, function (er, made) {
+                    if (er) cb(er, made);
+                    else mkdirP(p, mode, cb, made);
+                });
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                fs.stat(p, function (er2, stat) {
+                    // if the stat fails, then that's super weird.
+                    // let the original error be the failure reason.
+                    if (er2 || !stat.isDirectory()) cb(er, made)
+                    else cb(null, made);
+                });
+                break;
+        }
+    });
+}
+
+mkdirP.sync = function sync (p, mode, made) {
+    var path = nodeRequire('path');
+    var fs = nodeRequire('fs');
+    if (mode === undefined) {
+        mode = 0x1FF & (~process.umask());
+    }
+    if (!made) made = null;
+
+    if (typeof mode === 'string') mode = parseInt(mode, 8);
+    p = path.resolve(p);
+
+    try {
+        fs.mkdirSync(p, mode);
+        made = made || p;
+    }
+    catch (err0) {
+        switch (err0.code) {
+            case 'ENOENT' :
+                made = sync(path.dirname(p), mode, made);
+                sync(p, mode, made);
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                var stat;
+                try {
+                    stat = fs.statSync(p);
+                }
+                catch (err1) {
+                    throw err0;
+                }
+                if (!stat.isDirectory()) throw err0;
+                break;
+        }
+    }
+
+    return made;
+};
+
+module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
+
+},{}],"/Users/yu/ksana2015/node_modules/tibetan/wylie.js":[function(require,module,exports){
 var opt = { check:false, check_strict:false, print_warnings:false, fix_spacing:false }
 
 function setopt(arg_opt) {
@@ -165303,1939 +166233,5 @@ module.exports= {
 
 
 
-},{}],"C:\\ksana2015\\node_modules\\ksana2015-stacktoc\\index.js":[function(require,module,exports){
-var React=(window&&window.React)||require("react");
-var E=React.createElement;
-var trimHit=function(hit) {
-  if (hit>999) { 
-    return (Math.floor(hit/1000)).toString()+"K+";
-  } else return hit.toString();
-}
-var trimText=function(text,opts) {
-    if (opts.maxitemlength && text.length>opts.maxitemlength) {
-      var stopAt=opts.stopAt||"";
-      if (stopAt) {
-        var at=opts.maxitemlength;
-        while (at>10) {
-          if (text.charAt(at)==stopAt) return text.substr(0,at)+"...";
-          at--;
-        }
-      } else {
-        return text.substr(0,opts.maxitemlength)+"...";
-      }
-    } 
-    return text;
-}
-var ganzhi="　甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥";
-
-var renderDepth=function(depth,opts,nodetype) {
-  var out=[];
-  if (opts.tocstyle=="vertical_line") {
-    for (var i=0;i<depth;i++) {
-      if (i==depth-1) {
-        out.push(E("img", {src: opts.tocbar_start}));
-      } else {
-        out.push(E("img", {src: opts.tocbar}));  
-      }
-    }
-    return out;    
-  } else if (opts.tocstyle=="ganzhi") {
-    return E("span", null, ganzhi[depth]+".");
-  } else {
-    if (depth) return E("span", null, depth, ".")
-    else return null;
-  }
-  return null;
-};
-
-
-var Ancestors=React.createClass({
-  goback:function(e) {
-    var n=e.target.dataset["n"];  
-    if (typeof n=="undefined") n=e.target.parentNode.dataset["n"];
-    this.props.setCurrent(n); 
-  },
-  showExcerpt:function(e) {
-    var n=parseInt(e.target.parentNode.dataset["n"]);
-    e.stopPropagation();
-    e.preventDefault();
-    this.props.showExcerpt(n);
-  }, 
-  showHit:function(hit) {
-    if (hit)  return E("a", {href: "#", onClick: this.showExcerpt, className: "pull-right badge hitbadge"}, trimHit(hit))
-    else return E("span", null);
-  },
-  renderAncestor:function(n,idx) {
-    var hit=this.props.toc[n].hit;
-    var text=this.props.toc[n].text.trim();
-    text=trimText(text,this.props.opts);
-    if (this.props.textConverter) text=this.props.textConverter(text);
-    return E("div", {key: "a"+n, className: "node parent", "data-n": n, onClick: this.goback}, renderDepth(idx,this.props.opts,"ancestor"),
-              E("a", {className: "text", href: "#"}, text), this.showHit(hit))
-  },
-  render:function() {
-    if (!this.props.data || !this.props.data.length) return E("div",null);
-    return E("div", null, this.props.data.map(this.renderAncestor))
-  } 
-}); 
-var Children=React.createClass({
-  getInitialState:function() {
-    return {selected:0};
-  },
-  shouldComponentUpdate:function(nextProps,nextState) {
-    if (nextProps.data.join()!=this.props.data.join() ) {
-      nextState.selected=parseInt(nextProps.data[0]);
-    }
-    return true;
-  },
-  open:function(e) {
-    var n=e.target.parentNode.dataset["n"];
-    if (typeof n!=="undefined") this.props.setCurrent(parseInt(n));
-  }, 
-  showHit:function(hit) {
-    if (hit)  return E("a", {href: "#", onClick: this.showExcerpt, 
-      className: "pull-right badge hitbadge"}, trimHit(hit))
-    else return E("span",null);
-  },
-  showExcerpt:function(e) {
-    var n=parseInt(e.target.parentNode.dataset["n"]);
-    e.stopPropagation();
-    e.preventDefault();
-    this.props.hitClick(n);
-  }, 
-  nodeClicked:function(e) {
-    var target=e.target;
-    while (target && typeof target.dataset.n=="undefined")target=target.parentNode;
-    if (!target) return;
-    var n=parseInt(target.dataset.n);
-    var child=this.props.toc[n];
-    if (this.props.showTextOnLeafNodeOnly) {
-      if (child.hasChild) {
-        this.open(e);
-      } else {
-        this.showText(e);
-      }
-    } else {
-      if (n==this.state.selected) {
-        if (child.hasChild) this.open(e);
-        else this.showText(e);
-      } else {
-        this.showText(e);
-      }
-    }
-    this.setState({selected:n});
-  },
-  renderChild:function(n) {
-    var child=this.props.toc[n];
-    var hit=this.props.toc[n].hit;
-    var classes="node child",haschild=false;  
-    //if (child.extra) extra="<extra>"+child.extra+"</extra>";
-    if (!child.hasChild) classes+=" nochild";
-    else haschild=true;
-    var selected=this.state.selected;
-    if (this.props.showTextOnLeafNodeOnly) {
-      selected=n;
-    }
-
-    var classes="btn btn-link";
-    if (n==selected) {
-      if (haschild) classes="btn btn-default expandable";
-      else classes="btn btn-link link-selected";
-    }
-
-    var text=this.props.toc[n].text.trim();
-    var depth=this.props.toc[n].depth;
-    text=trimText(text,this.props.opts)
-    if (this.props.textConverter) text=this.props.textConverter(text);
-    return E("div", {key: "child"+n, "data-n": n}, renderDepth(depth,this.props.opts,"child"), 
-           E("a", {"data-n": n, className: classes +" tocitem text", onClick: this.nodeClicked}, text+" "), this.showHit(hit)
-           )
-  },
-  showText:function(e) { 
-    var target=e.target;
-    var n=e.target.dataset.n;
-    while (target && typeof target.dataset.n=="undefined") {
-      target=target.parentNode;
-    }
-    if (target && target.dataset.n && this.props.showText) {
-      this.props.showText(parseInt(target.dataset.n));
-    }
-  },
-  render:function() {
-    if (!this.props.data || !this.props.data.length) return E("div", null);
-    return E("div", null, this.props.data.map(this.renderChild))
-  }
-}); 
-
-var stacktoc = React.createClass({
-  getInitialState: function() {
-    return {bar: "world",cur:this.props.current|0};//403
-  },
-  buildtoc: function(toc) {
-    if (!toc || !toc.length) return;  
-      var depths=[];
-      var prev=0;
-      for (var i=0;i<toc.length;i++) {
-        var depth=toc[i].depth;
-        if (prev>depth) { //link to prev sibling
-          if (depths[depth]) toc[depths[depth]].next = i;
-          for (var j=depth;j<prev;j++) depths[j]=0;
-        }
-        if (i<toc.length-1 && toc[i+1].depth>depth) {
-          toc[i].hasChild=true;
-        }
-        depths[depth]=i;
-        prev=depth;
-      } 
-
-  }, 
-
-  componentWillReceiveProps:function(nextProps) {
-    if (nextProps.data && nextProps.data.length && nextProps.data != this.props.data) {
-      this.buildtoc(nextProps.data);
-    }
-  }, 
-  setCurrent:function(n) {
-    n=parseInt(n);
-    this.setState({cur:n});
-    var child=this.props.data[n];
-    if (!(child.hasChild && this.props.showTextOnLeafNodeOnly)) {
-		  if (this.props.showText)  this.props.showText(n);
-    }
-  },
-  findByVoff:function(voff) {
-    for (var i=0;i<this.props.data.length;i++) {
-      var t=this.props.data[i];
-      if (t.voff>voff) return i-1;
-    }
-    return 0; //return root node
-  },
-  shouldComponentUpdate:function(nextProps,nextState) {
-    if (nextProps.goVoff&&nextProps.goVoff !=this.props.goVoff) {
-      nextState.cur=this.findByVoff(nextProps.goVoff);
-    }
-    if (nextProps.current != this.props.current) {
-      nextState.cur=nextProps.current;
-    }
-    return true;
-  },
-  fillHit:function(nodeIds) {
-    if (typeof nodeIds=="undefined") return;
-    if (typeof nodeIds=="number") nodeIds=[nodeIds];
-    var toc=this.props.data;
-    var hits=this.props.hits;
-    if (toc.length<2) return;
-    var getRange=function(n) {
-      if (n+1>=toc.length) {
-        console.error("exceed toc length",n);
-        return;
-      }
-      var depth=toc[n].depth , nextdepth=toc[n+1].depth;
-      if (n==toc.length-1 || n==0) {
-          toc[n].end=Math.pow(2, 48);
-          return;
-      } else  if (nextdepth>depth){
-        if (toc[n].next) {
-          toc[n].end= toc[toc[n].next].voff;  
-        } else { //last sibling
-          var next=n+1;
-          while (next<toc.length && toc[next].depth>depth) next++;
-          if (next==toc.length) toc[n].end=Math.pow(2,48);
-          else toc[n].end=toc[next].voff;
-        }
-      } else { //same level or end of sibling
-        toc[n].end=toc[n+1].voff;
-      }
-    }
-    var getHit=function(n) {
-      var start=toc[n].voff;
-      var end=toc[n].end;
-      if (n==0) {
-        toc[0].hit=hits.length;
-      } else {
-        var hit=0;
-        for (var i=0;i<hits.length;i++) {
-          if (hits[i]>=start && hits[i]<end) hit++;
-        }
-        toc[n].hit=hit;
-      }
-    }
-    nodeIds.forEach(function(n){getRange(n)});
-    nodeIds.forEach(function(n){getHit(n)});
-  },
-  fillHits:function(ancestors,children) {
-      this.fillHit(ancestors);
-      this.fillHit(children);
-      this.fillHit(this.state.cur);
-  },
-  hitClick:function(n) {
-    if (this.props.showExcerpt)  this.props.showExcerpt(n);
-  },
-  onHitClick:function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.hitClick(this.state.cur);
-  },
-  showHit:function(hit) {
-    if (hit)  return E("a", {href: "#", onClick: this.onHitClick, className: "pull-right badge hitbadge"}, trimHit(hit))
-    else return E("span",null);
-  },
-  showText:function(e) {
-    var target=e.target;
-    var n=e.target.dataset.n;
-    while (target && typeof target.dataset.n=="undefined") {
-      target=target.parentNode;
-    }
-    if (target && target.dataset.n && this.props.showText) {
-      this.props.showText(parseInt(target.dataset.n));
-    }
-  },
-  render: function() {
-    if (!this.props.data || !this.props.data.length) return E("div",null);
-    var depth=this.props.data[this.state.cur].depth+1;
-    var ancestors=enumAncestors(this.props.data,this.state.cur);
-    var children=enumChildren(this.props.data,this.state.cur);
-    var opts=this.props.opts||{};
-    var current=this.props.data[this.state.cur];
-    if (this.props.hits && this.props.hits.length) {
-      this.fillHits(ancestors,children);
-    }
-
-    var text=current.text.trim();
-    text=trimText(text,opts);
-    if (this.props.textConverter) text=this.props.textConverter(text);
-    return ( 
-      E("div", {className: "stacktoc"}, 
-        E(Ancestors, {opts: opts, textConverter: this.props.textConverter, showExcerpt: this.hitClick, setCurrent: this.setCurrent, toc: this.props.data, data: ancestors}), 
-        E("div", {className: "node current"}, renderDepth(depth-1,opts,"current"), E("a", {href: "#", onClick: this.showText, "data-n": this.state.cur}, E("span", {className: "text"}, text)), this.showHit(current.hit)), 
-        E(Children, {opts: opts, textConverter: this.props.textConverter, showTextOnLeafNodeOnly: this.props.showTextOnLeafNodeOnly, 
-                  showText: this.props.showText, hitClick: this.hitClick, setCurrent: this.setCurrent, toc: this.props.data, data: children})
-      )
-    ); 
-  }
-});
-var enumAncestors=function(toc,cur) {
-    if (!toc || !toc.length) return;
-    if (cur==0) return [];
-    var n=cur-1;
-    var depth=toc[cur].depth - 1;
-    var parents=[];
-    while (n>=0 && depth>0) {
-      if (toc[n].depth==depth) {
-        parents.unshift(n);
-        depth--;
-      }
-      n--;
-    }
-    parents.unshift(0); //first ancestor is root node
-    return parents;
-}
-
-var enumChildren=function(toc,cur) {
-    var children=[];
-    if (!toc || !toc.length || toc.length==1) return children;
-
-    if (toc[cur+1].depth!= 1+toc[cur].depth) return children;  // no children node
-    var n=cur+1;
-    var child=toc[n];
-    
-    while (child) {
-      children.push(n);
-      var next=toc[n+1];
-      if (!next) break;
-      if (next.depth==child.depth) {
-        n++;
-      } else if (next.depth>child.depth) {
-        n=child.next;
-      } else break;
-      if (n) child=toc[n];else break;
-    }
-    return children;
-}
-var genToc=function(toc,title) {
-    var out=[{depth:0,text:title||ksana.js.title}];
-    if (toc.texts) for (var i=0;i<toc.texts.length;i++) {
-      out.push({text:toc.texts[i],depth:toc.depths[i], voff:toc.vpos[i]});
-    }
-    return out; 
-}
-module.exports={component:stacktoc,genToc:genToc,enumChildren:enumChildren,enumAncestors:enumAncestors};
-
-},{"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\checkbrowser.js":[function(require,module,exports){
-/*
-convert to pure js
-save -g reactify
-*/
-var React=(window&&window.React)||require("react");
-var E=React.createElement;
-
-var hasksanagap=(typeof ksanagap!="undefined");
-if (hasksanagap && (typeof console=="undefined" || typeof console.log=="undefined")) {
-		window.console={log:ksanagap.log,error:ksanagap.error,debug:ksanagap.debug,warn:ksanagap.warn};
-		console.log("install console output funciton");
-}
-
-var checkfs=function() {
-	return (navigator && navigator.webkitPersistentStorage) || hasksanagap;
-}
-var featurechecks={
-	"fs":checkfs
-}
-var checkbrowser = React.createClass({
-	getInitialState:function() {
-
-		var missingFeatures=this.getMissingFeatures();
-		return {ready:false, missing:missingFeatures};
-	},
-	getMissingFeatures:function() {
-		var feature=this.props.feature.split(",");
-		var status=[];
-		feature.map(function(f){
-			var checker=featurechecks[f];
-			if (checker) checker=checker();
-			status.push([f,checker]);
-		});
-		return status.filter(function(f){return !f[1]});
-	},
-	downloadbrowser:function() {
-		window.location="https://www.google.com/chrome/"
-	},
-	renderMissing:function() {
-		var showMissing=function(m) {
-			return E("div", null, m);
-		}
-		return (
-		 E("div", {ref: "dialog1", className: "modal fade", "data-backdrop": "static"}, 
-		    E("div", {className: "modal-dialog"}, 
-		      E("div", {className: "modal-content"}, 
-		        E("div", {className: "modal-header"}, 
-		          E("button", {type: "button", className: "close", "data-dismiss": "modal", "aria-hidden": "true"}, "×"), 
-		          E("h4", {className: "modal-title"}, "Browser Check")
-		        ), 
-		        E("div", {className: "modal-body"}, 
-		          E("p", null, "Sorry but the following feature is missing"), 
-		          this.state.missing.map(showMissing)
-		        ), 
-		        E("div", {className: "modal-footer"}, 
-		          E("button", {onClick: this.downloadbrowser, type: "button", className: "btn btn-primary"}, "Download Google Chrome")
-		        )
-		      )
-		    )
-		  )
-		 );
-	},
-	renderReady:function() {
-		return E("span", null, "browser ok")
-	},
-	render:function(){
-		return  (this.state.missing.length)?this.renderMissing():this.renderReady();
-	},
-	componentDidMount:function() {
-		if (!this.state.missing.length) {
-			this.props.onReady();
-		} else {
-			$(this.refs.dialog1.getDOMNode()).modal('show');
-		}
-	}
-});
-
-module.exports=checkbrowser;
-},{"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js":[function(require,module,exports){
-
-var userCancel=false;
-var files=[];
-var totalDownloadByte=0;
-var targetPath="";
-var tempPath="";
-var nfile=0;
-var baseurl="";
-var result="";
-var downloading=false;
-var startDownload=function(dbid,_baseurl,_files) { //return download id
-	var fs     = require("fs");
-	var path   = require("path");
-
-	
-	files=_files.split("\uffff");
-	if (downloading) return false; //only one session
-	userCancel=false;
-	totalDownloadByte=0;
-	nextFile();
-	downloading=true;
-	baseurl=_baseurl;
-	if (baseurl[baseurl.length-1]!='/')baseurl+='/';
-	targetPath=ksanagap.rootPath+dbid+'/';
-	tempPath=ksanagap.rootPath+".tmp/";
-	result="";
-	return true;
-}
-
-var nextFile=function() {
-	setTimeout(function(){
-		if (nfile==files.length) {
-			nfile++;
-			endDownload();
-		} else {
-			downloadFile(nfile++);	
-		}
-	},100);
-}
-
-var downloadFile=function(nfile) {
-	var url=baseurl+files[nfile];
-	var tmpfilename=tempPath+files[nfile];
-	var mkdirp = require("./mkdirp");
-	var fs     = require("fs");
-	var http   = require("http");
-
-	mkdirp.sync(path.dirname(tmpfilename));
-	var writeStream = fs.createWriteStream(tmpfilename);
-	var datalength=0;
-	var request = http.get(url, function(response) {
-		response.on('data',function(chunk){
-			writeStream.write(chunk);
-			totalDownloadByte+=chunk.length;
-			if (userCancel) {
-				writeStream.end();
-				setTimeout(function(){nextFile();},100);
-			}
-		});
-		response.on("end",function() {
-			writeStream.end();
-			setTimeout(function(){nextFile();},100);
-		});
-	});
-}
-
-var cancelDownload=function() {
-	userCancel=true;
-	endDownload();
-}
-var verify=function() {
-	return true;
-}
-var endDownload=function() {
-	nfile=files.length+1;//stop
-	result="cancelled";
-	downloading=false;
-	if (userCancel) return;
-	var fs     = require("fs");
-	var mkdirp = require("./mkdirp");
-
-	for (var i=0;i<files.length;i++) {
-		var targetfilename=targetPath+files[i];
-		var tmpfilename   =tempPath+files[i];
-		mkdirp.sync(path.dirname(targetfilename));
-		fs.renameSync(tmpfilename,targetfilename);
-	}
-	if (verify()) {
-		result="success";
-	} else {
-		result="error";
-	}
-}
-
-var downloadedByte=function() {
-	return totalDownloadByte;
-}
-var doneDownload=function() {
-	if (nfile>files.length) return result;
-	else return "";
-}
-var downloadingFile=function() {
-	return nfile-1;
-}
-
-var downloader={startDownload:startDownload, downloadedByte:downloadedByte,
-	downloadingFile:downloadingFile, cancelDownload:cancelDownload,doneDownload:doneDownload};
-module.exports=downloader;
-},{"./mkdirp":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\mkdirp.js","fs":false,"http":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js":[function(require,module,exports){
-/* todo , optional kdb */
-var React=(window&&window.React)||require("react");
-var HtmlFS=require("./htmlfs");
-var html5fs=require("./html5fs");
-var CheckBrowser=require("./checkbrowser");
-var E=React.createElement;
-
-
-var FileList=null;
-
-/*TODO kdb check version*/
-var Filemanager = React.createClass({
-	getInitialState:function() {
-		var quota=this.getQuota();
-		return {browserReady:false,noupdate:true,	requestQuota:quota,remain:0};
-	},
-	componentWillMount:function(){
-	  if (ksanagap.bootopts.material) FileList=require("./filelist_mui");
-	  else FileList=require("./filelist");
-	},
-	getQuota:function() {
-		var q=this.props.quota||"128M";
-		var unit=q[q.length-1];
-		var times=1;
-		if (unit=="M") times=1024*1024;
-		else if (unit="K") times=1024;
-		return parseInt(q) * times;
-	},
-	missingKdb:function() {
-		if (ksanagap.platform!="chrome") return [];
-		var missing=this.props.needed.filter(function(kdb){
-			for (var i in html5fs.files) {
-				if (html5fs.files[i][0]==kdb.filename) return false;
-			}
-			return true;
-		},this);
-		return missing;
-	},
-	getRemoteUrl:function(fn) {
-		var f=this.props.needed.filter(function(f){return f.filename==fn});
-		if (f.length ) return f[0].url;
-	},
-	genFileList:function(existing,missing){
-		var out=[];
-		for (var i in existing) {
-			var url=this.getRemoteUrl(existing[i][0]);
-			out.push({filename:existing[i][0], url :url, ready:true });
-		}
-		for (var i in missing) {
-			out.push(missing[i]);
-		}
-		return out;
-	},
-	reload:function() {
-		html5fs.readdir(function(files){
-  			this.setState({files:this.genFileList(files,this.missingKdb())});
-  		},this);
-	 },
-	deleteFile:function(fn) {
-	  html5fs.rm(fn,function(){
-	  	this.reload();
-	  },this);
-	},
-	onQuoteOk:function(quota,usage) {
-		if (ksanagap.platform!="chrome") {
-			//console.log("onquoteok");
-			this.setState({noupdate:true,missing:[],files:[],autoclose:true
-				,quota:quota,remain:quota-usage,usage:usage});
-			return;
-		}
-		//console.log("quote ok");
-		var files=this.genFileList(html5fs.files,this.missingKdb());
-		var that=this;
-		that.checkIfUpdate(files,function(hasupdate) {
-			var missing=this.missingKdb();
-			var autoclose=this.props.autoclose;
-			if (missing.length) autoclose=false;
-			that.setState({autoclose:autoclose,
-				quota:quota,usage:usage,files:files,
-				missing:missing,
-				noupdate:!hasupdate,
-				remain:quota-usage});
-		});
-	},  
-	onBrowserOk:function() {
-	  this.totalDownloadSize();
-
-	}, 
-	dismiss:function() {
-		this.props.onReady(this.state.usage,this.state.quota);
-		
-		setTimeout(function(){
-			if (typeof $ !== "undefined") {
-				var modalin=$(".modal.in");
-				if (modalin.modal) modalin.modal('hide');				
-			}
-		},500);
-	}, 
-
-	totalDownloadSize:function() {
-		var files=this.missingKdb();
-		var taskqueue=[],totalsize=0;
-		for (var i=0;i<files.length;i++) {
-			taskqueue.push(
-				(function(idx){
-					return (function(data){
-						if (!(typeof data=='object' && data.__empty)) totalsize+=data;
-						html5fs.getDownloadSize(files[idx].url,taskqueue.shift());
-					});
-				})(i)
-			);
-		}
-		var that=this;
-		taskqueue.push(function(data){	
-			totalsize+=data;
-			setTimeout(function(){that.setState({requireSpace:totalsize,browserReady:true})},0);
-		});
-		taskqueue.shift()({__empty:true});
-	},
-	checkIfUpdate:function(files,cb) {
-		var taskqueue=[];
-		for (var i=0;i<files.length;i++) {
-			taskqueue.push(
-				(function(idx){
-					return (function(data){
-						if (!(typeof data=='object' && data.__empty)) files[idx-1].hasUpdate=data;
-						html5fs.checkUpdate(files[idx].url,files[idx].filename,taskqueue.shift());
-					});
-				})(i)
-			);
-		}
-		var that=this;
-		taskqueue.push(function(data){	
-			if (files.length) files[files.length-1].hasUpdate=data;
-			var hasupdate=files.some(function(f){return f.hasUpdate});
-			if (cb) cb.apply(that,[hasupdate]);
-		});
-		taskqueue.shift()({__empty:true});
-	},
-	render:function(){
-    		if (!this.state.browserReady) {   
-      			return E(CheckBrowser, {feature: "fs", onReady: this.onBrowserOk})
-    		} if (!this.state.quota || this.state.remain<this.state.requireSpace) {  
-    			var quota=this.state.requestQuota;
-    			if (this.state.usage+this.state.requireSpace>quota) {
-    				quota=(this.state.usage+this.state.requireSpace)*1.5;
-    			}
-      			return E(HtmlFS, {quota: quota, autoclose: "true", onReady: this.onQuoteOk})
-      		} else {
-			if (!this.state.noupdate || this.missingKdb().length || !this.state.autoclose) {
-				var remain=Math.round((this.state.usage/this.state.quota)*100);				
-				return E(FileList, {action: this.action, files: this.state.files, remainPercent: remain})
-			} else {
-				setTimeout( this.dismiss ,0);
-				return E("span", null, "Success");
-			}
-      		}
-	},
-	action:function() {
-	  var args = Array.prototype.slice.call(arguments);
-	  var type=args.shift();
-	  var res=null, that=this;
-	  if (type=="delete") {
-	    this.deleteFile(args[0]);
-	  }  else if (type=="reload") {
-	  	this.reload();
-	  } else if (type=="dismiss") {
-	  	this.dismiss();
-	  }
-	}
-});
-
-module.exports=Filemanager;
-},{"./checkbrowser":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\checkbrowser.js","./filelist":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist.js","./filelist_mui":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist_mui.js","./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","./htmlfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist.js":[function(require,module,exports){
-var React=require("react");
-var E=React.createElement;
-var html5fs=require("./html5fs");
-var FileList = React.createClass({
-	getInitialState:function() {
-		return {downloading:false,progress:0};
-	},
-	updatable:function(f) {
-        var classes="btn btn-warning";
-        if (this.state.downloading) classes+=" disabled";
-		if (f.hasUpdate) return   E("button", {className: classes, 
-			"data-filename": f.filename, "data-url": f.url, 
-	            onClick: this.download
-	       }, "Update")
-		else return null;
-	},
-	showLocal:function(f) {
-        var classes="btn btn-danger";
-        if (this.state.downloading) classes+=" disabled";
-	  return E("tr", null, E("td", null, f.filename), 
-	      E("td", null), 
-	      E("td", {className: "pull-right"}, 
-	      this.updatable(f), E("button", {className: classes, 
-	               onClick: this.deleteFile, "data-filename": f.filename}, "Delete")
-	        
-	      )
-	  )
-	},  
-	showRemote:function(f) { 
-	  var classes="btn btn-warning";
-	  if (this.state.downloading) classes+=" disabled";
-	  return (E("tr", {"data-id": f.filename}, E("td", null, 
-	      f.filename), 
-	      E("td", null, f.desc), 
-	      E("td", null, 
-	      E("button", {"data-filename": f.filename, "data-url": f.url, 
-	            className: classes, 
-	            onClick: this.download}, "Download")
-	      )
-	  ));
-	},
-	showFile:function(f) {
-	//	return <span data-id={f.filename}>{f.url}</span>
-		return (f.ready)?this.showLocal(f):this.showRemote(f);
-	},
-	reloadDir:function() {
-		this.props.action("reload");
-	},
-	download:function(e) {
-		var url=e.target.dataset["url"];
-		var filename=e.target.dataset["filename"];
-		this.setState({downloading:true,progress:0,url:url});
-		this.userbreak=false;
-		html5fs.download(url,filename,function(){
-			this.reloadDir();
-			this.setState({downloading:false,progress:1});
-			},function(progress,total){
-				if (progress==0) {
-					this.setState({message:"total "+total})
-			 	}
-			 	this.setState({progress:progress});
-			 	//if user press abort return true
-			 	return this.userbreak;
-			}
-		,this);
-	},
-	deleteFile:function( e) {
-		var filename=e.target.attributes["data-filename"].value;
-		this.props.action("delete",filename);
-	},
-	allFilesReady:function(e) {
-		return this.props.files.every(function(f){ return f.ready});
-	},
-	dismiss:function() {
-		$(this.refs.dialog1.getDOMNode()).modal('hide');
-		this.props.action("dismiss");
-	},
-	abortdownload:function() {
-		this.userbreak=true;
-	},
-	showProgress:function() {
-	     if (this.state.downloading) {
-	      var progress=Math.round(this.state.progress*100);
-	      return (
-	      	E("div", null, 
-	      	"Downloading from ", this.state.url, 
-	      E("div", {key: "progress", className: "progress col-md-8"}, 
-	          E("div", {className: "progress-bar", role: "progressbar", 
-	              "aria-valuenow": progress, "aria-valuemin": "0", 
-	              "aria-valuemax": "100", style: {width: progress+"%"}}, 
-	            progress, "%"
-	          )
-	        ), 
-	        E("button", {onClick: this.abortdownload, 
-	        	className: "btn btn-danger col-md-4"}, "Abort")
-	        )
-	        );
-	      } else {
-	      		if ( this.allFilesReady() ) {
-	      			return E("button", {onClick: this.dismiss, className: "btn btn-success"}, "Ok")
-	      		} else return null;
-	      		
-	      }
-	},
-	showUsage:function() {
-		var percent=this.props.remainPercent;
-           return (E("div", null, E("span", {className: "pull-left"}, "Usage:"), E("div", {className: "progress"}, 
-		  E("div", {className: "progress-bar progress-bar-success progress-bar-striped", role: "progressbar", style: {width: percent+"%"}}, 
-		    	percent+"%"
-		  )
-		)));
-	},
-	render:function() {
-	  	return (
-		E("div", {ref: "dialog1", className: "modal fade", "data-backdrop": "static"}, 
-		    E("div", {className: "modal-dialog"}, 
-		      E("div", {className: "modal-content"}, 
-		        E("div", {className: "modal-header"}, 
-		          E("h4", {className: "modal-title"}, "File Installer")
-		        ), 
-		        E("div", {className: "modal-body"}, 
-		        	E("table", {className: "table"}, 
-		        	E("tbody", null, 
-		          	this.props.files.map(this.showFile)
-		          	)
-		          )
-		        ), 
-		        E("div", {className: "modal-footer"}, 
-		        	this.showUsage(), 
-		           this.showProgress()
-		        )
-		      )
-		    )
-		  )
-		);
-	},	
-	componentDidMount:function() {
-		$(this.refs.dialog1.getDOMNode()).modal('show');
-	}
-});
-
-module.exports=FileList;
-},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\filelist_mui.js":[function(require,module,exports){
-var React=require("react");
-//var mui=require("material-ui");
-var E=React.createElement;
-var html5fs=require("./html5fs");
-
-var FileList = React.createClass({
-	getInitialState:function() {
-		return {downloading:false,progress:0};
-	},
-	updatable:function(f) {
-        var classes="btn btn-warning";
-        if (this.state.downloading) classes+=" disabled";
-		if (f.hasUpdate) return   E("button", {className: classes, 
-			"data-filename": f.filename, "data-url": f.url, 
-	            onClick: this.download
-	       }, "Update")
-		else return null;
-	},
-	showLocal:function(f) {
-        var classes="btn btn-danger";
-        if (this.state.downloading) classes+=" disabled";
-	  return E("tr", null, E("td", null, f.filename), 
-	      E("td", null), 
-	      E("td", {className: "pull-right"}, 
-	      this.updatable(f), E("button", {className: classes, 
-	               onClick: this.deleteFile, "data-filename": f.filename}, "Delete")
-	        
-	      )
-	  )
-	},  
-	showRemote:function(f) { 
-	  var classes="btn btn-warning";
-	  if (this.state.downloading) classes+=" disabled";
-	  return (E("tr", {"data-id": f.filename}, E("td", null, 
-	      f.filename), 
-	      E("td", null, f.desc), 
-	      E("td", null, 
-	      E("button", {"data-filename": f.filename, "data-url": f.url, 
-	            className: classes, 
-	            onClick: this.download}, "Download")
-	      )
-	  ));
-	},
-	showFile:function(f) {
-	//	return <span data-id={f.filename}>{f.url}</span>
-		return (f.ready)?this.showLocal(f):this.showRemote(f);
-	},
-	reloadDir:function() {
-		this.props.action("reload");
-	},
-	download:function(e) {
-		var url=e.target.dataset["url"];
-		var filename=e.target.dataset["filename"];
-		this.setState({downloading:true,progress:0,url:url});
-		this.userbreak=false;
-		html5fs.download(url,filename,function(){
-			this.reloadDir();
-			this.setState({downloading:false,progress:1});
-			},function(progress,total){
-				if (progress==0) {
-					this.setState({message:"total "+total})
-			 	}
-			 	this.setState({progress:progress});
-			 	//if user press abort return true
-			 	return this.userbreak;
-			}
-		,this);
-	},
-	deleteFile:function( e) {
-		var filename=e.target.attributes["data-filename"].value;
-		this.props.action("delete",filename);
-	},
-	allFilesReady:function(e) {
-		return this.props.files.every(function(f){ return f.ready});
-	},
-	abortdownload:function() {
-		this.userbreak=true;
-	},
-	showProgress:function() {
-	     if (this.state.downloading) {
-	      var progress=Math.round(this.state.progress*100);
-	      return (
-	      	E("div", null, 
-	      	"Downloading from ", this.state.url, 
-	      E("div", {key: "progress", className: "progress col-md-8"}, 
-	          E("div", {className: "progress-bar", role: "progressbar", 
-	              "aria-valuenow": progress, "aria-valuemin": "0", 
-	              "aria-valuemax": "100", style: {width: progress+"%"}}, 
-	            progress, "%"
-	          )
-	        ), 
-	        E("button", {onClick: this.abortdownload, 
-	        	className: "btn btn-danger col-md-4"}, "Abort")
-	        )
-	        );
-	      } else {
-	      		if ( this.allFilesReady() ) {
-	      			return E("button", {onClick: this.dismiss, className: "btn btn-success"}, "Ok")
-	      		} else return null;
-	      		
-	      }
-	},
-	showUsage:function() {
-		var percent=this.props.remainPercent;
-        return E("span", null,  "remaining space "+percent+"%");
-	},
-	onToggle:function(e,idx,toggle) {
-		console.log("toggle",idx);
-	}
-	,buildmenuitems:function(files) {
-		var out=[];
-		for (var i=0;i<files.length;i++) {
-			var f=files[i];
-			
-			out.push({
-					payload:i,
-					text:this.showFile(f),
-					toggle:true, defaultToggled: f.ready
-				});
-		}
-		return out;
-	}
-	,render:function() {
-	  	return (
-		E("div", {ref: "dialog1", className: "modal fade", "data-backdrop": "static"}, 
-		    E("div", {className: "modal-dialog"}, 
-		      E("div", {className: "modal-content"}, 
-		        E("div", {className: "modal-header"}, 
-		          E("h4", {className: "modal-title"}, "File Installer")
-		        ), 
-		        E("div", {className: "modal-body"}, 
-		        	E("table", {className: "table"}, 
-		        	E("tbody", null, 
-		          	this.props.files.map(this.showFile)
-		          	)
-		          )
-		        ), 
-		        E("div", {className: "modal-footer"}, 
-		        	this.showUsage(), 
-		           this.showProgress()
-		        )
-		      )
-		    )
-		  )
-		);
-	},	
-	componentDidMount:function() {
-	}
-});
-
-module.exports=FileList;
-},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js":[function(require,module,exports){
-/* emulate filesystem on html5 browser */
-var get_head=function(url,field,cb){
-	var xhr = new XMLHttpRequest();
-	xhr.open("HEAD", url, true);
-	xhr.onreadystatechange = function() {
-			if (this.readyState == this.DONE) {
-				cb(xhr.getResponseHeader(field));
-			} else {
-				if (this.status!==200&&this.status!==206) {
-					cb("");
-				}
-			}
-	};
-	xhr.send();
-}
-var get_date=function(url,cb) {
-	get_head(url,"Last-Modified",function(value){
-		cb(value);
-	});
-}
-var get_size=function(url, cb) {
-	get_head(url,"Content-Length",function(value){
-		cb(parseInt(value));
-	});
-};
-var checkUpdate=function(url,fn,cb) {
-	if (!url) {
-		cb(false);
-		return;
-	}
-	get_date(url,function(d){
-		API.fs.root.getFile(fn, {create: false, exclusive: false}, function(fileEntry) {
-			fileEntry.getMetadata(function(metadata){
-				var localDate=Date.parse(metadata.modificationTime);
-				var urlDate=Date.parse(d);
-				cb(urlDate>localDate);
-			});
-		},function(){
-			cb(false);
-		});
-	});
-}
-var download=function(url,fn,cb,statuscb,context) {
-	 var totalsize=0,batches=null,written=0;
-	 var fileEntry=0, fileWriter=0;
-	 var createBatches=function(size) {
-		var bytes=1024*1024, out=[];
-		var b=Math.floor(size / bytes);
-		var last=size %bytes;
-		for (var i=0;i<=b;i++) {
-			out.push(i*bytes);
-		}
-		out.push(b*bytes+last);
-		return out;
-	 }
-	 var finish=function() {
-		 rm(fn,function(){
-				fileEntry.moveTo(fileEntry.filesystem.root, fn,function(){
-					setTimeout( cb.bind(context,false) , 0) ;
-				},function(e){
-					console.log("failed",e)
-				});
-		 },this);
-	 };
-		var tempfn="temp.kdb";
-		var batch=function(b) {
-		var abort=false;
-		var xhr = new XMLHttpRequest();
-		var requesturl=url+"?"+Math.random();
-		xhr.open('get', requesturl, true);
-		xhr.setRequestHeader('Range', 'bytes='+batches[b]+'-'+(batches[b+1]-1));
-		xhr.responseType = 'blob';
-		xhr.addEventListener('load', function() {
-			var blob=this.response;
-			fileEntry.createWriter(function(fileWriter) {
-				fileWriter.seek(fileWriter.length);
-				fileWriter.write(blob);
-				written+=blob.size;
-				fileWriter.onwriteend = function(e) {
-					if (statuscb) {
-						abort=statuscb.apply(context,[ fileWriter.length / totalsize,totalsize ]);
-						if (abort) setTimeout( cb.bind(context,false) , 0) ;
-				 	}
-					b++;
-					if (!abort) {
-						if (b<batches.length-1) setTimeout(batch.bind(context,b),0);
-						else                    finish();
-				 	}
-			 	};
-			}, console.error);
-		},false);
-		xhr.send();
-	}
-
-	get_size(url,function(size){
-		totalsize=size;
-		if (!size) {
-			if (cb) cb.apply(context,[false]);
-		} else {//ready to download
-			rm(tempfn,function(){
-				 batches=createBatches(size);
-				 if (statuscb) statuscb.apply(context,[ 0, totalsize ]);
-				 API.fs.root.getFile(tempfn, {create: 1, exclusive: false}, function(_fileEntry) {
-							fileEntry=_fileEntry;
-						batch(0);
-				 });
-			},this);
-		}
-	});
-}
-
-var readFile=function(filename,cb,context) {
-	API.fs.root.getFile(filename, {create: false, exclusive: false},function(fileEntry) {
-		fileEntry.file(function(file){
-			var reader = new FileReader();
-			reader.onloadend = function(e) {
-				if (cb) cb.call(cb,this.result);
-			};
-			reader.readAsText(file,"utf8");
-		});
-	}, console.error);
-}
-
-function createDir(rootDirEntry, folders,  cb) {
-  // Throw out './' or '/' and move on to prevent something like '/foo/.//bar'.
-  if (folders[0] == '.' || folders[0] == '') {
-    folders = folders.slice(1);
-  }
-  rootDirEntry.getDirectory(folders[0], {create: true}, function(dirEntry) {
-    // Recursively add the new subfolder (if we still have another to create).
-    if (folders.length) {
-      createDir(dirEntry, folders.slice(1),cb);
-    } else {
-			cb();
-		}
-  }, cb);
-};
-
-
-var writeFile=function(filename,buf,cb,context){
-	var write=function(fileEntry){
-		fileEntry.createWriter(function(fileWriter) {
-			fileWriter.write(buf);
-			fileWriter.onwriteend = function(e) {
-				if (cb) cb.apply(cb,[buf.byteLength]);
-			};
-		}, console.error);
-	}
-
-	var getFile=function(filename){
-		API.fs.root.getFile(filename, {exclusive:true}, function(fileEntry) {
-			write(fileEntry);
-		}, function(){
-				API.fs.root.getFile(filename, {create:true,exclusive:true}, function(fileEntry) {
-					write(fileEntry);
-				});
-
-		});
-	}
-	var slash=filename.lastIndexOf("/");
-	if (slash>-1) {
-		createDir(API.fs.root, filename.substr(0,slash).split("/"),function(){
-			getFile(filename);
-		});
-	} else {
-		getFile(filename);
-	}
-}
-
-var readdir=function(cb,context) {
-	var dirReader = API.fs.root.createReader();
-	var out=[],that=this;
-	dirReader.readEntries(function(entries) {
-		if (entries.length) {
-			for (var i = 0, entry; entry = entries[i]; ++i) {
-				if (entry.isFile) {
-					out.push([entry.name,entry.toURL ? entry.toURL() : entry.toURI()]);
-				}
-			}
-		}
-		API.files=out;
-		if (cb) cb.apply(context,[out]);
-	}, function(){
-		if (cb) cb.apply(context,[null]);
-	});
-}
-var getFileURL=function(filename) {
-	if (!API.files ) return null;
-	var file= API.files.filter(function(f){return f[0]==filename});
-	if (file.length) return file[0][1];
-}
-var rm=function(filename,cb,context) {
-	var url=getFileURL(filename);
-	if (url) rmURL(url,cb,context);
-	else if (cb) cb.apply(context,[false]);
-}
-
-var rmURL=function(filename,cb,context) {
-	webkitResolveLocalFileSystemURL(filename, function(fileEntry) {
-		fileEntry.remove(function() {
-			if (cb) cb.apply(context,[true]);
-		}, console.error);
-	},  function(e){
-		if (cb) cb.apply(context,[false]);//no such file
-	});
-}
-function errorHandler(e) {
-	console.error('Error: ' +e.name+ " "+e.message);
-}
-var initfs=function(grantedBytes,cb,context) {
-	webkitRequestFileSystem(PERSISTENT, grantedBytes,  function(fs) {
-		API.fs=fs;
-		API.quota=grantedBytes;
-		readdir(function(){
-			API.initialized=true;
-			cb.apply(context,[grantedBytes,fs]);
-		},context);
-	}, errorHandler);
-}
-var init=function(quota,cb,context) {
-	navigator.webkitPersistentStorage.requestQuota(quota,
-			function(grantedBytes) {
-				initfs(grantedBytes,cb,context);
-		}, errorHandler
-	);
-}
-var queryQuota=function(cb,context) {
-	var that=this;
-	navigator.webkitPersistentStorage.queryUsageAndQuota(
-	 function(usage,quota){
-			initfs(quota,function(){
-				cb.apply(context,[usage,quota]);
-			},context);
-	});
-}
-var API={
-	init:init
-	,readdir:readdir
-	,checkUpdate:checkUpdate
-	,rm:rm
-	,rmURL:rmURL
-	,getFileURL:getFileURL
-	,writeFile:writeFile
-	,readFile:readFile
-	,download:download
-	,get_head:get_head
-	,get_date:get_date
-	,get_size:get_size
-	,getDownloadSize:get_size
-	,queryQuota:queryQuota
-}
-module.exports=API;
-
-},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js":[function(require,module,exports){
-var html5fs=require("./html5fs");
-var React=(window&&window.React)||require("react");
-var E=React.createElement;
-
-var htmlfs = React.createClass({
-	getInitialState:function() { 
-		return {ready:false, quota:0,usage:0,Initialized:false,autoclose:this.props.autoclose};
-	},
-	initFilesystem:function() {
-		var quota=this.props.quota||1024*1024*128; // default 128MB
-		quota=parseInt(quota);
-		html5fs.init(quota,function(q){
-			this.dialog=false;
-			$(this.refs.dialog1.getDOMNode()).modal('hide');
-			this.setState({quota:q,autoclose:true});
-		},this);
-	},
-	welcome:function() {
-		return (
-		E("div", {ref: "dialog1", className: "modal fade", id: "myModal", "data-backdrop": "static"}, 
-		    E("div", {className: "modal-dialog"}, 
-		      E("div", {className: "modal-content"}, 
-		        E("div", {className: "modal-header"}, 
-		          E("h4", {className: "modal-title"}, "Welcome")
-		        ), 
-		        E("div", {className: "modal-body"}, 
-		          "Browser will ask for your confirmation."
-		        ), 
-		        E("div", {className: "modal-footer"}, 
-		          E("button", {onClick: this.initFilesystem, type: "button", 
-		            className: "btn btn-primary"}, "Initialize File System")
-		        )
-		      )
-		    )
-		  )
-		 );
-	},
-	renderDefault:function(){
-		var used=Math.floor(this.state.usage/this.state.quota *100);
-		var more=function() {
-			if (used>50) return E("button", {type: "button", className: "btn btn-primary"}, "Allocate More");
-			else null;
-		}
-		return (
-		E("div", {ref: "dialog1", className: "modal fade", id: "myModal", "data-backdrop": "static"}, 
-		    E("div", {className: "modal-dialog"}, 
-		      E("div", {className: "modal-content"}, 
-		        E("div", {className: "modal-header"}, 
-		          E("h4", {className: "modal-title"}, "Sandbox File System")
-		        ), 
-		        E("div", {className: "modal-body"}, 
-		          E("div", {className: "progress"}, 
-		            E("div", {className: "progress-bar", role: "progressbar", style: {width: used+"%"}}, 
-		               used, "%"
-		            )
-		          ), 
-		          E("span", null, this.state.quota, " total , ", this.state.usage, " in used")
-		        ), 
-		        E("div", {className: "modal-footer"}, 
-		          E("button", {onClick: this.dismiss, type: "button", className: "btn btn-default", "data-dismiss": "modal"}, "Close"), 
-		          more()
-		        )
-		      )
-		    )
-		  )
-		  );
-	},
-	dismiss:function() {
-		var that=this;
-		setTimeout(function(){
-			that.props.onReady(that.state.quota,that.state.usage);	
-		},0);
-	},
-	queryQuota:function() {
-		if (ksanagap.platform=="chrome") {
-			html5fs.queryQuota(function(usage,quota){
-				this.setState({usage:usage,quota:quota,initialized:true});
-			},this);			
-		} else {
-			this.setState({usage:333,quota:1000*1000*1024,initialized:true,autoclose:true});
-		}
-	},
-	render:function() {
-		var that=this;
-		if (!this.state.quota || this.state.quota<this.props.quota) {
-			if (this.state.initialized) {
-				this.dialog=true;
-				return this.welcome();	
-			} else {
-				return E("span", null, "checking quota");
-			}			
-		} else {
-			if (!this.state.autoclose) {
-				this.dialog=true;
-				return this.renderDefault(); 
-			}
-			this.dismiss();
-			this.dialog=false;
-			return null;
-		}
-	},
-	componentDidMount:function() {
-		if (!this.state.quota) {
-			this.queryQuota();
-
-		};
-	},
-	componentDidUpdate:function() {
-		if (this.dialog) $(this.refs.dialog1.getDOMNode()).modal('show');
-	}
-});
-
-module.exports=htmlfs;
-},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\index.js":[function(require,module,exports){
-var ksana={"platform":"remote"};
-if (typeof window!="undefined") {
-	window.ksana=ksana;
-	if (typeof ksanagap=="undefined") {
-		window.ksanagap=require("./ksanagap"); //compatible layer with mobile
-	}
-}
-if (typeof process !="undefined") {
-	if (process.versions && process.versions["node-webkit"]) {
-  		if (typeof nodeRequire!="undefined") ksana.require=nodeRequire;
-  		ksana.platform="node-webkit";
-  		window.ksanagap.platform="node-webkit";
-		var ksanajs=require("fs").readFileSync("ksana.js","utf8").trim();
-		ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
-		window.kfs=require("./kfs");
-  	}
-} else if (typeof chrome!="undefined"){//} && chrome.fileSystem){
-//	window.ksanagap=require("./ksanagap"); //compatible layer with mobile
-	window.ksanagap.platform="chrome";
-	window.kfs=require("./kfs_html5");
-	if(window.location.origin.indexOf("//127.0.0.1")>-1) {
-		require("./livereload")();
-	}
-	ksana.platform="chrome";
-} else {
-	if (typeof ksanagap!="undefined" && typeof fs!="undefined") {//mobile
-		var ksanajs=fs.readFileSync("ksana.js","utf8").trim(); //android extra \n at the end
-		ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
-		ksana.platform=ksanagap.platform;
-		if (typeof ksanagap.android !="undefined") {
-			ksana.platform="android";
-		}
-	}
-}
-var timer=null;
-var React=window.React||require("react");
-var boot=function(appId,opts,cb) {
-
-	if (typeof opts=="function") {
-		cb=opts;
-		opts={};
-	}
-	ksanagap.bootopts=opts;
-	if (typeof React!="undefined") {
-		React.initializeTouchEvents(true);
-	}
-	ksana.appId=appId;
-	if (ksanagap.platform=="chrome") { //need to wait for jsonp ksana.js
-		timer=setInterval(function(){
-			if (ksana.ready){
-				clearInterval(timer);
-				if ( (opts.chromeFileSystem) && ksana.js && ksana.js.files && ksana.js.files.length) {
-					require("./installkdb")(ksana.js,cb);
-				} else {
-					cb();		
-				}
-			}
-		},300);
-	} else {
-		cb();
-	}
-}
-
-module.exports={boot:boot
-	,htmlfs:require("./htmlfs")
-	,html5fs:require("./html5fs")
-	,liveupdate:require("./liveupdate")
-	,fileinstaller:require("./fileinstaller")
-	,downloader:require("./downloader")
-	,installkdb:require("./installkdb")
-};
-},{"./downloader":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js","./fileinstaller":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js","./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js","./htmlfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\htmlfs.js","./installkdb":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\installkdb.js","./kfs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs.js","./kfs_html5":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs_html5.js","./ksanagap":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js","./livereload":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js","./liveupdate":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\liveupdate.js","fs":false,"react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\installkdb.js":[function(require,module,exports){
-var React=(window&&window.React)||require("react");
-var Fileinstaller=require("./fileinstaller");
-
-var getRequire_kdb=function() {
-    var required=[];
-    ksana.js.files.map(function(f){
-      if (f.indexOf(".kdb")==f.length-4) {
-        var slash=f.lastIndexOf("/");
-        if (slash>-1) {
-          var dbid=f.substring(slash+1,f.length-4);
-          required.push({url:f,dbid:dbid,filename:dbid+".kdb"});
-        } else {
-          var dbid=f.substring(0,f.length-4);
-          required.push({url:ksana.js.baseurl+f,dbid:dbid,filename:f});
-        }        
-      }
-    });
-    return required;
-}
-var callback=null;
-var onReady=function() {
-	callback();
-}
-var openFileinstaller=function(keep) {
-	var require_kdb=getRequire_kdb().map(function(db){
-	  return {
-	    url:window.location.origin+window.location.pathname+db.dbid+".kdb",
-	    dbdb:db.dbid,
-	    filename:db.filename
-	  }
-	})
-	return React.createElement(Fileinstaller, {quota: "512M", autoclose: !keep, needed: require_kdb, 
-	                 onReady: onReady});
-}
-var installkdb=function(ksanajs,cb,context) {
-	React.render(openFileinstaller(),document.getElementById("main"));
-	callback=cb;
-}
-module.exports=installkdb;
-},{"./fileinstaller":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\fileinstaller.js","react":"react"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs.js":[function(require,module,exports){
-//Simulate feature in ksanagap
-/* 
-  runs on node-webkit only
-*/
-
-var readDir=function(path) { //simulate Ksanagap function
-	var fs=nodeRequire("fs");
-	path=path||"..";
-	var dirs=[];
-	if (path[0]==".") {
-		if (path==".") dirs=fs.readdirSync(".");
-		else {
-			dirs=fs.readdirSync("..");
-		}
-	} else {
-		dirs=fs.readdirSync(path);
-	}
-
-	return dirs.join("\uffff");
-}
-var listApps=function() {
-
-	var fs=nodeRequire("fs");
-	var ksanajsfile=function(d) {return "../"+d+"/ksana.js"};
-	var dirs=fs.readdirSync("..").filter(function(d){
-				return fs.statSync("../"+d).isDirectory() && d[0]!="."
-				   && fs.existsSync(ksanajsfile(d));
-	});
-	
-	var out=dirs.map(function(d){
-
-		var fn=ksanajsfile(d);
-		if (!fs.existsSync(fn)) return;
-		var content=fs.readFileSync(fn,"utf8");
-  		content=content.replace("})","}");
-  		content=content.replace("jsonp_handler(","");
-  		try{
-  			var obj= JSON.parse(content);
-			obj.dbid=d;
-			obj.path=d;
-			return obj;
-  		} catch(e) {
-  			console.log(e);
-  			return null;
-  		}
-	});
-
-	out=out.filter(function(o){return !!o});
-	return JSON.stringify(out);
-}
-
-
-
-var kfs={readDir:readDir,listApps:listApps};
-
-module.exports=kfs;
-},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\kfs_html5.js":[function(require,module,exports){
-
-var readDir=function(cb,context){
-	require("./html5fs").readdir(cb,context);
-}
-var listApps=function(){
-	return "[]";
-}
-module.exports={readDir:readDir,listApps:listApps};
-},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\ksanagap.js":[function(require,module,exports){
-var appname="installer";
-if (typeof ksana=="undefined") {
-	window.ksana={platform:"chrome"};
-}
-var switchApp=function(path) {
-	var fs=require("fs");
-	path="../"+path;
-	appname=path;
-	document.location.href= path+"/index.html"; 
-	process.chdir(path);
-}
-var downloader={};
-var rootPath="";
-
-var deleteApp=function(app) {
-	console.error("not allow on PC, do it in File Explorer/ Finder");
-}
-var username=function() {
-	return "";
-}
-var useremail=function() {
-	return ""
-}
-var runtime_version=function() {
-	return "1.4";
-}
-
-//copy from liveupdate
-var jsonp=function(url,dbid,callback,context) {
-  var script=document.getElementById("jsonp2");
-  if (script) {
-    script.parentNode.removeChild(script);
-  }
-  window.jsonp_handler=function(data) {
-    if (typeof data=="object") {
-      data.dbid=dbid;
-      callback.apply(context,[data]);    
-    }  
-  }
-  window.jsonp_error_handler=function() {
-    console.error("url unreachable",url);
-    callback.apply(context,[null]);
-  }
-  script=document.createElement('script');
-  script.setAttribute('id', "jsonp2");
-  script.setAttribute('onerror', "jsonp_error_handler()");
-  url=url+'?'+(new Date().getTime());
-  script.setAttribute('src', url);
-  document.getElementsByTagName('head')[0].appendChild(script); 
-}
-
-
-var loadKsanajs=function(){
-	if (typeof process!="undefined" && !process.browser) {
-		var ksanajs=require("fs").readFileSync("./ksana.js","utf8").trim();
-		downloader=require("./downloader");
-		//ksana.js=JSON.parse(ksanajs.substring(14,ksanajs.length-1));
-		rootPath=process.cwd();
-		rootPath=require("path").resolve(rootPath,"..").replace(/\\/g,"/")+'/';
-		ksana.ready=true;
-	} else{
-		var url=window.location.origin+window.location.pathname.replace("index.html","")+"ksana.js";
-		jsonp(url,appname,function(data){
-			ksana.js=data;
-			ksana.ready=true;
-		});
-	}
-}
-
-loadKsanajs();
-
-var boot=function(appId,cb) {
-	if (typeof appId=="function") {
-		cb=appId;
-		appId="unknownapp";
-	}
-
-	ksana.appId=appId;
-	var timer=setInterval(function(){
-			if (ksana.ready){
-				clearInterval(timer);
-				cb();
-			}
-		});
-}
-
-
-var ksanagap={
-	platform:"node-webkit",
-	startDownload:downloader.startDownload,
-	downloadedByte:downloader.downloadedByte,
-	downloadingFile:downloader.downloadingFile,
-	cancelDownload:downloader.cancelDownload,
-	doneDownload:downloader.doneDownload,
-	switchApp:switchApp,
-	rootPath:rootPath,
-	deleteApp: deleteApp,
-	username:username, //not support on PC
-	useremail:username,
-	runtime_version:runtime_version,
-	boot:boot
-}
-module.exports=ksanagap;
-},{"./downloader":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\downloader.js","fs":false,"path":false}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\livereload.js":[function(require,module,exports){
-var started=false;
-var timer=null;
-var bundledate=null;
-var get_date=require("./html5fs").get_date;
-var checkIfBundleUpdated=function() {
-	get_date("bundle.js",function(date){
-		if (bundledate &&bundledate!=date){
-			location.reload();
-		}
-		bundledate=date;
-	});
-}
-var livereload=function() {
-	if (started) return;
-
-	timer1=setInterval(function(){
-		checkIfBundleUpdated();
-	},2000);
-	started=true;
-}
-
-module.exports=livereload;
-},{"./html5fs":"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\html5fs.js"}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\liveupdate.js":[function(require,module,exports){
-
-var jsonp=function(url,dbid,callback,context) {
-  var script=document.getElementById("jsonp");
-  if (script) {
-    script.parentNode.removeChild(script);
-  }
-  if (typeof dbid=="function") {
-    context=callback;
-    callback=dbid;
-    dbid="";
-  }
-  window.jsonp_handler=function(data) {
-    //console.log("receive from ksana.js",data);
-    if (typeof data=="object" && dbid) {
-      if (typeof data.dbid=="undefined") {
-        data.dbid=dbid;
-      }
-    }
-    callback.apply(context,[data]);
-  }
-
-  window.jsonp_error_handler=function() {
-    console.error("url unreachable",url);
-    callback.apply(context,[null]);
-  }
-
-  script=document.createElement('script');
-  script.setAttribute('id', "jsonp");
-  script.setAttribute('onerror', "jsonp_error_handler()");
-  url=url+'?'+(new Date().getTime());
-  script.setAttribute('src', url);
-  document.getElementsByTagName('head')[0].appendChild(script); 
-}
-var runtime_version_ok=function(minruntime) {
-  if (!minruntime) return true;//not mentioned.
-  var min=parseFloat(minruntime);
-  var runtime=parseFloat( ksanagap.runtime_version()||"1.0");
-  if (min>runtime) return false;
-  return true;
-}
-
-var needToUpdate=function(fromjson,tojson) {
-  var needUpdates=[];
-  for (var i=0;i<fromjson.length;i++) { 
-    var to=tojson[i];
-    var from=fromjson[i];
-    var newfiles=[],newfilesizes=[],removed=[];
-    
-    if (!to || !to.files) continue; //cannot reach host
-    if (!runtime_version_ok(to.minruntime)) {
-      console.warn("runtime too old, need "+to.minruntime);
-      continue; 
-    }
-    if (!from.filedates) {
-      console.warn("missing filedates in ksana.js of "+from.dbid);
-      continue;
-    }
-    from.filedates.map(function(f,idx){
-      var newidx=to.files.indexOf( from.files[idx]);
-      if (newidx==-1) {
-        //file removed in new version
-        removed.push(from.files[idx]);
-      } else {
-        var fromdate=Date.parse(f);
-        var todate=Date.parse(to.filedates[newidx]);
-        if (fromdate<todate) {
-          newfiles.push( to.files[newidx] );
-          newfilesizes.push(to.filesizes[newidx]);
-        }        
-      }
-    });
-    if (newfiles.length) {
-      from.newfiles=newfiles;
-      from.newfilesizes=newfilesizes;
-      from.removed=removed;
-      needUpdates.push(from);
-    }
-  }
-  return needUpdates;
-}
-var getUpdatables=function(apps,cb,context) {
-  getRemoteJson(apps,function(jsons){
-    var hasUpdates=needToUpdate(apps,jsons);
-    cb.apply(context,[hasUpdates]);
-  },context);
-}
-var getRemoteJson=function(apps,cb,context) {
-  var taskqueue=[],output=[];
-  var makecb=function(app){
-    return function(data){
-        if (!(data && typeof data =='object' && data.__empty)) output.push(data);
-        if (!app.baseurl) {
-          taskqueue.shift({__empty:true});
-        } else {
-          var url=app.baseurl+"/ksana.js";
-          try {
-            jsonp( url ,app.dbid,taskqueue.shift(), context);             
-          } catch(e) {
-            console.log(e);
-            taskqueue.shift({__empty:true});
-          }
-        }
-    };
-  };
-  apps.forEach(function(app){taskqueue.push(makecb(app))});
-
-  taskqueue.push(function(data){
-    output.push(data);
-    cb.apply(context,[output]);
-  });
-
-  taskqueue.shift()({__empty:true}); //run the task
-}
-var humanFileSize=function(bytes, si) {
-    var thresh = si ? 1000 : 1024;
-    if(bytes < thresh) return bytes + ' B';
-    var units = si ? ['kB','MB','GB','TB','PB','EB','ZB','YB'] : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
-    var u = -1;
-    do {
-        bytes /= thresh;
-        ++u;
-    } while(bytes >= thresh);
-    return bytes.toFixed(1)+' '+units[u];
-};
-var humanDate=function(datestring) {
-    var d=Date.parse(datestring);
-    if (isNaN(d)) {
-      return "invalid date";
-    } else {
-      return new Date(d).toLocaleString();
-    }
-}
-var start=function(ksanajs,cb,context){
-  var files=ksanajs.newfiles||ksanajs.files;
-  var baseurl=ksanajs.baseurl|| "http://127.0.0.1:8080/"+ksanajs.dbid+"/";
-  var started=ksanagap.startDownload(ksanajs.dbid,baseurl,files.join("\uffff"));
-  cb.apply(context,[started]);
-}
-var status=function(){
-  var nfile=ksanagap.downloadingFile();
-  var downloadedByte=ksanagap.downloadedByte();
-  var done=ksanagap.doneDownload();
-  return {nfile:nfile,downloadedByte:downloadedByte, done:done};
-}
-
-var cancel=function(){
-  return ksanagap.cancelDownload();
-}
-
-var liveupdate={ humanFileSize: humanFileSize, humanDate:humanDate,
-  needToUpdate: needToUpdate , jsonp:jsonp, 
-  getUpdatables:getUpdatables,
-  start:start,
-  cancel:cancel,
-  status:status
-  };
-module.exports=liveupdate;
-},{}],"C:\\ksana2015\\node_modules\\ksana2015-webruntime\\mkdirp.js":[function(require,module,exports){
-function mkdirP (p, mode, f, made) {
-     var path = nodeRequire('path');
-     var fs = nodeRequire('fs');
-	
-    if (typeof mode === 'function' || mode === undefined) {
-        f = mode;
-        mode = 0x1FF & (~process.umask());
-    }
-    if (!made) made = null;
-
-    var cb = f || function () {};
-    if (typeof mode === 'string') mode = parseInt(mode, 8);
-    p = path.resolve(p);
-
-    fs.mkdir(p, mode, function (er) {
-        if (!er) {
-            made = made || p;
-            return cb(null, made);
-        }
-        switch (er.code) {
-            case 'ENOENT':
-                mkdirP(path.dirname(p), mode, function (er, made) {
-                    if (er) cb(er, made);
-                    else mkdirP(p, mode, cb, made);
-                });
-                break;
-
-            // In the case of any other error, just see if there's a dir
-            // there already.  If so, then hooray!  If not, then something
-            // is borked.
-            default:
-                fs.stat(p, function (er2, stat) {
-                    // if the stat fails, then that's super weird.
-                    // let the original error be the failure reason.
-                    if (er2 || !stat.isDirectory()) cb(er, made)
-                    else cb(null, made);
-                });
-                break;
-        }
-    });
-}
-
-mkdirP.sync = function sync (p, mode, made) {
-    var path = nodeRequire('path');
-    var fs = nodeRequire('fs');
-    if (mode === undefined) {
-        mode = 0x1FF & (~process.umask());
-    }
-    if (!made) made = null;
-
-    if (typeof mode === 'string') mode = parseInt(mode, 8);
-    p = path.resolve(p);
-
-    try {
-        fs.mkdirSync(p, mode);
-        made = made || p;
-    }
-    catch (err0) {
-        switch (err0.code) {
-            case 'ENOENT' :
-                made = sync(path.dirname(p), mode, made);
-                sync(p, mode, made);
-                break;
-
-            // In the case of any other error, just see if there's a dir
-            // there already.  If so, then hooray!  If not, then something
-            // is borked.
-            default:
-                var stat;
-                try {
-                    stat = fs.statSync(p);
-                }
-                catch (err1) {
-                    throw err0;
-                }
-                if (!stat.isDirectory()) throw err0;
-                break;
-        }
-    }
-
-    return made;
-};
-
-module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
-
-},{}]},{},["C:\\ksana2015\\adarsha\\index.js"])
-
-
+},{}]},{},["/Users/yu/ksana2015/adarsha/index.js"])
 //# sourceMappingURL=bundle.js.map

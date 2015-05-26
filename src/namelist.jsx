@@ -4,7 +4,7 @@
 
 //var othercomponent=Require("other"); 
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var namelist = React.createClass({
   getInitialState: function() {
     return {selected:null};

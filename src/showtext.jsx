@@ -4,7 +4,7 @@
 var React=require("react");
 var Textcontrolbar=require("./textcontrolbar.jsx");
 var Showseg=require("./showseg.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 
 var showtext = React.createClass({
   getInitialState: function() {
@@ -123,6 +123,9 @@ var showtext = React.createClass({
     //console.log("pb:",pb.length,"text:",text.length);
     return segs;
   },
+  scroll:function() {
+    console.log("scrolled!");
+  },
   render: function() {
     var content=this.props.text||"";
     if (this.props.wylie) content=tibetan.toWylie(content,null,false);
@@ -135,7 +138,7 @@ var showtext = React.createClass({
     });
 
     return (
-      <div className="cursor">
+      <div className="cursor" onScroll={this.scroll}>
         <Textcontrolbar message={this.state.message} sidemenu={this.props.sidemenu} toggleMenu={this.props.toggleMenu} dataN={this.props.dataN} setwylie={this.props.setwylie} wylie={this.props.wylie} page={this.props.page} bodytext={this.props.bodytext}  next={this.props.nextfile} prev={this.props.prevfile} setpage={this.props.setpage} db={this.props.db} toc={this.props.toc} />
         <br></br><br></br>
         <div ref="pagetext">{segs}</div>

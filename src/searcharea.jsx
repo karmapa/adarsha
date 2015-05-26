@@ -4,7 +4,7 @@
 var React=require("react");
 var Namelist=require("./namelist.jsx");
 var Resultlist=require("./resultlist.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
 var search_api=require("./search_api");
 
@@ -157,7 +157,7 @@ var searcharea= React.createClass({
         </div>       
         {this.renderInputSyntax()}
         <Namelist wylie={this.props.wylie} res_toc={this.state.res_toc} tofind={this.state.tofind} gotofile={this.props.gotofile} />
-        <Resultlist wylie={this.props.wylie} res={this.state.res} tofind={this.state.tofind} gotofile={this.props.gotofile} />
+        <Resultlist className="resultlist" wylie={this.props.wylie} res={this.state.res} tofind={this.state.tofind} gotofile={this.props.gotofile} />
       </div>
     );
   }

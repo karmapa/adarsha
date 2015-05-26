@@ -4,7 +4,7 @@
 
 //var othercomponent=Require("other"); 
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var resultlist=React.createClass({  //should search result
   show:function() {
     if(this.props.wylie == false) var tofind=this.props.tofind;

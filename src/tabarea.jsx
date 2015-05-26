@@ -1,7 +1,7 @@
 var React=require("react");
 var Stacktoc=require("ksana2015-stacktoc").component;  //載入目錄顯示元件
 var Searcharea=require("./searcharea.jsx");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var tabarea = React.createClass({
   getInitialState: function() {
     return {res:{},res_toc:[]};

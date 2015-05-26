@@ -1,5 +1,5 @@
 var React=require("react");
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var Textcontrolbar = React.createClass({
   getInitialState: function() {
     return {address:0,fontsize:125,message:""};
@@ -49,9 +49,10 @@ var Textcontrolbar = React.createClass({
   },
   getAddress: function() {
     if (!this.props.bodytext)return;
-    var file=this.props.bodytext.file;
-    var page=this.props.page;
-    var res=this.filepage2vpos(file,page);
+    // var file=this.props.bodytext.file;
+    // var page=this.props.page;
+    // var res=this.filepage2vpos(file,page);
+   var res = "";
    if(this.props.wylie == false) return res;
    if(this.props.wylie == true) return tibetan.toWylie(res,null,false);    
   },

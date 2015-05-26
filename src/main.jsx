@@ -4,10 +4,10 @@
  change name of ./component.js and  "dependencies" section of ../../component.js */
 var React=require("react");
 var Tabarea=require("./tabarea.jsx");
-var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
+//var Fileinstaller=require("ksana2015-webruntime").fileinstaller;
 var kde=require("ksana-database");  // Ksana Database Engine
 var kse=require("ksana-search"); // Ksana Search Engine (run at client side)
-var tibetan=require("ksana-tibetan").wylie;
+var tibetan=require("tibetan/wylie");
 var Showtext=require("./showtext.jsx");
 
 var version="v0.1.46";
