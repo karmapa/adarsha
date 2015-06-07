@@ -86,10 +86,10 @@ var main = React.createClass({
   onReady:function() {
     if (!this.state.db) kde.open("jiangkangyur",function(a,db){
         this.setState({db:db});
-        db.get([["fields","head"],["fields","head_depth"],["fields","head_voff"]],function(){
+        db.get([["fields","head"],["fields","head_depth"],["fields","head_vpos"]],function(){
           var heads=db.get(["fields","head"]);
           var depths=db.get(["fields","head_depth"]);
-          var voffs=db.get(["fields","head_voff"]);
+          var voffs=db.get(["fields","head_vpos"]);
           var toc=this.genToc(heads,depths,voffs);
           this.setState({toc:toc});
           this.goHashTag();
