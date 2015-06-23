@@ -5,14 +5,14 @@ var React=require('react');
 var Defbox=require("./defbox.jsx");
 var corres_api=require("./corres_api");
 var dict_api=require("./dict_api");
-var jPedurma=require("./jPedurma");
-var dPedurma=require("./dPedurma");
-var hPedurma=require("./hPedurma");
+var jPedurma=require("pedurma").jPedurma;
+var dPedurma=require("pedurma").dPedurma;
+var hPedurma=require("pedurma").hPedurma;
 var mappings={"J":jPedurma,"D":dPedurma,"H":hPedurma};
 
 var showseg= React.createClass({
   getInitialState: function() {
-    return {recen:"lijiang",showCorres:false,clickedCorrespb:{},clickedChPos:{left:0,top:0},openBox:"",vpos:0};
+    return {recen:"lijiang",showCorres:false,clickedCorrespb:{},clickedChPos:{left:0,top:0},openBox:"",vpos:0,seperateLine:false};
   },
   componentWillReceiveProps: function(nextProps) {
     this.setState({showCorres:false,openBox:false});
@@ -59,7 +59,10 @@ var showseg= React.createClass({
       e.target.nextSibling.nextSibling.nodeName=="IMG") {
       if (e.target && e.target.dataset) {
         var pb=e.target.dataset.pb;
-        if (pb) this.props.removeImage(pb);
+        if (pb) {
+          this.props.removeImage(pb);
+          this.setState({seperateLine:false});
+        }
       }
     } else {
       var pb=null;
@@ -69,13 +72,17 @@ var showseg= React.createClass({
       }
       if (pb) {
         this.props.addImage(pb);
+        this.setState({seperateLine:true});
       } else {
         //if (e && e.target && e.target.previousSibling && e.target.previousSibling
         //  && e.target.previousSibling.previousSibling && e.target.previousSibling.previousSibling.previousSibling.dataset){
         if(e && e.target && e.target.dataset.img){
           //var pb=e.target.previousSibling.previousSibling.previousSibling.dataset.pb;
           var pb=e.target.dataset.img;
-          if (pb) this.props.removeImage(pb);
+          if (pb) {
+            this.props.removeImage(pb);
+            this.setState({seperateLine:false});
+          }
         }
       }  
     }    
@@ -87,10 +94,15 @@ var showseg= React.createClass({
       if(!this.state.showCorres) {
         imgName=this.getImgName(seg.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.props.recen+"/"+imgName+".jpg";//
+        //imgLink="../adarsha_img/"+this.props.recen+"/"+imgName+".jpg";
+        //imgLink="../001-002a.jpg";
       } else {
         imgName=this.getImgName(this.state.clickedCorrespb.pb);
         imgLink="http://res.cloudinary.com/www-dharma-treasure-org/image/upload/"+this.state.clickedCorrespb.recen+"/"+imgName+".jpg";//
+        //imgLink="../adarsha_img/"+this.state.clickedCorrespb.recen+"/"+imgName+".jpg";
+        //imgLink="../001-002a.jpg";
       }
+
       return (
         <div>
           <a href="#" data-pb={seg.pb}>{seg.pb}</a>
@@ -98,6 +110,7 @@ var showseg= React.createClass({
           Derge:<a data-type="goCorres" data-recen="D" data-pb={corresPage.D}>{corresPage.D}</a>
           &nbsp;&nbsp;
           Lhasa:<a data-type="goCorres" data-recen="H" data-pb={corresPage.H}>{corresPage.H}</a>
+
           <img className="sourceimage" data-img={seg.pb} width="100%" src={imgLink} /><br></br>
         </div>
       );
@@ -116,12 +129,13 @@ var showseg= React.createClass({
   render: function() {
     var seg=this.props.segs ||{};
     if(typeof seg != "undefined") var linkedPb = this.renderPb(seg);//{this.props.segs.pb}
-
+    var content=this.props.segs.text;
+    if(this.state.seperateLine) content=content.replace(/\n/g,"<br/>");
     return (
      <div onScroll={this.removeDefBox}>
         <div onKeypress={this.keyup} onClick={this.togglePageImg} ref="pagetext" className="pagetext">
           {linkedPb}
-          <div dangerouslySetInnerHTML={{__html: this.props.segs.text}} />
+          <div dangerouslySetInnerHTML={{__html: content}} />
         </div>
         <Defbox vpos={this.state.vpos} clickedChPos={this.state.clickedChPos} def={this.state.def} openBox={this.state.openBox} />
       </div>

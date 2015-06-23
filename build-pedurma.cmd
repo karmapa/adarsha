@@ -1,0 +1,1 @@
+browserify --bare -r pedurma > pedurma-bundle.js
